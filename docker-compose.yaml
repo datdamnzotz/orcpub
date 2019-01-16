@@ -35,6 +35,8 @@ services:
       - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./deploy/snakeoil.crt:/etc/nginx/snakeoil.crt
       - ./deploy/snakeoil.key:/etc/nginx/snakeoil.key
+      - ./deploy/50x.html:/usr/share/nginx/html/50x.html
+      - ./deploy/background.jpg:/usr/share/nginx/html/background.jpg
     depends_on:
       - orcpub
     restart: always
