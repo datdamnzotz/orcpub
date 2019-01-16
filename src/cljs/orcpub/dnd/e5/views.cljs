@@ -902,7 +902,8 @@
                          :margin-top "20px"}}
            "LOGIN"]
           [:div.m-t-10
-           [facebook-login-button]]
+           ;[facebook-login-button]
+           ]
           [:div
            {:style {:margin-top "50px"}}
            [form-input {:title "Username or Email"
@@ -1522,9 +1523,7 @@
             (if (not frame?)
               [:div.content.bg-lighter.p-10.flex
                [:div.flex-grow-1
-                [:div "Due to licensing issues, we were forced to remove all non-SRD content, if you have questions about what is and is not SRD content please see the " srd-link ". If you would like to see the non-SRD content added back to OrcPub please sign our " [:a.orange {:href "https://www.change.org/p/wizards-of-the-coast-wizards-of-the-coast-please-grant-orc-pub-licensing-rights-to-your-content" :target "_blank"}
-                                                                                                                                                                                                                                                                           "petition here at change.org"]
-                 "."]
+                [:div "This is the community server for Orcpub.  Enjoy -DatDamnZotz"]
                 (if (not mobile?)
                   [:div.m-t-10 "You can add content from other sources using the builders in the 'My Content' menu. Here are some compatible sources: "
                    [:div.flex.flex-wrap.m-t-10
@@ -1556,6 +1555,7 @@
             [:a.orange.m-l-5 {:href "/terms-of-use" :target :_blank} "Terms of Use"]]
            [:div.legal-footer
             [:p "© 2019 OrcPub" [:span.m-l-20 "Contact: " [:a {:href "mailto:redorc@orcpub.com"} "redorc@orcpub.com"]]]
+            [:p "Site Contact " [:a {:href "mailto:thDM@dungeonmastersvault.com"} "thDM@dungeonmastersvault.com"]]
             [:p "Wizards of the Coast, Dungeons & Dragons, D&D, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2019 Wizards. All Rights Reserved. OrcPub.com is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC."]]]
           [debug-data]]]])]))
 
@@ -2050,7 +2050,7 @@
         [:div.m-b-20
          [spellcaster-levels-table spell-slot-factors total-spellcaster-levels levels mobile?]])
       (if (or pact-magic? spell-slot-factors)
-        [:div.m-b-20 
+        [:div.m-b-20
          [spell-slots-table id spell-slots spell-slot-factors total-spellcaster-levels levels mobile? pact-magic?]])
       [:div.m-b-20
        [:span.f-w-b.f-s-16 "Spell Preparation"]
@@ -3168,7 +3168,7 @@
         freqs (into #{} (map has-frequency-units? all-traits))]
     [:div.details-columns
      {:class-name (if (= 2 num-columns) "flex")}
-   
+
      [:div.flex-grow-1.details-column-2
       {:class-name (if (= 2 num-columns) "w-50-p m-l-20")}
       [list-item-section "Damage Resistances" "surrounded-shield" resistances resistance-str]
@@ -5140,7 +5140,7 @@
      (map-indexed
       (fn [index modifier]
         ^{:key index}
-        [option-level-modifier         
+        [option-level-modifier
          modifier
          index
          edit-modifier-type-event
@@ -5213,7 +5213,7 @@
      (map-indexed
       (fn [index selection]
         ^{:key index}
-        [option-level-selection         
+        [option-level-selection
          selection
          index
          edit-selection-type-event
@@ -5514,7 +5514,7 @@
         spell-lists @(subscribe [::spells/spell-lists])
         class-key (get subclass :class)
         classes @(subscribe [::classes/classes])
-        mobile? @(subscribe [:mobile?])]    
+        mobile? @(subscribe [:mobile?])]
     [:div.p-20.main-text-color
      [:div.flex.flex-wrap
       [:div.m-b-20
@@ -5599,7 +5599,7 @@
       ::e5/delete-subclass-trait
       :edit-trait-level-event ::e5/edit-subclass-trait-level]]))
 
-(defn option-spell [index 
+(defn option-spell [index
                      {:keys [level value] :as spell-cfg}
                      set-spell-level-event
                      set-spell-value-event
