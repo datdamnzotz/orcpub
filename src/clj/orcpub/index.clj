@@ -122,8 +122,7 @@ html, body, #app {
     (include-css "/font-awesome-4.7.0/css/font-awesome.min.css")
     (include-css "https://fonts.googleapis.com/css?family=Open+Sans")
     [:script
-     "var _paq = _paq || [];
-	  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+     "	  var _paq = _paq || [];
 	  _paq.push(['trackPageView']);
 	  _paq.push(['enableLinkTracking']);
 	  (function() {
