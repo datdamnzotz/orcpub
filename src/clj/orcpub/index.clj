@@ -127,7 +127,7 @@ html, body, #app {
 	  _paq.push(['trackPageView']);
 	  _paq.push(['enableLinkTracking']);
 	  (function() {
-		var u="//t.lissproductions.com/";
+		var u=\"//t.lissproductions.com/\";
 		_paq.push(['setTrackerUrl', u+'piwik.php']);
 		_paq.push(['setSiteId', '7']);
 		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
