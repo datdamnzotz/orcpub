@@ -57,7 +57,7 @@
    [:div
     [:div {:style (style {:margin-bottom "5px"})} "Icons made by Lorc, Caduceus, and Delapouite. Available on " [:a.orange {:href "http://game-icons.net"} "http://game-icons.net"]]]
    [:div.m-l-10 {:style (style {:margin-left "10px"})}
-    [:a {:style (style orange-style) :href "https://github.com/larrychristensen/orcpub/issues" :target :_blank} "Feedback/Bug Reports"]]
+    [:a {:style (style orange-style) :href "https://github.com/Orcpub/orcpub/issues" :target :_blank} "Feedback/Bug Reports"]]
    [:div.m-l-10.m-r-10.p-10
     {:style (style {:margin-left "10px"
                     :margin-right "10px"
