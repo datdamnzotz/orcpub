@@ -109,7 +109,19 @@ html, body, #app {
 	  js.src = \"//connect.facebook.net/en_US/sdk.js\";
 	  fjs.parentNode.insertBefore(js, fjs);
 	  }(document, 'script', 'facebook-jssdk'));"
-      (oauth/app-id url))]]
+      (oauth/app-id url))]
+    [:script
+     "	  var _paq = _paq || [];
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+		var u=\"//t.lissproductions.com/\";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '7']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	  })();"]
+    ]
    [:body {:style "margin:0;height:100%;line-height:1"}
     [:div#app
      (if splash?
@@ -121,14 +133,4 @@ html, body, #app {
     (include-js "/js/compiled/orcpub.js")
     (include-css "/font-awesome-4.7.0/css/font-awesome.min.css")
     (include-css "https://fonts.googleapis.com/css?family=Open+Sans")
-    [:script
-     "	  var _paq = _paq || [];
-	  _paq.push(['trackPageView']);
-	  _paq.push(['enableLinkTracking']);
-	  (function() {
-		var u=\"//t.lissproductions.com/\";
-		_paq.push(['setTrackerUrl', u+'piwik.php']);
-		_paq.push(['setSiteId', '7']);
-		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-	  })();"]]))
+    ]))
