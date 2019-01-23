@@ -12,5 +12,5 @@ RUN unzip /tmp/datomic.zip && rm /tmp/datomic.zip &&\
 VOLUME /data
 VOLUME /log
 
-ENTRYPOINT ["/datomic/bin/transactor"]
-CMD ["/datomic/transactor.properties"]
+ENTRYPOINT ["/datomic/bin/transactor","-Xmx2g","-Xms2g","-XX:+UseG1GC","/datomic/transactor.properties"]
+
