@@ -532,8 +532,8 @@
 
 (def registration-page-style
   {:background-image "url(/image/shutterstock_432001912.jpg)"
-   :background-size "1200px 800px"
-   :background-position "-350px 0px"
+   ;;:background-size "1200px 800px"
+   ;;:background-position "-350px 0px"
    :background-clip :content-box
    :width "350px"
    :min-height "600px"})
@@ -1525,6 +1525,9 @@
               [:div.content.bg-lighter.p-10.flex
                [:div.flex-grow-1
                 [:div "This is the community server for Orcpub.  Enjoy -DatDamnZotz"]
+                [:div.m-t-10 " "]
+                [:div.m-t-10 "Please Note: Custom/imported data isn't permanent in your browser, export often!"]
+                [:div.m-t-10 " "]
                 (if (not mobile?)
                   [:div.m-t-10 "You can add content from other sources using the builders in the 'My Content' menu. Here are some compatible sources: "
                    [:div.flex.flex-wrap.m-t-10
@@ -3346,7 +3349,7 @@
            (if @show-selections?
              [character-selections id])]]]))))
 
-(defn share-link [id]
+(defn share-link-email [id]
   [:a.m-r-5.f-s-14
    {:href (str "mailto:?subject=My%20OrcPub%20Character%20"
                @(subscribe [::char/character-name id])
@@ -3355,6 +3358,14 @@
                (routes/path-for routes/dnd-e5-char-page-route :id id))}
    [:i.fa.fa-envelope.m-r-5]
    "share"])
+
+(defn share-link-www [id]
+  [:a.m-r-5.f-s-14
+   {:href (str "https://"
+               js/window.location.hostname
+               (routes/path-for routes/dnd-e5-char-page-route :id id)) :target "_blank"}
+   [:i.fa.fa-link.m-r-5]
+   "www"])
 
 (def character-display-style
   {:padding "20px 5px"
@@ -3485,11 +3496,13 @@
            "Character Page")
          (remove
           nil?
-          [[share-link id]
-           [character-page-fb-button id]
-           [:div.m-l-5.hover-shadow.pointer
-            {:on-click #(swap! expanded? not)}
-            [:img.h-32 {:src "/image/world-anvil.jpeg"}]]
+          [[share-link-email id]
+           [share-link-www id]
+           ;;[character-page-fb-button id]
+           ;;[:div.m-l-5.hover-shadow.pointer
+            ;;{:on-click #(swap! expanded? not)}
+            ;;[:img.h-32 {:src "/image/world-anvil.jpeg"}]]
+
            (if (and username
                     owner
                     (= owner username))
@@ -7264,8 +7277,9 @@
   [:div
    {:style character-display-style}
    [:div.flex.justify-cont-end.uppercase.align-items-c
-    [share-link id]
-    [:div.m-r-5 [character-page-fb-button id]]
+    [share-link-email id]
+    [share-link-www id]
+    ;;[:div.m-r-5 [character-page-fb-button id]]
     (if (= username owner)
       [:button.form-button
        {:on-click (make-event-handler :edit-character @(subscribe [::char/character id]))}
