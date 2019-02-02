@@ -24,7 +24,7 @@
     (meta-tag "og:title" title)
     (meta-tag "og:description" description)
     (meta-tag "og:image" image)
-    (meta-tag "google-signin-client_id" "86323071944-te5j96nbke0duomgm24j2on4rs4p7ob9.apps.googleusercontent.com")
+    ;(meta-tag "google-signin-client_id" "86323071944-te5j96nbke0duomgm24j2on4rs4p7ob9.apps.googleusercontent.com")
     [:meta {:charset "UTF-8"}]
     [:meta {:name "viewport"
             :content "width=device-width, initial-scale=1"}]
@@ -34,7 +34,7 @@
 .splash-button .splash-button-content {height: 120px; width: 120px}
 .splash-button .svg-icon {height: 64px; width: 64px}
 
-@media (max-width: 767px) 
+@media (max-width: 767px)
 {.splash-button .svg-icon {height: 32px; width: 32px}
 .splash-button-title-prefix {display: none}
 .splash-button .splash-button-content {height: 60px; width: 60px; font-size: 10px}
@@ -53,7 +53,7 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -65,7 +65,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -101,16 +101,7 @@ html, body, #app {
     [:title title]
     [:script
      (format
-      "   window.fbAsyncInit = function() {
-	  FB.init({
-	  appId      : '%s',
-	  xfbml      : true,
-          cookie     : true,
-	  version    : 'v2.9'
-	  });
-	  FB.AppEvents.logPageView();
-	  };
-
+      "
 	  (function(d, s, id){
 	  var js, fjs = d.getElementsByTagName(s)[0];
 	  if (d.getElementById(id)) {return;}
@@ -118,7 +109,19 @@ html, body, #app {
 	  js.src = \"//connect.facebook.net/en_US/sdk.js\";
 	  fjs.parentNode.insertBefore(js, fjs);
 	  }(document, 'script', 'facebook-jssdk'));"
-      (oauth/app-id url))]]
+      (oauth/app-id url))]
+    [:script
+     "	  var _paq = _paq || [];
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+		var u=\"//t.lissproductions.com/\";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '7']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	  })();"]
+    ]
    [:body {:style "margin:0;height:100%;line-height:1"}
     [:div#app
      (if splash?
@@ -130,11 +133,4 @@ html, body, #app {
     (include-js "/js/compiled/orcpub.js")
     (include-css "/font-awesome-4.7.0/css/font-awesome.min.css")
     (include-css "https://fonts.googleapis.com/css?family=Open+Sans")
-    [:script
-     "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-69209720-3', 'auto');
-	  ga('send', 'pageview');"]]))
+    ]))
