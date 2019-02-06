@@ -1,4 +1,4 @@
-#_(ns orcpub.dnd.e5.templates.ua-base
+(ns orcpub.dnd.e5.templates.ua-base
   (:require [orcpub.template :as t]
             [orcpub.common :as common]
             [orcpub.modifiers :as mods]
