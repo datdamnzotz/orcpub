@@ -77,7 +77,7 @@
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
-  :resource-paths ["resources" "resources/.ebextensions/*.config"]
+  :resource-paths ["resources" "resources/.ebextensions/"]
 
   :uberjar-name "orcpub.jar"
 
@@ -164,11 +164,11 @@
              }
 
   :repl-options {
-             ;; If nREPL takes too long to load it may timeout,
-             ;; increase this to wait longer before timing out.
-             ;; Defaults to 30000 (30 seconds)
-             :timeout 300000 ; 5 mins to wait
-			 }
+  ;; If nREPL takes too long to load it may timeout,
+  ;; increase this to wait longer before timing out.
+  ;; Defaults to 30000 (30 seconds)
+  :timeout 300000 ; 5 mins to wait
+  }
 
   ;; setting up nREPL for Figwheel and ClojureScript dev
   ;; Please see:

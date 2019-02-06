@@ -427,16 +427,17 @@
        [:div.flex.w-100-p.align-items-end
         {:class-name (if mobile? "justify-cont-s-b" "justify-cont-s-b")}
         [:div
-         [:a {:href "https://www.patreon.com/orcpub" :target :_blank}
+         [:a {:href "https://paypal.me/pools/c/8bpp1EQ8pX" :target :_blank}
           [:img.h-32.m-l-10.m-b-5.pointer.opacity-7.hover-opacity-full
            {:src (if mobile?
-                   "https://c5.patreon.com/external/logo/downloads_logomark_color_on_navy.png"
-                   "https://c5.patreon.com/external/logo/become_a_patron_button.png")}]]
+                   "/image/donate_sm.png"
+                   "/image/donate.png")}]]
          (if (not mobile?)
            [:div.main-text-color.p-10
-            (social-icon "facebook" "https://www.facebook.com/orcpub")
-            (social-icon "twitter" "https://twitter.com/OrcPub")
-            (social-icon "reddit-alien" "https://www.reddit.com/r/orcpub/")])]
+            ;(social-icon "facebook" "https://www.facebook.com/orcpub")
+            ;(social-icon "twitter" "https://twitter.com/OrcPub")
+            ;(social-icon "reddit-alien" "https://www.reddit.com/r/orcpub/")
+            ])]
         [:div.flex.m-b-5.m-r-5
          [header-tab
           "characters"
@@ -900,7 +901,8 @@
                          :margin-top "20px"}}
            "LOGIN"]
           [:div.m-t-10
-           [facebook-login-button]]
+           ;[facebook-login-button]
+           ]
           [:div
            {:style {:margin-top "50px"}}
            [form-input {:title "Username or Email"
@@ -1520,12 +1522,14 @@
             (if (not frame?)
               [:div.content.bg-lighter.p-10.flex
                [:div.flex-grow-1
-                [:div "Due to licensing issues, we were forced to remove all non-SRD content, if you have questions about what is and is not SRD content please see the " srd-link ". If you would like to see the non-SRD content added back to OrcPub please sign our " [:a.orange {:href "https://www.change.org/p/wizards-of-the-coast-wizards-of-the-coast-please-grant-orc-pub-licensing-rights-to-your-content" :target "_blank"}
-                                                                                                                                                                                                                                                                           "petition here at change.org"]
-                 "."]
+                [:div "This is the community server for Orcpub.  Enjoy -DatDamnZotz"]
+                [:div.m-t-10 " "]
+                [:div.m-t-10 "Please Note: Custom/imported data isn't permanent in your browser, export often!"]
+                [:div.m-t-10 " "]
                 (if (not mobile?)
                   [:div.m-t-10 "You can add content from other sources using the builders in the 'My Content' menu. Here are some compatible sources: "
                    [:div.flex.flex-wrap.m-t-10
+                    [:div.m-l-5 srd-link]
                     [:div.m-l-5 phb-link]
                     [:div.m-l-5 dmg-link]
                     [:div.m-l-5 mm-link]
@@ -1548,12 +1552,13 @@
            [:div
             [:div.m-b-5 "Icons made by Lorc, Caduceus, and Delapouite. Available on " [:a.orange {:href "http://game-icons.net"} "http://game-icons.net"]]]
            [:div.m-l-10
-            [:a.orange {:href "https://github.com/larrychristensen/orcpub/issues" :target :_blank} "Feedback/Bug Reports"]]
+            [:a.orange {:href "https://github.com/Orcpub/orcpub/issues" :target :_blank} "Feedback/Bug Reports"]]
            [:div.m-l-10.m-r-10.p-10
             [:a.orange {:href "/privacy-policy" :target :_blank} "Privacy Policy"]
             [:a.orange.m-l-5 {:href "/terms-of-use" :target :_blank} "Terms of Use"]]
            [:div.legal-footer
             [:p "© 2019 OrcPub" [:span.m-l-20 "Contact: " [:a {:href "mailto:redorc@orcpub.com"} "redorc@orcpub.com"]]]
+            [:p "Site Contact " [:a {:href "mailto:thDM@dungeonmastersvault.com"} "thDM@dungeonmastersvault.com"]]
             [:p "Wizards of the Coast, Dungeons & Dragons, D&D, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2019 Wizards. All Rights Reserved. OrcPub.com is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC."]]]
           [debug-data]]]])]))
 
@@ -3343,7 +3348,7 @@
            (if @show-selections?
              [character-selections id])]]]))))
 
-(defn share-link [id]
+(defn share-link-email [id]
   [:a.m-r-5.f-s-14
    {:href (str "mailto:?subject=My%20OrcPub%20Character%20"
                @(subscribe [::char/character-name id])
@@ -3352,6 +3357,14 @@
                (routes/path-for routes/dnd-e5-char-page-route :id id))}
    [:i.fa.fa-envelope.m-r-5]
    "share"])
+
+(defn share-link-www [id]
+  [:a.m-r-5.f-s-14
+   {:href (str "https://"
+               js/window.location.hostname
+               (routes/path-for routes/dnd-e5-char-page-route :id id)) :target "_blank"}
+   [:i.fa.fa-link.m-r-5]
+   "www"])
 
 (def character-display-style
   {:padding "20px 5px"
@@ -3482,11 +3495,13 @@
            "Character Page")
          (remove
           nil?
-          [[share-link id]
-           [character-page-fb-button id]
-           [:div.m-l-5.hover-shadow.pointer
-            {:on-click #(swap! expanded? not)}
-            [:img.h-32 {:src "/image/world-anvil.jpeg"}]]
+          [[share-link-email id]
+           [share-link-www id]
+           ;;[character-page-fb-button id]
+           ;;[:div.m-l-5.hover-shadow.pointer
+            ;;{:on-click #(swap! expanded? not)}
+            ;;[:img.h-32 {:src "/image/world-anvil.jpeg"}]]
+
            (if (and username
                     owner
                     (= owner username))
@@ -7261,8 +7276,9 @@
   [:div
    {:style character-display-style}
    [:div.flex.justify-cont-end.uppercase.align-items-c
-    [share-link id]
-    [:div.m-r-5 [character-page-fb-button id]]
+    [share-link-email id]
+    [share-link-www id]
+    ;;[:div.m-r-5 [character-page-fb-button id]]
     (if (= username owner)
       [:button.form-button
        {:on-click (make-event-handler :edit-character @(subscribe [::char/character id]))}
