@@ -390,6 +390,9 @@
 (defn route-to-my-content-page []
   (dispatch [:route routes/dnd-e5-my-content-route]))
 
+(defn route-to-my-encounters-page []
+  (dispatch [:route routes/dnd-e5-my-encounters-route]))
+
 (def logo [:img.orcpub-logo.h-32.w-120.pointer
            {:src "/image/orcpub-logo.svg"
             :on-click route-to-default-route}])
@@ -448,7 +451,7 @@
           device-type
           {:name "Character List"
            :route routes/dnd-e5-char-list-page-route}
-          {:name "Builder"
+          {:name "Character Builder"
            :route routes/dnd-e5-char-builder-route}
           {:name "Parties"
            :route routes/dnd-e5-char-parties-page-route}]
@@ -461,18 +464,18 @@
           device-type
           {:name "Spell List"
            :route routes/dnd-e5-spell-list-page-route}
-          {:name "Builder"
+          {:name "Spell Builder"
            :route routes/dnd-e5-spell-builder-page-route}]
          [header-tab
           "monsters"
-          "hydra"
+          "spiked-dragon-head"
           route-to-monster-list-page
           false
           (routes/dnd-e5-monster-page-routes (or (:handler active-route) active-route))
           device-type
           {:name "Monster List"
            :route routes/dnd-e5-monster-list-page-route}
-          {:name "Builder"
+          {:name "Monster Builder"
            :route routes/dnd-e5-monster-builder-page-route}]
          [header-tab
           "items"
@@ -488,6 +491,20 @@
           {:name "Item Builder"
            :route routes/dnd-e5-item-builder-page-route}]
          [header-tab
+          "encounters"
+          "dungeon-gate"
+          route-to-my-encounters-page
+          false
+          (routes/dnd-e5-my-encounters-routes
+            (or (:handler active-route)
+                active-route))
+          device-type
+          {:name "Combat Tracker"
+           :route routes/dnd-e5-combat-tracker-page-route}
+          {:name "Encounter Builder"
+           :route routes/dnd-e5-encounter-builder-page-route}
+          ]
+         [header-tab
           "My Content"
           "beer-stein"
           route-to-my-content-page
@@ -498,14 +515,6 @@
           device-type
           {:name "Content List"
            :route routes/dnd-e5-my-content-route}
-          {:name "Spell Builder"
-           :route routes/dnd-e5-spell-builder-page-route}
-          {:name "Monster Builder"
-           :route routes/dnd-e5-monster-builder-page-route}
-          {:name "Encounter Builder"
-           :route routes/dnd-e5-encounter-builder-page-route}
-          {:name "Combat Tracker"
-           :route routes/dnd-e5-combat-tracker-page-route}
           {:name "Feat Builder"
            :route routes/dnd-e5-feat-builder-page-route}
           {:name "Background Builder"
