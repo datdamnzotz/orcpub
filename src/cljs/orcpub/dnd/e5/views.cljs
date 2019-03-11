@@ -45,7 +45,9 @@
             [cljs.reader :as reader]
             [orcpub.user-agent :as user-agent]
             [cljs.core.async :refer [<! timeout]]
-            [bidi.bidi :as bidi])
+            [bidi.bidi :as bidi]
+            [cljs-time.core :as time]
+            [cljs-time.format :as f])
   (:require-macros [cljs.core.async.macros :refer [go]]))
 
 ;; the `amount` of "uses" an action may have before it warrants
@@ -437,9 +439,9 @@
                    "/image/donate.png")}]]
          (if (not mobile?)
            [:div.main-text-color.p-10
-            ;(social-icon "facebook" "https://www.facebook.com/orcpub")
-            ;(social-icon "twitter" "https://twitter.com/OrcPub")
-            ;(social-icon "reddit-alien" "https://www.reddit.com/r/orcpub/")
+            (social-icon "reddit-alien" "https://www.reddit.com/r/dungeonmastersvault/")
+            (social-icon "twitter" "https://twitter.com/thdmv")
+            (social-icon "facebook" "https://www.facebook.com/groups/252484128656613/")
             ])]
         [:div.flex.m-b-5.m-r-5
          [header-tab
@@ -1571,9 +1573,9 @@
             [:a.orange {:href "/privacy-policy" :target :_blank} "Privacy Policy"]
             [:a.orange.m-l-5 {:href "/terms-of-use" :target :_blank} "Terms of Use"]]
            [:div.legal-footer
-            [:p "© 2019 OrcPub" [:span.m-l-20 "Contact: " [:a {:href "mailto:redorc@orcpub.com"} "redorc@orcpub.com"]]]
-            [:p "Site Contact " [:a {:href "mailto:thDM@dungeonmastersvault.com"} "thDM@dungeonmastersvault.com"]]
-            [:p "Wizards of the Coast, Dungeons & Dragons, D&D, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2019 Wizards. All Rights Reserved. OrcPub.com is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC."]]]
+            [:p "© " (f/unparse (f/formatter "yyyy") (time/now)) " OrcPub"]
+            [:p "Contact " [:a {:href "mailto:thDM@dungeonmastersvault.com"} "thDM@dungeonmastersvault.com"]]
+            [:p "Wizards of the Coast, Dungeons & Dragons, D&D, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © " (f/unparse (f/formatter "yyyy") (time/now)) " Wizards. All Rights Reserved. OrcPub.com is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC."]]]
             [debug-data]]]])]))
 
 (def row-style
