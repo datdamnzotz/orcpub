@@ -432,11 +432,11 @@
        [:div.flex.w-100-p.align-items-end
         {:class-name (if mobile? "justify-cont-s-b" "justify-cont-s-b")}
         [:div
-         [:a {:href "https://paypal.me/pools/c/8bpp1EQ8pX" :target :_blank}
+         [:a {:href "https://www.patreon.com/DungeonMastersVault" :target :_blank}
           [:img.h-32.m-l-10.m-b-5.pointer.opacity-7.hover-opacity-full
            {:src (if mobile?
-                   "/image/donate_sm.png"
-                   "/image/donate.png")}]]
+                   "https://c5.patreon.com/external/logo/downloads_logomark_color_on_navy.png"
+                   "https://c5.patreon.com/external/logo/become_a_patron_button.png")}]]
          (if (not mobile?)
            [:div.main-text-color.p-10
             (social-icon "reddit-alien" "https://www.reddit.com/r/dungeonmastersvault/")
@@ -1538,7 +1538,7 @@
             (if (not frame?)
               [:div.content.bg-lighter.p-10.flex
                [:div.flex-grow-1
-                [:div "This is the community server for Orcpub.  Enjoy -DatDamnZotz"]
+                [:div "We are not shutting down! Support us on Patreon! This IS the community server for Orcpub.  Enjoy -DatDamnZotz"]
                 [:div.m-t-10 " "]
                 [:div.m-t-10 "Please Note: Custom/imported data isn't permanent in your browser, export often!"]
                 [:div.m-t-10 " "]
