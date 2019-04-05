@@ -94,7 +94,7 @@
                       :font-weight :bold
                       :font-size "14px"
                       :height "48px"})}
-      "version 2.0 - community edition"]
+      "version 2.5e - community edition"]
      [:div
       {:style (style
                {:display :flex

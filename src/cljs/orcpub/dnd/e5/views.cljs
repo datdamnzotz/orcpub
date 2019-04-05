@@ -1538,7 +1538,7 @@
             (if (not frame?)
               [:div.content.bg-lighter.p-10.flex
                [:div.flex-grow-1
-                [:div "We are not shutting down! Support us on Patreon! This IS the community server for Orcpub.  Enjoy -DatDamnZotz"]
+                [:div "Support us on Patreon! This IS the community server for Orcpub.  Enjoy -DatDamnZotz"]
                 [:div.m-t-10 " "]
                 [:div.m-t-10 "Please Note: Custom/imported data isn't permanent in your browser, export often!"]
                 [:div.m-t-10 " "]
