@@ -5807,6 +5807,12 @@
        :option-pack
        race
        "m-l-5 m-b-20"]]
+     [:div.m-b-20
+       [:div.f-w-b
+        "Description"]
+       [textarea-field
+        {:value (get race :help)
+         :on-change #(dispatch [::races/set-race-prop :help %])}]]
      [:div.m-b-20.flex.flex-wrap
       [:div.m-r-5
        [labeled-dropdown
@@ -5942,6 +5948,12 @@
        :option-pack
        background
        "m-l-5 m-b-20"]]
+     [:div.m-b-20
+       [:div.f-w-b
+        "Description"]
+       [textarea-field
+        {:value (get background :help)
+         :on-change #(dispatch [::bg/set-background-prop :help %])}]]
      [:div [background-skill-proficiencies background]]
      [:div [background-languages background]]
      [:div [background-tool-proficiencies background]]
