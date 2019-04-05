@@ -86,15 +86,15 @@
       {:style (style {:display :flex
                       :justify-content :space-around})}
       [:img
-       {:src "/image/orcpub-logo.svg"
-        :style (style {:height "70px"})}]]
+       {:src "/image/dmv-logo.svg"
+        :style (style {:height "120px"})}]]
      [:div
       {:style (style {:text-align :center
                       :text-shadow "1px 2px 1px black"
                       :font-weight :bold
                       :font-size "14px"
                       :height "48px"})}
-      "version 2.5e - community edition"]
+      "orcpub version 2.5e - community edition"]
      [:div
       {:style (style
                {:display :flex

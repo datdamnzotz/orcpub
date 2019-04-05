@@ -396,7 +396,7 @@
   (dispatch [:route routes/dnd-e5-my-encounters-route]))
 
 (def logo [:img.orcpub-logo.h-32.w-120.pointer
-           {:src "/image/orcpub-logo.svg"
+           {:src "/image/dmv-logo.svg"
             :on-click route-to-default-route}])
 
 (defn app-header []
@@ -573,7 +573,7 @@
        [:div.flex.justify-cont-s-a.align-items-c
         {:style registration-header-style}
         [:img.pointer
-         {:src "/image/orcpub-logo.svg"
+         {:src "/image/dmv-logo.svg"
           :style registration-logo-style
           :on-click route-to-default-page}]]
        [:div.flex-grow-1 content]
@@ -1396,29 +1396,33 @@
 (defn amazon-link [title url]
   [:a.orange {:href url :target "_blank"} title])
 
-(def phb-link (amazon-link "PHB" "https://www.amazon.com/gp/product/0786965606/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965606&linkId=d0e5f5e84d625c00ca1e9f9086e5d7c4"))
+(def phb-link (amazon-link "PHB" "https://www.amazon.com/gp/product/0786965606/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0786965606&linkCode=as2&tag=dungeonmast0f-20&linkId=5bfed95fea5fb4de26e7dfb0b912ab2b"))
 
-(def dmg-link (amazon-link "DMG" "https://www.amazon.com/gp/product/0786965622/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965622&linkId=067760cfb629d77c7162287b06684bf4"))
+(def dmg-link (amazon-link "DMG" "https://www.amazon.com/gp/product/0786965622/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965622&linkId=8fd21c190661cc03840d76b38a9a267c"))
 
-(def mm-link (amazon-link "MM" "https://www.amazon.com/gp/product/0786965614/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965614&linkId=6d27c01945d45ceff0204eade602f998"))
+(def mm-link (amazon-link "MM" "https://www.amazon.com/gp/product/0786965614/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965614&linkId=e549777dd5a09652e28387a8de16e387"))
 
-(def xge-link (amazon-link "XGE" "https://www.amazon.com/gp/product/0786966114/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966114&linkId=df71445fe4cab418c535a38d55c3b761"))
+(def xge-link (amazon-link "XGE" "https://www.amazon.com/gp/product/0786966114/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966114&linkId=f10c695f0f2e5d0e5f07ddc84a478701"))
 
-(def scag-link (amazon-link "SCAG" "https://www.amazon.com/gp/product/0786965800/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965800&linkId=deac8f6d8ceeb243cc29931992bcde52"))
+(def scag-link (amazon-link "SCAG" "https://www.amazon.com/gp/product/0786965800/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965800&linkId=48a1a6749c667a30a2d9219d24e81cd4"))
 
-(def vgm-link (amazon-link "VGM" "https://www.amazon.com/gp/product/0786966017/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966017&linkId=1db974c1bc5c3f2f49971ad2e1fc7906"))
+(def vgm-link (amazon-link "VGM" "https://www.amazon.com/gp/product/0786966017/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966017&linkId=c80d97ef139c29f9fb3334b2546061fe"))
 
-(def toa-link (amazon-link "TOA" "https://www.amazon.com/gp/product/0786966106/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966106&linkId=83a1e9d255d69267b0b441e8a7bcde80"))
+(def toa-link (amazon-link "TOA" "https://www.amazon.com/gp/product/0786966106/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966106&linkId=a09688499b3d4e55cffcbdbd565e57ff"))
 
-(def skt-link (amazon-link "SKT" "https://www.amazon.com/gp/product/0786966009/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966009&linkId=191904c4573b03a08afbc490e1c94fd9"))
+(def skt-link (amazon-link "SKT" "https://www.amazon.com/gp/product/0786966009/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966009&linkId=5dbc8c6b617cb67207bd450e9d1b86c3"))
 
-(def oota-link (amazon-link "OOTA" "https://www.amazon.com/gp/product/0786965819/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965819&linkId=e00c6e6016c6d319a0191c35cde3d24b"))
+(def oota-link (amazon-link "OOTA" "https://www.amazon.com/gp/product/0786965819/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965819&linkId=fdedeafd2c2d2c6463c9d7eec6e29e8d"))
 
-(def pota-link (amazon-link "POTA" "https://www.amazon.com/gp/product/0786965789/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965789&linkId=7db71e3ac545c311e302d15692072b74"))
+(def pota-link (amazon-link "POTA" "https://www.amazon.com/gp/product/0786965789/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965789&linkId=f2c950b5b2caaec13e1a1ff3dc635c63"))
 
-(def yp-link (amazon-link "YP" "https://www.amazon.com/gp/product/0786966092/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966092&linkId=09d5160452645b8c9cac1e66735120f3"))
+(def yp-link (amazon-link "YP" "https://www.amazon.com/gp/product/0786966092/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966092&linkId=1b6a9248917283c2eefa90604623a7bf"))
 
-(def cos-link (amazon-link "COS" "https://www.amazon.com/gp/product/0786965983/ref=as_li_tl?ie=UTF8&tag=orcpub-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965983&linkId=b47dbcb3687fd053c365d68c7132937e"))
+(def cos-link (amazon-link "COS" "https://www.amazon.com/gp/product/0786965983/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786965983&linkId=e0f4063f762ea8f5562292560ae5316e"))
+
+(def mtof-link (amazon-link "MTOF" "https://www.amazon.com/gp/product/0786966246/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966246&linkId=57081aaf12b656fd0b95c787d30ea7ec"))
+
+(def gmgtr-link (amazon-link "GMGtR" "https://www.amazon.com/gp/product/0786966599/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966599&linkId=783e3da079c4c6938bc8d202c73f3c6a"))
 
 #_(defn amazon-frame [link]
   [:iframe {:style {:width "120px" :height "240px"}
@@ -1538,7 +1542,7 @@
             (if (not frame?)
               [:div.content.bg-lighter.p-10.flex
                [:div.flex-grow-1
-                [:div "Support us on Patreon! This IS the community server for Orcpub.  Enjoy -DatDamnZotz"]
+                [:div "Support us on Patreon! This IS the community server for Orcpub."]
                 [:div.m-t-10 " "]
                 [:div.m-t-10 "Please Note: Custom/imported data isn't permanent in your browser, export often!"]
                 [:div.m-t-10 " "]
@@ -1557,7 +1561,10 @@
                     [:div.m-l-5 cos-link]
                     [:div.m-l-5 skt-link]
                     [:div.m-l-5 oota-link]
-                    [:div.m-l-5 pota-link]]])]
+                    [:div.m-l-5 pota-link]
+                    [:div.m-l-5 mtof-link]
+                    [:div.m-l-5 gmgtr-link]
+                    ]])]
                [:i.fa.fa-times.p-10.pointer
                 {:on-click #(dispatch [:close-srd-message])}]])])]
         [:div#app-main.container
