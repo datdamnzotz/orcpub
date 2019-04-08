@@ -6117,21 +6117,32 @@
                     :value nm})
                  @(subscribe [::monsters/alignments]))
          :value (or alignment "neutral")
-         :on-change #(dispatch [::monsters/set-monster-prop :alignment %])}]]
+         :on-change #(dispatch [::monsters/set-monster-prop :alignment %])}]]]
+     [:div.flex.w-100-p.flex-wrap
       [:div.flex-grow-1.m-b-20.m-l-5
        [labeled-dropdown
         "Armor Class"
         {:items (map
-                 value-to-item
-                 (range 5 25))
+                  value-to-item
+                  (range 5 25))
          :value (or armor-class 10)
-         :on-change #(dispatch [::monsters/set-monster-prop :armor-class (js/parseInt %)])}]]]
-     [:div.m-b-20
+         :on-change #(dispatch [::monsters/set-monster-prop :armor-class (js/parseInt %)])}]]
+      [monster-input-field
+       "Armor Notes"
+       :armor-notes
+       monster
+       "m-l-5 m-b-20 flex-grow-1 notes"]]
+     [:div.flex.w-100-p.flex-wrap
       [monster-input-field
        "Speed"
        :speed
        monster
-       "m-l-5 m-b-20"]]
+       "m-l-5 m-b-20 flex-grow-1"]
+      [monster-input-field
+       "Senses"
+       :senses
+       monster
+       "m-l-5 m-b-20 flex-grow-1 senses"]]
      [:div.m-b-20
       [:div.f-s-24.f-w-b "Hit Points"]
       [:div.flex.w-100-p.flex-wrap
@@ -6906,6 +6917,12 @@
          (dispatch [::e5/import-plugin nm text]))))
     (.readAsText reader file)))
 
+(defn capitalize-words
+  [s]
+  (->> (s/split (str s) #"\b")
+       (map s/capitalize)
+       s/join))
+
 (defn my-content-type []
   (let [expanded? (r/atom false)]
     (fn [source-name plugin type-name type-key icon add-event edit-event delete-event plural]
@@ -6927,7 +6944,7 @@
                                       final-type-name (if plural
                                                         (if (not= 1 num) plural type-name)
                                                         (str type-name (if (not= 1 num) "s")))]
-                                  (str num " " (common/safe-capitalize final-type-name)))]]
+                                  (str num " " (capitalize-words final-type-name)))]]
           [:div.orange.pointer
            [:i.fa.m-r-5
             {:class-name (if @expanded? "fa-caret-up" "fa-caret-down")}]
@@ -7069,7 +7086,7 @@
   [my-content-type
    name
    plugin
-   "eldritch invocation"
+   "eldritch invocations"
    ::e5/invocations
    "warlock-eye"
    ::classes/new-invocation
