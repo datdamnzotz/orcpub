@@ -17,7 +17,7 @@
   {:title "Privacy Policy"
    :font-size 48
    :subsections
-   [{:title "Thank you for using Dungeon Masters Vault!"
+   [{:title "Thank you for using Dungeon Master's Vault!"
      :font-size 32
      :paragraphs
      ["We wrote this policy to help you understand what information we collect, how we use it, and what choices you have. Because we're an internet company, some of the concepts below are a little technical, but we've tried our best to explain things in a simple and clear way. We welcome your questions and comments on this policy."]}
@@ -27,56 +27,56 @@
      [{:title "When you give it to us or give us permission to obtain it"
        :font-size 28
        :paragraphs
-       ["When you sign up for or use our products, you voluntarily give us certain information. This can include your name, profile photo, role-playing game characters, comments, likes, the email address or phone number you used to sign up, and any other information you provide us. If you're using Dungeon Masters Vault on your mobile device, you can also choose to provide us with location data. And if you choose to buy something on Dungeon Masters Vault, you provide us with payment information, contact information (ex., address and phone number), and what you purchased. If you buy something for someone else on Dungeon Masters Vault, you'd also provide us with their shipping details and contact information."
-        "You also may give us permission to access your information in other services. For example, you may link your Facebook or Twitter account to Dungeon Masters Vault, which allows us to obtain information from those accounts (like your friends or contacts). The information we get from those services often depends on your settings or their privacy policies, so be sure to check what those are."]}
+       ["When you sign up for or use our products, you voluntarily give us certain information. This can include your name, profile photo, role-playing game characters, comments, likes, the email address or phone number you used to sign up, and any other information you provide us. If you're using Dungeon Master's Vault on your mobile device, you can also choose to provide us with location data. And if you choose to buy something on Dungeon Master's Vault, you provide us with payment information, contact information (ex., address and phone number), and what you purchased. If you buy something for someone else on Dungeon Master's Vault, you'd also provide us with their shipping details and contact information."
+        "You also may give us permission to access your information in other services. For example, you may link your Facebook or Twitter account to Dungeon Master's Vault, which allows us to obtain information from those accounts (like your friends or contacts). The information we get from those services often depends on your settings or their privacy policies, so be sure to check what those are."]}
       {:title "We also get technical information when you use our products"
        :font-size 28
        :paragraphs
        ["These days, whenever you use a website, mobile application, or other internet service, there's certain information that almost always gets created and recorded automatically. The same is true when you use our products. Here are some of the types of information we collect:"
-        "Log data. When you use Dungeon Masters Vault, our servers may automatically record information (\"log data\"), including information that your browser sends whenever you visit a website or your mobile app sends when you're using it. This log data may include your Internet Protocol address, the address of the web pages you visited that had Dungeon Masters Vault features, browser type and settings, the date and time of your request, how you used Dungeon Masters Vault, and cookie data."
-        "Cookie data. Depending on how you're accessing our products, we may use \"cookies\" (small text files sent by your computer each time you visit our website, unique to your Dungeon Masters Vault account or your browser) or similar technologies to record log data. When we use cookies, we may use \"session\" cookies (that last until you close your browser) or \"persistent\" cookies (that last until you or your browser delete them). For example, we may use cookies to store your language preferences or other Dungeon Masters Vault settings so you don‘t have to set them up every time you visit Dungeon Masters Vault. Some of the cookies we use are associated with your Dungeon Masters Vault account (including personal information about you, such as the email address you gave us), and other cookies are not."
-        "Device information. In addition to log data, we may also collect information about the device you're using Dungeon Masters Vault on, including what type of device it is, what operating system you're using, device settings, unique device identifiers, and crash data. Whether we collect some or all of this information often depends on what type of device you're using and its settings. For example, different types of information are available depending on whether you're using a Mac or a PC, or an iPhone or an Android phone. To learn more about what information your device makes available to us, please also check the policies of your device manufacturer or software provider."]}
+        "Log data. When you use Dungeon Master's Vault, our servers may automatically record information (\"log data\"), including information that your browser sends whenever you visit a website or your mobile app sends when you're using it. This log data may include your Internet Protocol address, the address of the web pages you visited that had Dungeon Master's Vault features, browser type and settings, the date and time of your request, how you used Dungeon Master's Vault, and cookie data."
+        "Cookie data. Depending on how you're accessing our products, we may use \"cookies\" (small text files sent by your computer each time you visit our website, unique to your Dungeon Master's Vault account or your browser) or similar technologies to record log data. When we use cookies, we may use \"session\" cookies (that last until you close your browser) or \"persistent\" cookies (that last until you or your browser delete them). For example, we may use cookies to store your language preferences or other Dungeon Master's Vault settings so you don‘t have to set them up every time you visit Dungeon Master's Vault. Some of the cookies we use are associated with your Dungeon Master's Vault account (including personal information about you, such as the email address you gave us), and other cookies are not."
+        "Device information. In addition to log data, we may also collect information about the device you're using Dungeon Master's Vault on, including what type of device it is, what operating system you're using, device settings, unique device identifiers, and crash data. Whether we collect some or all of this information often depends on what type of device you're using and its settings. For example, different types of information are available depending on whether you're using a Mac or a PC, or an iPhone or an Android phone. To learn more about what information your device makes available to us, please also check the policies of your device manufacturer or software provider."]}
       {:title "Our partners and advertisers may share information with us"
        :font-size 28
        :paragraphs
-       ["We may get information about you and your activity off Dungeon Masters Vault from our affiliates, advertisers, partners and other third parties we work with. For example:"
+       ["We may get information about you and your activity off Dungeon Master's Vault from our affiliates, advertisers, partners and other third parties we work with. For example:"
         "Online advertisers typically share information with the websites or apps where they run ads to measure and/or improve those ads. We also receive this information, which may include information like whether clicks on ads led to purchases or a list of criteria to use in targeting ads."]}]}
     {:title "How do we use the information we collect?"
      :font-size 32
      :paragraphs
-     ["We use the information we collect to provide our products to you and make them better, develop new products, and protect Dungeon Masters Vault and our users. For example, we may log how often people use two different versions of a product, which can help us understand which version is better. If you make a purchase on Dungeon Masters Vault, we'll save your payment information and contact information so that you can use them the next time you want to buy something on Dungeon Masters Vault."
+     ["We use the information we collect to provide our products to you and make them better, develop new products, and protect Dungeon Master's Vault and our users. For example, we may log how often people use two different versions of a product, which can help us understand which version is better. If you make a purchase on Dungeon Master's Vault, we'll save your payment information and contact information so that you can use them the next time you want to buy something on Dungeon Master's Vault."
       "We also use the information we collect to offer you customized content, including:"
       "Showing you ads you might be interested in."
       "We also use the information we collect to:"
-      "Send you updates (such as when certain activity, like shares or comments, happens on Dungeon Masters Vault), newsletters, marketing materials and other information that may be of interest to you. For example, depending on your email notification settings, we may send you weekly updates that include content you may like. You can decide to stop getting these updates by updating your account settings (or through other settings we may provide)."
-      "Help your friends and contacts find you on Dungeon Masters Vault. For example, if you sign up using a Facebook account, we may help your Facebook friends find your account on Dungeon Masters Vault when they first sign up for Dungeon Masters Vault. Or, we may allow people to search for your account on Dungeon Masters Vault using your email address."
+      "Send you updates (such as when certain activity, like shares or comments, happens on Dungeon Master's Vault), newsletters, marketing materials and other information that may be of interest to you. For example, depending on your email notification settings, we may send you weekly updates that include content you may like. You can decide to stop getting these updates by updating your account settings (or through other settings we may provide)."
+      "Help your friends and contacts find you on Dungeon Master's Vault. For example, if you sign up using a Facebook account, we may help your Facebook friends find your account on Dungeon Master's Vault when they first sign up for Dungeon Master's Vault. Or, we may allow people to search for your account on Dungeon Master's Vault using your email address."
       "Respond to your questions or comments."]}
     {:title "Transferring your Information"
      :font-size 32
      :paragraphs
-     ["Dungeon Masters Vault is headquartered in the United States. By using our products or services, you authorize us to transfer and store your information inside the United States, for the purposes described in this policy. The privacy protections and the rights of authorities to access your personal information in such countries may not be equivalent to those in your home country."]}
+     ["Dungeon Master's Vault is headquartered in the United States. By using our products or services, you authorize us to transfer and store your information inside the United States, for the purposes described in this policy. The privacy protections and the rights of authorities to access your personal information in such countries may not be equivalent to those in your home country."]}
     {:title "How and when do we share information"
      :font-size 32
      :paragraphs
-     ["Anyone can see the public role-playing game characters and other content you create, and the profile information you give us. We may also make this public information available through what are called \"APIs\" (basically a technical way to share information quickly). For example, a partner might use a Dungeon Masters Vault API to integrate with other applications our users may be interested in. The other limited instances where we may share your personal information include:"
-      "When we have your consent. This includes sharing information with other services (like Facebook or Twitter) when you've chosen to link to your Dungeon Masters Vault account to those services or publish your activity on Dungeon Masters Vault to them. For example, you can choose to share your characters on Facebook or Twitter."
-      "When you buy something on Dungeon Masters Vault using your credit card, we may share your credit card information, contact information, and other information about the transaction with the merchant you're buying from. The merchants treat this information just as if you had made a purchase from their website directly, which means their privacy policies and marketing policies apply to the information we share with them."
-      "Online advertisers typically use third party companies to audit the delivery and performance of their ads on websites and apps. We also allow these companies to collect this information on Dungeon Masters Vault. To learn more, please see our Help Center."
+     ["Anyone can see the public role-playing game characters and other content you create, and the profile information you give us. We may also make this public information available through what are called \"APIs\" (basically a technical way to share information quickly). For example, a partner might use a Dungeon Master's Vault API to integrate with other applications our users may be interested in. The other limited instances where we may share your personal information include:"
+      "When we have your consent. This includes sharing information with other services (like Facebook or Twitter) when you've chosen to link to your Dungeon Master's Vault account to those services or publish your activity on Dungeon Master's Vault to them. For example, you can choose to share your characters on Facebook or Twitter."
+      "When you buy something on Dungeon Master's Vault using your credit card, we may share your credit card information, contact information, and other information about the transaction with the merchant you're buying from. The merchants treat this information just as if you had made a purchase from their website directly, which means their privacy policies and marketing policies apply to the information we share with them."
+      "Online advertisers typically use third party companies to audit the delivery and performance of their ads on websites and apps. We also allow these companies to collect this information on Dungeon Master's Vault. To learn more, please see our Help Center."
       "We may employ third party companies or individuals to process personal information on our behalf based on our instructions and in compliance with this Privacy Policy. For example, we share credit card information with the payment companies we use to store your payment information. Or, we may share data with a security consultant to help us get better at identifying spam. In addition, some of the information we request may be collected by third party providers on our behalf."
-      "If we believe that disclosure is reasonably necessary to comply with a law, regulation or legal request; to protect the safety, rights, or property of the public, any person, or Dungeon Masters Vault; or to detect, prevent, or otherwise address fraud, security or technical issues. We may share the information described in this Policy with our wholly-owned subsidiaries and affiliates. We may engage in a merger, acquisition, bankruptcy, dissolution, reorganization, or similar transaction or proceeding that involves the transfer of the information described in this Policy. We may also share aggregated or non-personally identifiable information with our partners, advertisers or others."]}
+      "If we believe that disclosure is reasonably necessary to comply with a law, regulation or legal request; to protect the safety, rights, or property of the public, any person, or Dungeon Master's Vault; or to detect, prevent, or otherwise address fraud, security or technical issues. We may share the information described in this Policy with our wholly-owned subsidiaries and affiliates. We may engage in a merger, acquisition, bankruptcy, dissolution, reorganization, or similar transaction or proceeding that involves the transfer of the information described in this Policy. We may also share aggregated or non-personally identifiable information with our partners, advertisers or others."]}
     {:title "What choices do you have about your information?"
      :font-size 32
      :paragraphs
-     ["You may close your account at any time by emailing thDM@dungeonmastersvault.com. We will then inactivate your account and remove your content from Dungeon Masters Vault. We may retain archived copies of you information as required by law or for legitimate business purposes (including to help address fraud and spam). You may remove any content you create from Dungeon Masters Vault at any time, although we may retain archived copies of the information. You may also disable sharing of content you create at any time, whether publicly shared or privately shared with specific users."
+     ["You may close your account at any time by emailing thDM@dungeonmastersvault.com. We will then inactivate your account and remove your content from Dungeon Master's Vault. We may retain archived copies of you information as required by law or for legitimate business purposes (including to help address fraud and spam). You may remove any content you create from Dungeon Master's Vault at any time, although we may retain archived copies of the information. You may also disable sharing of content you create at any time, whether publicly shared or privately shared with specific users."
       "Also, we support the Do Not Track browser setting."]}
     {:title "Our policy on children's information"
      :font-size 32
      :paragraphs
-     ["Dungeon Masters Vault is not directed to children under 13. If you learn that your minor child has provided us with personal information without your consent, please contact us."]}
+     ["Dungeon Master's Vault is not directed to children under 13. If you learn that your minor child has provided us with personal information without your consent, please contact us."]}
     {:title "How do we make changes to this policy?"
      :font-size 32
      :paragraphs
-     ["We may change this policy from time to time, and if we do we'll post any changes on this page. If you continue to use Dungeon Masters Vault after those changes are in effect, you agree to the revised policy. If the changes are significant, we may provide more prominent notice or get your consent as required by law."]}
+     ["We may change this policy from time to time, and if we do we'll post any changes on this page. If you continue to use Dungeon Master's Vault after those changes are in effect, you agree to the revised policy. If the changes are significant, we may provide more prominent notice or get your consent as required by law."]}
     {:title "How can you contact us?"
      :font-size 32
      :paragraphs
@@ -106,17 +106,17 @@
   {:title "Terms of Service"
    :font-size 48
    :subsections
-   [{:title "Thank you for using Dungeon Masters Vault!"
+   [{:title "Thank you for using Dungeon Master's Vault!"
      :font-size 32
      :paragraphs
-     [[:div "These Terms of Service (\"Terms\") govern your access to and use of Dungeon Masters Vault's website, products, and services (\"Products\"). Please read these Terms carefully, and contact us if you have any questions. By accessing or using our Products, you agree to be bound by these Terms and by our " [:a {:href "/privacy-policy" :target :_blank} "Privacy Policy"] ". You also confirm you have read and agreed to our " [:a {:href "/community-guidelines" :target :_blank} "Community guidelines"] " and our " [:a {:href "/cookies-policy"} "Cookies policy"] "."]]}
-    {:title "1. Using Dungeon Masters Vault"
+     [[:div "These Terms of Service (\"Terms\") govern your access to and use of Dungeon Master's Vault's website, products, and services (\"Products\"). Please read these Terms carefully, and contact us if you have any questions. By accessing or using our Products, you agree to be bound by these Terms and by our " [:a {:href "/privacy-policy" :target :_blank} "Privacy Policy"] ". You also confirm you have read and agreed to our " [:a {:href "/community-guidelines" :target :_blank} "Community guidelines"] " and our " [:a {:href "/cookies-policy"} "Cookies policy"] "."]]}
+    {:title "1. Using Dungeon Master's Vault"
      :font-size 32
      :subsections
-     [{:title "a. Who can use Dungeon Masters Vault"
+     [{:title "a. Who can use Dungeon Master's Vault"
        :font-size 28
        :paragraphs
-       ["You may use our Products only if you can form a binding contract with Dungeon Masters Vault, and only in compliance with these Terms and all applicable laws. When you create your Dungeon Masters Vault account, you must provide us with accurate and complete information. Any use or access by anyone under the age of 13 is prohibited. If you open an account on behalf of a company, organization, or other entity, then (a) \"you\" includes you and that entity, and (b) you represent and warrant that you are authorized to grant all permissions and licenses provided in these Terms and bind the entity to these Terms, and that you agree to these Terms on the entity's behalf. Some of our Products may be software that is downloaded to your computer, phone, tablet, or other device. You agree that we may automatically upgrade those Products, and these Terms will apply to such upgrades."]}
+       ["You may use our Products only if you can form a binding contract with Dungeon Master's Vault, and only in compliance with these Terms and all applicable laws. When you create your Dungeon Master's Vault account, you must provide us with accurate and complete information. Any use or access by anyone under the age of 13 is prohibited. If you open an account on behalf of a company, organization, or other entity, then (a) \"you\" includes you and that entity, and (b) you represent and warrant that you are authorized to grant all permissions and licenses provided in these Terms and bind the entity to these Terms, and that you agree to these Terms on the entity's behalf. Some of our Products may be software that is downloaded to your computer, phone, tablet, or other device. You agree that we may automatically upgrade those Products, and these Terms will apply to such upgrades."]}
       {:title "b. Our license to you"
        :font-size 28
        :paragraphs
@@ -127,54 +127,54 @@
      [{:title "a. Posting Content"
        :font-size 28
        :paragraphs
-       ["Dungeon Masters Vault allows you to post content, including photos, comments, links, and other materials. Anything that you post or otherwise make available on our Products is referred to as \"User Content.\" You retain all rights in, and are solely responsible for, the User Content you post to Dungeon Masters Vault."]}
-      {:title "b. How Dungeon Masters Vault and other users can use your content"
+       ["Dungeon Master's Vault allows you to post content, including photos, comments, links, and other materials. Anything that you post or otherwise make available on our Products is referred to as \"User Content.\" You retain all rights in, and are solely responsible for, the User Content you post to Dungeon Master's Vault."]}
+      {:title "b. How Dungeon Master's Vault and other users can use your content"
        :font-size 28
        :paragraphs
-       ["You grant Dungeon Masters Vault and our users a non-exclusive, royalty-free, transferable, sublicensable, worldwide license to use, store, display, reproduce, save, modify, create derivative works, perform, and distribute your User Content on Dungeon Masters Vault solely for the purposes of operating, developing, providing, and using the Dungeon Masters Vault Products. Nothing in these Terms shall restrict other legal rights Dungeon Masters Vault may have to User Content, for example under other licenses. We reserve the right to remove or modify User Content for any reason, including User Content that we believe violates these Terms or our policies."]}
+       ["You grant Dungeon Master's Vault and our users a non-exclusive, royalty-free, transferable, sublicensable, worldwide license to use, store, display, reproduce, save, modify, create derivative works, perform, and distribute your User Content on Dungeon Master's Vault solely for the purposes of operating, developing, providing, and using the Dungeon Master's Vault Products. Nothing in these Terms shall restrict other legal rights Dungeon Master's Vault may have to User Content, for example under other licenses. We reserve the right to remove or modify User Content for any reason, including User Content that we believe violates these Terms or our policies."]}
       {:title "c. How long we keep your content"
        :font-size 28
        :paragraphs
-       ["Following termination or deactivation of your account, or if you remove any User Content from Dungeon Masters Vault, we may retain your User Content for a commercially reasonable period of time for backup, archival, or audit purposes. Furthermore, Dungeon Masters Vault and its users may retain and continue to use, store, display, reproduce, modify, create derivative works, perform, and distribute any of your User Content that other users have stored or shared through Dungeon Masters Vault."]}
+       ["Following termination or deactivation of your account, or if you remove any User Content from Dungeon Master's Vault, we may retain your User Content for a commercially reasonable period of time for backup, archival, or audit purposes. Furthermore, Dungeon Master's Vault and its users may retain and continue to use, store, display, reproduce, modify, create derivative works, perform, and distribute any of your User Content that other users have stored or shared through Dungeon Master's Vault."]}
       {:title "d. Feedback you provide"
        :font-size 28
        :paragraphs
-       ["We value hearing from our users, and are always interested in learning about ways we can make Dungeon Masters Vault more awesome. If you choose to submit comments, ideas or feedback, you agree that we are free to use them without any restriction or compensation to you. By accepting your submission, Dungeon Masters Vault does not waive any rights to use similar or related Feedback previously known to Dungeon Masters Vault, or developed by its employees, or obtained from sources other than you"]}]}
+       ["We value hearing from our users, and are always interested in learning about ways we can make Dungeon Master's Vault more awesome. If you choose to submit comments, ideas or feedback, you agree that we are free to use them without any restriction or compensation to you. By accepting your submission, Dungeon Master's Vault does not waive any rights to use similar or related Feedback previously known to Dungeon Master's Vault, or developed by its employees, or obtained from sources other than you"]}]}
     {:title "3. Copyright policy"
      :font-size 32
      :paragraphs
-     ["Dungeon Masters Vault has adopted and implemented the Dungeon Masters Vault Copyright policy in accordance with the Digital Millennium Copyright Act and other applicable copyright laws. For more information, please read our Copyright policy."]}
+     ["Dungeon Master's Vault has adopted and implemented the Dungeon Master's Vault Copyright policy in accordance with the Digital Millennium Copyright Act and other applicable copyright laws. For more information, please read our Copyright policy."]}
     {:title "4. Security"
      :font-size 32
      :paragraphs
-     ["We care about the security of our users. While we work to protect the security of your content and account, Dungeon Masters Vault cannot guarantee that unauthorized third parties will not be able to defeat our security measures. We ask that you keep your password secure. Please notify us immediately of any compromise or unauthorized use of your account."]}
+     ["We care about the security of our users. While we work to protect the security of your content and account, Dungeon Master's Vault cannot guarantee that unauthorized third parties will not be able to defeat our security measures. We ask that you keep your password secure. Please notify us immediately of any compromise or unauthorized use of your account."]}
     {:title "5. Third-party links, sites, and services"
      :font-size 32
      :paragraphs
-     ["Our Products may contain links to third-party websites, advertisers, services, special offers, or other events or activities that are not owned or controlled by Dungeon Masters Vault. We do not endorse or assume any responsibility for any such third-party sites, information, materials, products, or services. If you access any third party website, service, or content from Dungeon Masters Vault, you do so at your own risk and you agree that Dungeon Masters Vault will have no liability arising from your use of or access to any third-party website, service, or content."]}
+     ["Our Products may contain links to third-party websites, advertisers, services, special offers, or other events or activities that are not owned or controlled by Dungeon Master's Vault. We do not endorse or assume any responsibility for any such third-party sites, information, materials, products, or services. If you access any third party website, service, or content from Dungeon Master's Vault, you do so at your own risk and you agree that Dungeon Master's Vault will have no liability arising from your use of or access to any third-party website, service, or content."]}
     {:title "6. Termination"
      :font-size 32
      :paragraphs
-     ["Dungeon Masters Vault may terminate or suspend this license at any time, with or without cause or notice to you. Upon termination, you continue to be bound by Sections 2 and 6-12 of these Terms."]}
+     ["Dungeon Master's Vault may terminate or suspend this license at any time, with or without cause or notice to you. Upon termination, you continue to be bound by Sections 2 and 6-12 of these Terms."]}
     {:title "7. Indemnity"
      :font-size 32
      :paragraphs
-     ["If you use our Products for commercial purposes without agreeing to our Business Terms as required by Section 1(c), as determined in our sole and absolute discretion, you agree to indemnify and hold harmless Dungeon Masters Vault and its respective officers, directors, employees and agents, from and against any claims, suits, proceedings, disputes, demands, liabilities, damages, losses, costs and expenses, including, without limitation, reasonable legal and accounting fees (including costs of defense of claims, suits or proceedings brought by third parties), in any way related to (a) your access to or use of our Products, (b) your User Content, or (c) your breach of any of these Terms."]}
+     ["If you use our Products for commercial purposes without agreeing to our Business Terms as required by Section 1(c), as determined in our sole and absolute discretion, you agree to indemnify and hold harmless Dungeon Master's Vault and its respective officers, directors, employees and agents, from and against any claims, suits, proceedings, disputes, demands, liabilities, damages, losses, costs and expenses, including, without limitation, reasonable legal and accounting fees (including costs of defense of claims, suits or proceedings brought by third parties), in any way related to (a) your access to or use of our Products, (b) your User Content, or (c) your breach of any of these Terms."]}
     {:title "8. Disclaimers"
      :font-size 32
      :paragraphs
      ["The Products and all included content are provided on an \"as is\" basis without warranty of any kind, whether express or implied."
-      "Dungeon Masters Vault SPECIFICALLY DISCLAIMS ANY AND ALL WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE."
-      "Dungeon Masters Vault takes no responsibility and assumes no liability for any User Content that you or any other user or third party posts or transmits using our Products. You understand and agree that you may be exposed to User Content that is inaccurate, objectionable, inappropriate for children, or otherwise unsuited to your purpose."]}
+      "Dungeon Master's Vault SPECIFICALLY DISCLAIMS ANY AND ALL WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE."
+      "Dungeon Master's Vault takes no responsibility and assumes no liability for any User Content that you or any other user or third party posts or transmits using our Products. You understand and agree that you may be exposed to User Content that is inaccurate, objectionable, inappropriate for children, or otherwise unsuited to your purpose."]}
     {:title "9. Limitation of liability"
      :font-size 32
      :paragraphs
-     ["TO THE MAXIMUM EXTENT PERMITTED BY LAW, Dungeon Masters Vault SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOOD-WILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (A) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE PRODUCTS; (B) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE PRODUCTS, INCLUDING WITHOUT LIMITATION, ANY DEFAMATORY, OFFENSIVE OR ILLEGAL CONDUCT OF OTHER USERS OR THIRD PARTIES; OR (C) UNAUTHORIZED ACCESS, USE OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT. IN NO EVENT SHALL Dungeon Masters Vault'S AGGREGATE LIABILITY FOR ALL CLAIMS RELATING TO THE PRODUCTS EXCEED ONE HUNDRED U.S. DOLLARS (U.S. $100.00)."]}
+     ["TO THE MAXIMUM EXTENT PERMITTED BY LAW, Dungeon Master's Vault SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOOD-WILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (A) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE PRODUCTS; (B) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE PRODUCTS, INCLUDING WITHOUT LIMITATION, ANY DEFAMATORY, OFFENSIVE OR ILLEGAL CONDUCT OF OTHER USERS OR THIRD PARTIES; OR (C) UNAUTHORIZED ACCESS, USE OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT. IN NO EVENT SHALL Dungeon Master's Vault'S AGGREGATE LIABILITY FOR ALL CLAIMS RELATING TO THE PRODUCTS EXCEED ONE HUNDRED U.S. DOLLARS (U.S. $100.00)."]}
     :title "10. Arbitration"
     :font-size 32
     :paragraphs
-    ["For any dispute you have with Dungeon Masters Vault, you agree to first contact us and attempt to resolve the dispute with us informally. If Dungeon Masters Vault has not been able to resolve the dispute with you informally, we each agree to resolve any claim, dispute, or controversy (excluding claims for injunctive or other equitable relief) arising out of or in connection with or relating to these Terms by binding arbitration by the American Arbitration Association (\"AAA\") under the Commercial Arbitration Rules and Supplementary Procedures for Consumer Related Disputes then in effect for the AAA, except as provided herein. Unless you and Dungeon Masters Vault agree otherwise, the arbitration will be conducted in the county where you reside. Each party will be responsible for paying any AAA filing, administrative and arbitrator fees in accordance with AAA rules, except that Dungeon Masters Vault will pay for your reasonable filing, administrative, and arbitrator fees if your claim for damages does not exceed $75,000 and is non-frivolous (as measured by the standards set forth in Federal Rule of Civil Procedure 11(b)). The award rendered by the arbitrator shall include costs of arbitration, reasonable attorneys' fees and reasonable costs for expert and other witnesses, and any judgment on the award rendered by the arbitrator may be entered in any court of competent jurisdiction. Nothing in this Section shall prevent either party from seeking injunctive or other equitable relief from the courts for matters related to data security, intellectual property or unauthorized access to the Service. ALL CLAIMS MUST BE BROUGHT IN THE PARTIES' INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING, AND, UNLESS WE AGREE OTHERWISE, THE ARBITRATOR MAY NOT CONSOLIDATE MORE THAN ONE PERSON'S CLAIMS. YOU AGREE THAT, BY ENTERING INTO THESE TERMS, YOU AND Dungeon Masters Vault ARE EACH WAIVING THE RIGHT TO A TRIAL BY JURY OR TO PARTICIPATE IN A CLASS ACTION."
-     "To the extent any claim, dispute or controversy regarding Dungeon Masters Vault or our Products isn't arbitrable under applicable laws or otherwise: you and Dungeon Masters Vault both agree that any claim or dispute regarding Dungeon Masters Vault will be resolved exclusively in accordance with Clause 11 of these Terms."]
+    ["For any dispute you have with Dungeon Master's Vault, you agree to first contact us and attempt to resolve the dispute with us informally. If Dungeon Master's Vault has not been able to resolve the dispute with you informally, we each agree to resolve any claim, dispute, or controversy (excluding claims for injunctive or other equitable relief) arising out of or in connection with or relating to these Terms by binding arbitration by the American Arbitration Association (\"AAA\") under the Commercial Arbitration Rules and Supplementary Procedures for Consumer Related Disputes then in effect for the AAA, except as provided herein. Unless you and Dungeon Master's Vault agree otherwise, the arbitration will be conducted in the county where you reside. Each party will be responsible for paying any AAA filing, administrative and arbitrator fees in accordance with AAA rules, except that Dungeon Master's Vault will pay for your reasonable filing, administrative, and arbitrator fees if your claim for damages does not exceed $75,000 and is non-frivolous (as measured by the standards set forth in Federal Rule of Civil Procedure 11(b)). The award rendered by the arbitrator shall include costs of arbitration, reasonable attorneys' fees and reasonable costs for expert and other witnesses, and any judgment on the award rendered by the arbitrator may be entered in any court of competent jurisdiction. Nothing in this Section shall prevent either party from seeking injunctive or other equitable relief from the courts for matters related to data security, intellectual property or unauthorized access to the Service. ALL CLAIMS MUST BE BROUGHT IN THE PARTIES' INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING, AND, UNLESS WE AGREE OTHERWISE, THE ARBITRATOR MAY NOT CONSOLIDATE MORE THAN ONE PERSON'S CLAIMS. YOU AGREE THAT, BY ENTERING INTO THESE TERMS, YOU AND Dungeon Master's Vault ARE EACH WAIVING THE RIGHT TO A TRIAL BY JURY OR TO PARTICIPATE IN A CLASS ACTION."
+     "To the extent any claim, dispute or controversy regarding Dungeon Master's Vault or our Products isn't arbitrable under applicable laws or otherwise: you and Dungeon Master's Vault both agree that any claim or dispute regarding Dungeon Master's Vault will be resolved exclusively in accordance with Clause 11 of these Terms."]
     {:title "11. Governing law and jurisdiction"
      :font-size 32
      :paragraphs
@@ -185,24 +185,24 @@
      [{:title "Notification procedures and changes to these Terms"
        :font-size 28
        :paragraphs
-       ["Dungeon Masters Vault reserves the right to determine the form and means of providing notifications to you, and you agree to receive legal notices electronically if we so choose. We may revise these Terms from time to time and the most current version will always be posted on our website. If a revision, in our sole discretion, is material we will notify you. By continuing to access or use the Products after revisions become effective, you agree to be bound by the revised Terms. If you do not agree to the new terms, please stop using the Products."]}
+       ["Dungeon Master's Vault reserves the right to determine the form and means of providing notifications to you, and you agree to receive legal notices electronically if we so choose. We may revise these Terms from time to time and the most current version will always be posted on our website. If a revision, in our sole discretion, is material we will notify you. By continuing to access or use the Products after revisions become effective, you agree to be bound by the revised Terms. If you do not agree to the new terms, please stop using the Products."]}
       {:title "Assignment"
        :font-size 28
        :paragraphs
-       ["These Terms, and any rights and licenses granted hereunder, may not be transferred or assigned by you, but may be assigned by Dungeon Masters Vault without restriction. Any attempted transfer or assignment in violation hereof shall be null and void.
+       ["These Terms, and any rights and licenses granted hereunder, may not be transferred or assigned by you, but may be assigned by Dungeon Master's Vault without restriction. Any attempted transfer or assignment in violation hereof shall be null and void.
 "]}
       {:title "Entire agreement/severability"
        :font-size 28
        :paragraphs
-       ["These Terms, together with the Privacy policy and any amendments and any additional agreements you may enter into with Dungeon Masters Vault in connection with the Products, shall constitute the entire agreement between you and Dungeon Masters Vault concerning the Products. If any provision of these Terms is deemed invalid, then that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions of these Terms will remain in full force and effect."]}
+       ["These Terms, together with the Privacy policy and any amendments and any additional agreements you may enter into with Dungeon Master's Vault in connection with the Products, shall constitute the entire agreement between you and Dungeon Master's Vault concerning the Products. If any provision of these Terms is deemed invalid, then that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions of these Terms will remain in full force and effect."]}
       {:title "No waiver"
        :font-size 28
        :paragraphs
-       ["No waiver of any term of these Terms shall be deemed a further or continuing waiver of such term or any other term, and Dungeon Masters Vault's failure to assert any right or provision under these Terms shall not constitute a waiver of such right or provision."]}
+       ["No waiver of any term of these Terms shall be deemed a further or continuing waiver of such term or any other term, and Dungeon Master's Vault's failure to assert any right or provision under these Terms shall not constitute a waiver of such right or provision."]}
       {:title "Parties"
        :font-size 28
        :paragraphs
-       ["These Terms are a contract between you and Dungeon Masters Vault"
+       ["These Terms are a contract between you and Dungeon Master's Vault"
         "Effective March 1, 2019"]}]}]})
 
 (defn terms-of-use []
@@ -215,8 +215,8 @@
    [{:title "Our Mission"
      :font-size 32
      :paragraphs
-     ["At Dungeon Masters Vault, our mission is to help you discover and do what you love. That means showing you ideas that are relevant, interesting and personal to you, and making sure you don't see anything that's inappropriate or spammy."
-      "These are guidelines for what we do and don't allow on Dungeon Masters Vault. If you come across content that seems to break these rules, you can report it to us."]}
+     ["At Dungeon Master's Vault, our mission is to help you discover and do what you love. That means showing you ideas that are relevant, interesting and personal to you, and making sure you don't see anything that's inappropriate or spammy."
+      "These are guidelines for what we do and don't allow on Dungeon Master's Vault. If you come across content that seems to break these rules, you can report it to us."]}
     {:title "Safety"
      :font-size 32
      :paragraphs
@@ -232,20 +232,20 @@
     {:title "Intellectual property and other rights"
      :font-size 32
      :paragraphs
-     ["To respect the rights of people on and off Dungeon Masters Vault, please:"
+     ["To respect the rights of people on and off Dungeon Master's Vault, please:"
       "Don't infringe anyone's intellectual property, privacy or other rights."
       "Don't do anything or post any content that violates laws or regulations."
-      "Don't use Dungeon Masters Vault's name, logo or trademark in a way that confuses people (check out our brand guidelines for more details)."]}
+      "Don't use Dungeon Master's Vault's name, logo or trademark in a way that confuses people (check out our brand guidelines for more details)."]}
     {:title "Site security and access"
      :font-size 32
      :paragraphs
-     ["To keep Dungeon Masters Vault secure, we ask that you please:"
+     ["To keep Dungeon Master's Vault secure, we ask that you please:"
       "Don't access, use or tamper with our systems or our technical providers' systems."
       "Don't break or circumvent our security measures or test the vulnerability of our systems or networks."
-      "Don't use any undocumented or unsupported method to access, search, scrape, download or change any part of Dungeon Masters Vault."
+      "Don't use any undocumented or unsupported method to access, search, scrape, download or change any part of Dungeon Master's Vault."
       "Don't try to reverse engineer our software."
-      "Don't try to interfere with people on Dungeon Masters Vault or our hosts or networks, like sending a virus, overloading, spamming or mail-bombing."
-      "Don't collect or store personally identifiable information from Dungeon Masters Vault or people on Dungeon Masters Vault without permission."
+      "Don't try to interfere with people on Dungeon Master's Vault or our hosts or networks, like sending a virus, overloading, spamming or mail-bombing."
+      "Don't collect or store personally identifiable information from Dungeon Master's Vault or people on Dungeon Master's Vault without permission."
       "Don't share your password, let anyone access your account or do anything that might put your account at risk."
       "Don't sell access to your account, boards, or username, or otherwise transfer account features for compensation."]}
     {:title "Spam"
@@ -265,10 +265,10 @@
   {:title "Cookies"
    :font-size 48
    :subsections
-   [{:title "Cookies on Dungeon Masters Vault"
+   [{:title "Cookies on Dungeon Master's Vault"
      :font-size 32
      :paragraphs
-     ["Our privacy policy describes how we collect and use information, and what choices you have. One way we collect information is through the use of a technology called \"cookies.\" We use cookies for all kinds of things on Dungeon Masters Vault."]}
+     ["Our privacy policy describes how we collect and use information, and what choices you have. One way we collect information is through the use of a technology called \"cookies.\" We use cookies for all kinds of things on Dungeon Master's Vault."]}
     {:title "What's a cookie?"
      :font-size 32
      :paragraphs
@@ -276,7 +276,7 @@
     {:title "How we use cookies"
      :font-size 32
      :paragraphs
-     ["We use cookies for lots of essential things on Dungeon Masters Vault—like helping you log in and tailoring your Dungeon Masters Vault experience. Here are some specifics on how we use cookies."]}
+     ["We use cookies for lots of essential things on Dungeon Master's Vault—like helping you log in and tailoring your Dungeon Master's Vault experience. Here are some specifics on how we use cookies."]}
     {:title "What we use cookies for"
      :font-size 32
      :subsections
@@ -292,29 +292,29 @@
       {:title "Login"
        :font-size 32
        :paragraphs
-       ["Cookies let you log in and out of Dungeon Masters Vault."]}
+       ["Cookies let you log in and out of Dungeon Master's Vault."]}
       {:title "Security"
        :font-size 32
        :paragraphs
-       ["Cookies are just one way we protect you from security risks. For example, we use them to detect when someone might be trying to hack your Dungeon Masters Vault account or spam the Dungeon Masters Vault community."]}
+       ["Cookies are just one way we protect you from security risks. For example, we use them to detect when someone might be trying to hack your Dungeon Master's Vault account or spam the Dungeon Master's Vault community."]}
       {:title "Analytics"
        :font-size 32
        :paragraphs
-       ["We use cookies to make Dungeon Masters Vault better. For example, these cookies tell us how many people use a certain feature and how popular it is, or whether people open an email we send."
+       ["We use cookies to make Dungeon Master's Vault better. For example, these cookies tell us how many people use a certain feature and how popular it is, or whether people open an email we send."
         "We also use cookies to help advertisers understand who sees and interacts with their ads, and who visits their website or purchases their products."]}
       {:title "Service providers"
        :font-size 32
        :paragraphs
-       ["Sometimes we hire security vendors or use third-party analytics providers to help us understand how people are using Dungeon Masters Vault. Just like we do, these providers may use cookies. Learn more about the third party providers we use."]}]}
+       ["Sometimes we hire security vendors or use third-party analytics providers to help us understand how people are using Dungeon Master's Vault. Just like we do, these providers may use cookies. Learn more about the third party providers we use."]}]}
     {:title "Where we use cookies"
      :font-size 32
      :paragraphs
-     ["We use cookies on Dungeon Masters Vault.com, in our mobile applications, and in our products and services (like ads, emails and applications). We also use them on the websites of partners who use Dungeon Masters Vault's Save button, Dungeon Masters Vault widgets, or ad tools like conversion tracking."]}
+     ["We use cookies on Dungeon Master's Vault.com, in our mobile applications, and in our products and services (like ads, emails and applications). We also use them on the websites of partners who use Dungeon Master's Vault's Save button, Dungeon Master's Vault widgets, or ad tools like conversion tracking."]}
     {:title "Your options"
      :font-size 32
      :paragraphs
      ["Your browser probably gives you cookie choices. For example, most browsers let you block \"third party cookies,\" which are cookies from sites other than the one you're visiting. Those options vary from browser to browser, so check your browser settings for more info."
-      "Some browsers also have a privacy setting called \"Do Not Track,\" which we support. This setting is another way for you to decide whether we use info from our partners and other services to customize Dungeon Masters Vault for you."
+      "Some browsers also have a privacy setting called \"Do Not Track,\" which we support. This setting is another way for you to decide whether we use info from our partners and other services to customize Dungeon Master's Vault for you."
       "Effective March 1, 2019"]}]})
 
 (defn cookie-policy []
