@@ -1390,6 +1390,38 @@
 (defn close-orcacle []
   (dispatch [:close-orcacle]))
 
+(defn orcacle []
+  (let [search-text @(subscribe [:search-text])]
+    [:div.flex.flex-column.h-100-p.white
+     {:style oracle-frame-style}
+     [:i.fa.fa-times-circle.f-s-24.orange.pointer
+      {:on-click close-orcacle
+       :style close-button-style}]
+     [:div
+      [:div.flex.justify-cont-s-a.m-t-10
+       [:div.flex.align-items-c.pointer
+        {:on-click close-orcacle}
+        [:span.f-s-32 "Orcacle"]
+        [:div.m-l-10 (svg-icon "hood" 48 "")]]]]
+     [:div
+      [:div.p-10
+       [:div.posn-rel
+        [:input.input.orcacle-input
+         {:value search-text
+          :on-change set-search-text
+          :on-key-press search-input-keypress
+          :style orcacle-input-style}]
+        [:i.fa.fa-times.posn-abs.f-s-24.pointer
+         {:style close-icon-style
+          :on-click set-search-text-empty}]]
+       [:span.f-s-14.i.opacity-5 "\"8d10 + 2\", \"magic missile\", \"kobold\", \"female calishite name\", \"tavern name\", etc."]]
+      [:div.flex-grow-1
+       [search-results]]]]))
+
+
+(def staff-pick-link
+  [:a.orange {:href "https://www.kickstarter.com/projects/458886079/petals-and-thorns-ii-heroes-of-ramshorn" :target "_blank"} "Petals and Thorns: Heroes of Ramshorn"])
+
 (def srd-link
   [:a.orange {:href "/SRD-OGL_V5.1.pdf" :target "_blank"} "the 5e SRD"])
 
@@ -1425,76 +1457,49 @@
 (def gmgtr-link (amazon-link "GMGtR" "https://www.amazon.com/gp/product/0786966599/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966599&linkId=783e3da079c4c6938bc8d202c73f3c6a"))
 
 #_(defn amazon-frame [link]
-  [:iframe {:style {:width "120px" :height "240px"}
-            :margin-width 0
-            :margin-height 0
-            :scrolling :no
-            :frame-border 0
-            :src link}])
+    [:iframe {:style {:width "120px" :height "240px"}
+              :margin-width 0
+              :margin-height 0
+              :scrolling :no
+              :frame-border 0
+              :src link}])
 
 #_(def scag-amazon-frame
-  (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965800&asins=0786965800&linkId=f35402a86dd0851190d952228fab36e9&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
+    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965800&asins=0786965800&linkId=f35402a86dd0851190d952228fab36e9&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 #_(def volos-amazon-frame
-  (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966017&asins=0786966017&linkId=8c552e7b980d7d944bd12dec57e002e8&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
+    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966017&asins=0786966017&linkId=8c552e7b980d7d944bd12dec57e002e8&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 #_(def phb-amazon-frame
-  (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965606&asins=0786965606&linkId=3b5b686390559c31dbc3c20d20f37ec4&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
+    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965606&asins=0786965606&linkId=3b5b686390559c31dbc3c20d20f37ec4&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 #_(def dmg-amazon-frame
-  (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965622&asins=0786965622&linkId=01922a9aafc4ea52eb90aed12bbeac04&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
+    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965622&asins=0786965622&linkId=01922a9aafc4ea52eb90aed12bbeac04&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 #_(def mm-amazon-frame
-  (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965614&asins=0786965614&linkId=5300756d865067bd552325212c176447&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
+    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965614&asins=0786965614&linkId=5300756d865067bd552325212c176447&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 #_(def xanathars-amazon-frame
-  (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966114&asins=0786966114&linkId=b1241c813fda22ff1b5ba56ba52cee50&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
+    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966114&asins=0786966114&linkId=b1241c813fda22ff1b5ba56ba52cee50&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 #_(def toa-amazon-frame
-  (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966106&asins=0786966106&linkId=8ef050066313a6092678df98f18401f7&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
+    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966106&asins=0786966106&linkId=8ef050066313a6092678df98f18401f7&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 #_(def yawning-portal-amazon-frame
-  (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966092&asins=0786966092&linkId=df092b3840d56523be6c3626966a0e47&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
+    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966092&asins=0786966092&linkId=df092b3840d56523be6c3626966a0e47&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 #_(def cos-amazon-frame
-  (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965983&asins=0786965983&linkId=91dfcae14b0c8ecd3795eaf375104ca5&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
+    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965983&asins=0786965983&linkId=91dfcae14b0c8ecd3795eaf375104ca5&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 #_(def skt-amazon-frame
-  (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966009&asins=0786966009&linkId=b0fe41c5ff03ada5d23ebd4a176abcf6&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
+    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966009&asins=0786966009&linkId=b0fe41c5ff03ada5d23ebd4a176abcf6&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 #_(def oota-amazon-frame
-  (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965819&asins=0786965819&linkId=125c478897a63892c24d0ca46c198848&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
+    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965819&asins=0786965819&linkId=125c478897a63892c24d0ca46c198848&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 #_(def pota-amazon-frame
     (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965789&asins=0786965789&linkId=a2c9018a5e1260f518fa6b0fd0812350&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
-(defn orcacle []
-  (let [search-text @(subscribe [:search-text])]
-    [:div.flex.flex-column.h-100-p.white
-     {:style oracle-frame-style}
-     [:i.fa.fa-times-circle.f-s-24.orange.pointer
-      {:on-click close-orcacle
-       :style close-button-style}]
-     [:div
-      [:div.flex.justify-cont-s-a.m-t-10
-       [:div.flex.align-items-c.pointer
-        {:on-click close-orcacle}
-        [:span.f-s-32 "Orcacle"]
-        [:div.m-l-10 (svg-icon "hood" 48 "")]]]]
-     [:div
-      [:div.p-10
-       [:div.posn-rel
-        [:input.input.orcacle-input
-         {:value search-text
-          :on-change set-search-text
-          :on-key-press search-input-keypress
-          :style orcacle-input-style}]
-        [:i.fa.fa-times.posn-abs.f-s-24.pointer
-         {:style close-icon-style
-          :on-click set-search-text-empty}]]
-       [:span.f-s-14.i.opacity-5 "\"8d10 + 2\", \"magic missile\", \"kobold\", \"female calishite name\", \"tavern name\", etc."]]
-      [:div.flex-grow-1
-       [search-results]]]]))
 
 (defn content-page [title button-cfgs content & {:keys [hide-header-message? frame?]}]
   (let [srd-message-closed? @(subscribe [:srd-message-closed?])
@@ -1542,29 +1547,13 @@
             (if (not frame?)
               [:div.content.bg-lighter.p-10.flex
                [:div.flex-grow-1
-                [:div "Support us on Patreon! This IS the community server for Orcpub."]
+                [:div "Staff Pick!  - We'd like to give back to the community with signal boosts! "]
+                [:div.m-t-10 "This week we have a 5e adventure about maintaining power/stability with warring factions (and making decisions with long term payoffs or consequences) "]
                 [:div.m-t-10 " "]
-                [:div.m-t-10 "Please Note: Custom/imported data isn't permanent in your browser, export often!"]
-                [:div.m-t-10 " "]
-                (if (not mobile?)
-                  [:div.m-t-10 "You can add content from other sources using the builders in the 'My Content' menu. Here are some compatible sources: "
-                   [:div.flex.flex-wrap.m-t-10
-                    [:div.m-l-5 srd-link]
-                    [:div.m-l-5 phb-link]
-                    [:div.m-l-5 dmg-link]
-                    [:div.m-l-5 mm-link]
-                    [:div.m-l-5 xge-link]
-                    [:div.m-l-5 scag-link]
-                    [:div.m-l-5 vgm-link]
-                    [:div.m-l-5 toa-link]
-                    [:div.m-l-5 yp-link]
-                    [:div.m-l-5 cos-link]
-                    [:div.m-l-5 skt-link]
-                    [:div.m-l-5 oota-link]
-                    [:div.m-l-5 pota-link]
-                    [:div.m-l-5 mtof-link]
-                    [:div.m-l-5 gmgtr-link]
-                    ]])]
+                [:div.b.m-t-10 staff-pick-link " @kickstarter - ends 5/10/2019."]
+                [:div.b.m-t-10 "Written by Chamomile, an indie Dev with a ton of DM experience and a solid eye for design! Give him a shot, we think you'll be pleased. : )"]
+
+                ]
                [:i.fa.fa-times.p-10.pointer
                 {:on-click #(dispatch [:close-srd-message])}]])])]
         [:div#app-main.container
