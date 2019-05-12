@@ -14,4 +14,4 @@ VOLUME /log
 
 EXPOSE 4334 4335 4336
 
-ENTRYPOINT ["/datomic/bin/transactor","-Xmx1.5g","-Xms1.5g","-XX:+UseG1GC","/datomic/transactor.properties"]
+ENTRYPOINT ["/datomic/bin/transactor","-Xmx1536m","-Xms1536m","-XX:+UseG1GC","/datomic/transactor.properties"]
