@@ -1420,7 +1420,7 @@
 
 
 (def staff-pick-link
-  [:a.orange {:href "https://www.kickstarter.com/projects/458886079/petals-and-thorns-ii-heroes-of-ramshorn" :target "_blank"} "Petals and Thorns: Heroes of Ramshorn"])
+  [:a.orange {:href "https://www.kickstarter.com/projects/242766563/eldritch-foundry" :target "_blank"} "Eldritch Foundry"])
 
 (def srd-link
   [:a.orange {:href "/SRD-OGL_V5.1.pdf" :target "_blank"} "the 5e SRD"])
@@ -1548,10 +1548,8 @@
               [:div.content.bg-lighter.p-10.flex
                [:div.flex-grow-1
                 [:div "Staff Pick!  - We'd like to give back to the community with signal boosts! "]
-                [:div.m-t-10 "This week we have a 5e adventure about maintaining power/stability with warring factions (and making decisions with long term payoffs or consequences) "]
-                [:div.m-t-10 " "]
-                [:div.b.m-t-10 staff-pick-link " @kickstarter - ends 5/10/2019."]
-                [:div.b.m-t-10 "Written by Chamomile, an indie Dev with a ton of DM experience and a solid eye for design! Give him a shot, we think you'll be pleased. : )"]
+                [:div.m-t-10 "Craft the mini of your dreams, with every detail you imagined, and have it 3D-printed in a never before seen quality."]
+                [:div.b.m-t-10 staff-pick-link " @kickstarter - ends Sat, June 8 2019"]
 
                 ]
                [:i.fa.fa-times.p-10.pointer
@@ -2892,7 +2890,7 @@
                       ;;expanded? (@expanded-details item-kw)
                       ]
                   ^{:key item-kw}
-                  [:tr.pointer
+                  [:tr
                    #_{:on-click (toggle-details-expanded-handler expanded-details item-kw)}
                    [:td.p-10.f-w-b (or (:name item) item-name)]
                    [:td.p-10 (::char-equip/quantity item-cfg)]
@@ -2930,7 +2928,7 @@
                 (let [treasure-name (::char-equip/name treasure-cfg)
                       {:keys [::equip/name] :as treasure} (equip/treasure-map treasure-kw)]
                   ^{:key treasure-kw}
-                  [:tr.pointer
+                  [:tr
                    #_{:on-click (toggle-details-expanded-handler expanded-details item-kw)}
                    [:td.p-10.f-w-b (or (:name treasure) treasure-name)]
                    [:td.p-10 (::char-equip/quantity treasure-cfg)]]))
