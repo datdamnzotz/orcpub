@@ -151,7 +151,7 @@
                   :traits [{:name "Frenzy"
                             :level 3
                             :page 49
-                            :summary "You can frenzy when you rage, affording you a single melee weapon attack as a bonus action on each turn until the rage ends. When the rage ends, you suffer 1 level of exhaustrion"}
+                            :summary "You can frenzy when you rage, affording you a single melee weapon attack as a bonus action on each turn until the rage ends. When the rage ends, you suffer 1 level of exhaustion"}
                            {:name "Mindless Rage"
                             :level 6
                             :page 49
