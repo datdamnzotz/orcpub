@@ -253,6 +253,8 @@
 
    [:.w-auto
     {:width :auto}]
+   [:.w-30-p
+    {:width "30%"}]
    [:.w-40-p
     {:width "40%"}]
    [:.w-50-p
@@ -297,8 +299,12 @@
    [:.h-800
     {:height "800px"}]
 
+   [:.h-10-p
+    {:height "10%"}]
    [:.h-100-p
     {:height "100%"}]
+   [:.h-auto
+    {:height "auto"}]
 
    [:.overflow-auto
     {:overflow :auto}]
@@ -413,6 +419,8 @@
     {:border-radius "50%"}]
    [:.b-rad-5
     {:border-radius "5px"}]
+   [:.b-rad-10
+    {:border-radius "10px"}]
 
    [:.b-1
     {:border "1px solid"}]

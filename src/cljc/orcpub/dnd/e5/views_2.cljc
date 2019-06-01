@@ -85,9 +85,8 @@
      [:div
       {:style (style {:display :flex
                       :justify-content :space-around})}
-      [:img
-       {:src "/image/dmv-logo.svg"
-        :style (style {:height "120px"})}]]
+      [:img.h-72
+       {:src "/image/dmv-logo.svg"}]]
      [:div
       {:style (style {:text-align :center
                       :text-shadow "1px 2px 1px black"

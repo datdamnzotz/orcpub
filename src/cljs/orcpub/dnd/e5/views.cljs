@@ -193,6 +193,9 @@
 (def login-style
   {:color "#f0a100"})
 
+(def login-style-menu
+  {:background-color "rgba(0,0,0,0.4)"})
+
 (defn dispatch-logout []
   (dispatch [:logout]))
 
@@ -257,15 +260,14 @@
        {:on-click hide-user-menu
         :on-mouse-over handle-user-menu
         :on-mouse-out hide-user-menu})
-     [:div.flex.align-items-c
-      [:div.user-icon [svg-icon "orc-head" 40 ""]]
+     [:div.b-rad-5.flex.align-items-c.p-l-10.p-r-10.p-t-5.p-b-5.f-s-16 {:style login-style-menu }
+      [:div.user-icon [svg-icon "orc-head" 35 ""]]
       (if username
         [:span.f-w-b.t-a-r
          (if (not @(subscribe [:mobile?])) [:span.m-r-5 username])]
         [:span.pointer.flex.flex-column.align-items-end
-         [:span.orange.underline.f-w-b.m-l-5
-          {:style login-style
-           :on-click dispatch-route-to-login}
+         [:span.white.f-w-b.m-l-5
+          {:on-click dispatch-route-to-login}
           [:span "LOGIN"]]])
       (if username
         [:i.fa.m-l-5.fa-caret-down])]
@@ -357,7 +359,7 @@
    :right 25})
 
 (def search-input-parent-style
-  {:background-color "rgba(0,0,0,0.15)"})
+  {:background-color "rgba(0,0,0,0.3)"})
 
 (def transparent-search-input-style
   (assoc search-input-style :color :transparent))
@@ -542,7 +544,7 @@
    :color text-color})
 
 (def registration-page-style
-  {:background-image "url(/image/shutterstock_432001912.jpg)"
+  {:background-image "url(/image/login-side.jpg)"
    :background-clip :content-box
    :width "350px"
    :min-height "600px"})
@@ -1560,11 +1562,12 @@
          [:div.content.f-w-n.f-s-12
           [:div.flex.justify-cont-s-b.align-items-c.flex-wrap.p-10
            [:div
-            [:div.m-b-5 "Icons made by Lorc, Caduceus, and Delapouite. Available on " [:a.orange {:href "http://game-icons.net"} "http://game-icons.net"]]]
-           [:div.m-l-10
-            [:a.orange {:href "https://github.com/Orcpub/orcpub/issues" :target :_blank} "Feedback/Bug Reports"]]
+            [:div.m-b-5 "Icons made by Lorc, Caduceus, and Delapouite. Available on " [:a.orange {:href "http://game-icons.net" :target :_blank} "http://game-icons.net"]]
+            [:div.m-b-5 "Artwork provided by the talented Sandra. Available on " [:a.orange {:href "https://www.deviantart.com/sandara" :target :_blank} "Deviantart"]]]
+           [:div.m-l-10]
            [:div.m-l-10.m-r-10.p-10
-            [:a.orange {:href "/privacy-policy" :target :_blank} "Privacy Policy"]
+            [:a.orange.m-l-5 {:href "https://github.com/Orcpub/orcpub/issues" :target :_blank} "Feedback/Bug Reports"]
+            [:a.orange.m-l-5 {:href "/privacy-policy" :target :_blank} "Privacy Policy"]
             [:a.orange.m-l-5 {:href "/terms-of-use" :target :_blank} "Terms of Use"]]
            [:div.legal-footer
             [:p "© " (f/unparse (f/formatter "yyyy") (time/now)) " OrcPub"]
