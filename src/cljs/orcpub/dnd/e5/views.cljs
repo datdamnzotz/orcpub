@@ -1422,7 +1422,7 @@
 
 
 (def staff-pick-link
-  [:a.orange {:href "https://www.kickstarter.com/projects/242766563/eldritch-foundry" :target "_blank"} "Eldritch Foundry"])
+  [:a.orange {:href "https://dysonlogos.blog/" :target "_blank"} "Dyson Dodecahedron"])
 
 (def srd-link
   [:a.orange {:href "/SRD-OGL_V5.1.pdf" :target "_blank"} "the 5e SRD"])
@@ -1549,11 +1549,9 @@
             (if (not frame?)
               [:div.content.bg-lighter.p-10.flex
                [:div.flex-grow-1
-                [:div "Staff Pick!  - We'd like to give back to the community with signal boosts! "]
-                [:div.m-t-10 "Craft the mini of your dreams, with every detail you imagined, and have it 3D-printed in a never before seen quality."]
-                [:div.b.m-t-10 staff-pick-link " @kickstarter - ends Sat, June 8 2019"]
-
-                ]
+                [:div "Staff Pick!"]
+                [:div.m-t-10 "Love Maps and Adventures? This guy has advantage on cartography. Check out "]
+                [:div.b.m-t-10 staff-pick-link " RPG Geek, co-owner of ZERO/barrier Productions. Level 5 Cartographer."]]
                [:i.fa.fa-times.p-10.pointer
                 {:on-click #(dispatch [:close-srd-message])}]])])]
         [:div#app-main.container
