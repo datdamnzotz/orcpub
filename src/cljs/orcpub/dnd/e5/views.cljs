@@ -1422,7 +1422,7 @@
 
 
 (def staff-pick-link
-  [:a.orange {:href "https://dysonlogos.blog/" :target "_blank"} "Dyson Dodecahedron"])
+  [:a.orange {:href "https://watabou.itch.io/medieval-fantasy-city-generator" :target "_blank"} "Medieval City Generator"])
 
 (def srd-link
   [:a.orange {:href "/SRD-OGL_V5.1.pdf" :target "_blank"} "the 5e SRD"])
@@ -1550,8 +1550,8 @@
               [:div.content.bg-lighter.p-10.flex
                [:div.flex-grow-1
                 [:div "Staff Pick!"]
-                [:div.m-t-10 "Love Maps and Adventures? This guy has advantage on cartography. Check out "]
-                [:div.b.m-t-10 staff-pick-link " RPG Geek, co-owner of ZERO/barrier Productions. Level 5 Cartographer."]]
+                [:div.m-t-10 "Need a random city? This application generates a random medieval city layout of a requested size. The generation method is rather arbitrary, the goal is to produce a nice looking map, not an accurate model of a city. "]
+                [:div.b.m-t-10 staff-pick-link " "]]
                [:i.fa.fa-times.p-10.pointer
                 {:on-click #(dispatch [:close-srd-message])}]])])]
         [:div#app-main.container
