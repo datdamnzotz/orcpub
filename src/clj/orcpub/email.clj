@@ -7,10 +7,10 @@
 
 (defn verification-email-html [first-and-last-name username verification-url]
   [:div
-   (str "Dear OrcPub Patron,")
+   (str "Welcome to the Dungeon Master's Vault tribe!")
    [:br]
    [:br]
-   "Your OrcPub account is almost ready, we just need you to verify your email address going the following URL to confirm that you are authorized to use this email address:"
+   "Your Dungeon Master's Vault account is almost ready, we just need you to verify your email address going the following URL to confirm that you are authorized to use this email address:"
    [:br]
    [:br]
    [:a {:href verification-url} verification-url]
@@ -19,7 +19,12 @@
    "Sincerely,"
    [:br]
    [:br]
-   "The OrcPub Team"])
+   "The Dungeon Master's Vault Team"[:br]
+   "https://www.patreon.com/DungeonMastersVault  <-- like what we are doing? support us here"[:br]
+   "https://www.reddit.com/r/dungeonmastersvault/"[:br]
+   "https://twitter.com/thdmv"[:br]
+   "https://www.facebook.com/groups/252484128656613/"[:br]
+   ])
 
 (defn verification-email [first-and-last-name username verification-url]
   [{:type "text/html"
@@ -28,19 +33,14 @@
 (defn email-cfg []
   {:user (environ/env :email-access-key)
    :pass (environ/env :email-secret-key)
-<<<<<<< HEAD
    :host (environ/env :email-server-url)
    :port (Integer/parseInt (or (environ/env :email-server-port) "587"))})
-=======
-   :host "email-smtp.us-west-2.amazonaws.com"
-   :port 587})
->>>>>>> orcbpub/master
 
 (defn send-verification-email [base-url {:keys [email username first-and-last-name]} verification-key]
   (postal/send-message (email-cfg)
-                       {:from "OrcPub Team <no-reply@dungeonmastersvault.com>"
+                       {:from "Dungeon Master's Vault Team <no-reply@dungeonmastersvault.com>"
                         :to email
-                        :subject "OrcPub Email Verification"
+                        :subject "Dungeon Master's Vault - Email Verification"
                         :body (verification-email
                                first-and-last-name
                                username
@@ -48,7 +48,7 @@
 
 (defn reset-password-email-html [first-and-last-name reset-url]
   [:div
-   (str "Dear OrcPub Patron")
+   (str "Hey there Dungeon Master's Vault tribe member.")
    [:br]
    [:br]
    "We received a request to reset your password, to do so please go to the following URL to complete the reset."
@@ -63,7 +63,13 @@
    "Sincerely,"
    [:br]
    [:br]
-   "The OrcPub Team"])
+   "The Dungeon Master's Vault Team"[:br]
+   "Want to support us?" [:br]
+   "https://www.patreon.com/DungeonMastersVault  <-- like what we are doing? support us here"[:br]
+   "https://www.reddit.com/r/dungeonmastersvault/"[:br]
+   "https://twitter.com/thdmv"[:br]
+   "https://www.facebook.com/groups/252484128656613/"[:br]
+   ])
 
 (defn reset-password-email [first-and-last-name reset-url]
   [{:type "text/html"
@@ -71,9 +77,9 @@
 
 (defn send-reset-email [base-url {:keys [email username first-and-last-name]} reset-key]
   (postal/send-message (email-cfg)
-                       {:from "OrcPub Team <no-reply@dungeonmastersvault.com>"
+                       {:from "Dungeon Master's Vault Team <no-reply@dungeonmastersvault.com>"
                         :to email
-                        :subject "OrcPub Password Reset"
+                        :subject "Dungeon Master's Vault - Password Reset"
                         :body (reset-password-email
                                first-and-last-name
                                (str base-url (routes/path-for routes/reset-password-page-route) "?key=" reset-key))}))
@@ -81,9 +87,9 @@
 (defn send-error-email [context exception]
   (if (not-empty (environ/env :email-errors-to))
     (postal/send-message (email-cfg)
-      {:from (str "OrcPub Errors <" (environ/env :email-errors-to) ">")
+      {:from (str "Dungeon Master's Vault - Errors <" (environ/env :email-errors-to) ">")
       :to (str (environ/env :email-errors-to))
-      :subject "Exception"
+      :subject "Dungeon Master's Vault - Exception"
       :body [{:type "text/plain"
               :content (let [writer (java.io.StringWriter.)]
                          (do (clojure.pprint/pprint (:request context) writer)
