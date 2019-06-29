@@ -28,8 +28,13 @@
 (defn email-cfg []
   {:user (environ/env :email-access-key)
    :pass (environ/env :email-secret-key)
+<<<<<<< HEAD
    :host (environ/env :email-server-url)
    :port (Integer/parseInt (or (environ/env :email-server-port) "587"))})
+=======
+   :host "email-smtp.us-west-2.amazonaws.com"
+   :port 587})
+>>>>>>> orcbpub/master
 
 (defn send-verification-email [base-url {:keys [email username first-and-last-name]} verification-key]
   (postal/send-message (email-cfg)
