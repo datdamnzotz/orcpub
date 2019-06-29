@@ -14,8 +14,8 @@
 
   :repositories [["apache" "http://repository.apache.org/snapshots/"]
                  ["my.datomic.com" {:url "https://my.datomic.com/repo"
-                                    :username [:gpg :env]
-                                    :password [:gpg :env]}]]
+                                    :username "john@lissproductions.com" ;[:gpg :env]
+                                    :password "b755193e-ef0a-47c0-b63b-db2780208e1b"}]] ;[:gpg :env]}]]
   :mirrors {"apache" {:url "https://repository.apache.org/snapshots/"}}
 
   :dependencies [[org.clojure/clojure "1.10.0"]
@@ -63,7 +63,7 @@
 
                  [pdfkit-clj "0.1.7"]
                  [vvvvalvalval/datomock "0.2.0"]
-                 [com.datomic/datomic-free "0.9.5561"]]
+                 [com.datomic/datomic-pro "0.9.5561"]]
 
   :plugins [[lein-figwheel "0.5.18"]
             [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]
@@ -185,7 +185,7 @@
             "prod-build" ^{:doc "Recompile code with prod profile."}
             ["externs"
              ["with-profile" "prod" "cljsbuild" "once" "main"]]}
-  :profiles {:dev {:dependencies [[com.datomic/datomic-free "0.9.5561"]
+  :profiles {:dev {:dependencies [[com.datomic/datomic-pro "0.9.5561"]
 
                                   [binaryage/devtools "0.9.4"]
                                   [figwheel-sidecar "0.5.14"]
