@@ -443,6 +443,8 @@
 
    [:.hidden
     {:display :none}]
+   [:.invisible
+    {:visibility :hidden}]
 
    (at-keyframes
     :fade-out
