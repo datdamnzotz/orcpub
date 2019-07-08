@@ -424,7 +424,7 @@
                   :value search-text
                   :on-key-press search-input-keypress
                   :on-change set-search-text
-                  :placeholder "try typing \"8d10 + 2\", \"magic missile\", \"kobold\", \"female name\", \"tavern name\", etc."}]])
+                  :placeholder "search the Vault - 8d10 + 2, magic missile, kobold, female name, tavern name, etc."}]])
              [:div.p-r-10.pointer
               {:on-click open-orcacle}
               [svg-icon "magnifying-glass" (if mobile? 32 48) ""]]]])
