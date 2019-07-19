@@ -133,4 +133,17 @@ html, body, #app {
     (include-js "/js/compiled/orcpub.js")
     (include-css "/font-awesome-4.7.0/css/font-awesome.min.css")
     (include-css "https://fonts.googleapis.com/css?family=Open+Sans")
-    ]))
+    [:script
+     "let plugins = localStorage.getItem('plugins');
+    if(plugins === null || plugins === '{}')
+    {
+      fetch('https://' + window.location.host + '/homebrew.orcbrew')
+        .then(resp => resp.text())
+        .then(text => {
+          if(!text.toUpperCase().includes('NOT FOUND')){
+            localStorage.setItem('plugins',text);
+            window.location.reload(false);
+          }
+      });
+    }
+    "]]))

@@ -63,7 +63,8 @@
 
                  [pdfkit-clj "0.1.7"]
                  [vvvvalvalval/datomock "0.2.0"]
-                 [com.datomic/datomic-pro "0.9.5561"]]
+                 [com.datomic/datomic-pro "0.9.5561"]
+                 [funcool/cuerdas "2.2.0"]]
 
   :plugins [[lein-figwheel "0.5.19"]
             [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]

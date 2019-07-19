@@ -19,6 +19,13 @@ Windows instructions [here](https://github.com/Orcpub/orcpub/wiki/Orcpub-on-Wind
 
 Docker Cheat [Sheet](https://github.com/Orcpub/orcpub/wiki/Docker-Cheat-sheet)
 
+### Importing your homebrew automatically
+
+To have your homebrew orcbrew file automatically loaded when a new client connects place it in the 'deploy/homebrew/' folder with the name "homebrew.orcbrew".
+All orcbrew files have to be combined into a single file named "homebrew.orcbrew" because that is the only file that will be loaded.
+This will elect to not import the homebrew if any other homebrew has already been imported on that device.
+If you want to overwrite what is already loaded delete all of the content from the Content List section and reload the page.
+
 ## Getting Started with Development
 
 ### With docker
@@ -53,6 +60,7 @@ EMAIL_SERVER_URL: '' # Url to a smtp server
 EMAIL_ACCESS_KEY: '' # User for the mail server
 EMAIL_SECRET_KEY: '' # Password for the user
 EMAIL_SERVER_PORT: 587 # Mail server port
+EMAIL_SSL: 'false' # Should SSL be used? Gmail requires this.
 DATOMIC_URL: datomic:free://datomic:4334/orcpub # Url for the database
 ```
 #### How do I contribute?
