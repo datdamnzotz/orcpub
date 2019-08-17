@@ -7519,9 +7519,11 @@
             username @(subscribe [:username])]
         [content-page
          "Parties"
-         []
+         [{:title "Create Party"
+           :icon "users"
+           :on-click (make-event-handler ::party/make-empty-party)}]
          [:div.p-5
-          [:div
+           [:div
            (doall
             (map
              (fn [{:keys [:db/id ::party/name] characters ::party/character-ids}]
