@@ -253,6 +253,10 @@
 
    [:.w-auto
     {:width :auto}]
+   [:.w-10-p
+    {:width "10%"}]
+   [:.w-20-p
+    {:width "20%"}]
    [:.w-30-p
     {:width "30%"}]
    [:.w-40-p
