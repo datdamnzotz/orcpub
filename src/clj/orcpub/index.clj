@@ -99,7 +99,7 @@ html, body, #app {
     height: 100%;
 }"]
     [:title title]
-    [:script
+    #_[:script
      (format
       "
 	  (function(d, s, id){

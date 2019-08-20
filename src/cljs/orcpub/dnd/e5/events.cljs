@@ -1372,19 +1372,19 @@
        (= error-code errors/unverified-expired) {:dispatch [:route routes/verify-failed-route]}
        :else (dispatch-login-failure [:div "An error occurred. If the problem persists please email " [:a {:href "mailto:thDM@dungeonmastersvault.com" :target :blank} "thDM@dungeonmastersvault.com"]])))))
 
-(defn fb []
+#_(defn fb []
   js/FB)
 
-(defn get-fb-user [callback]
+#_(defn get-fb-user [callback]
   (if js/FB
     (.api js/FB "/me?fields=email" callback)))
 
-(defn fb-init []
+#_(defn fb-init []
   (try
     ((goog.object.get js/window "fbAsyncInit"))
     (catch :default e (prn "E" e))))
 
-(defn fb-login-callback [response]
+#_(defn fb-login-callback [response]
   (if (= "connected" (.-status response))
     (do (dispatch [:hide-login-message])
         (go (let [path (routes/path-for routes/fb-login-route)
@@ -1396,17 +1396,17 @@
                 401 (dispatch [:show-login-message "You must allow OrcPub to view your email address so we can create your account. We will not send you emails unless you later give us permission to. In Facebook, please go to 'Settings' > 'Apps', delete 'orcpub', and try again."])
                 nil))))))
 
-(reg-event-fx
+#_(reg-event-fx
  :init-fb
  (fn [_ _]
    (fb-init)))
 
-(reg-event-db
+#_(reg-event-db
  :set-fb-logged-in
  (fn [db [_ logged-in?]]
    (assoc db :fb-logged-in? logged-in?)))
 
-(reg-event-fx
+#_(reg-event-fx
  :fb-logout
  (fn [{:keys [db]} _]
    (let [facebook js/FB]
@@ -1422,8 +1422,9 @@
  :logout
  (fn [cofx [_ response]]
    {:dispatch-n [[:clear-login]
-                 [:fb-logout]
-                 [:set-fb-logged-in false]]}))
+                 ;[:fb-logout]
+                 ;[:set-fb-logged-in false]
+                 ]}))
 
 (def login-routes
   #{routes/login-page-route

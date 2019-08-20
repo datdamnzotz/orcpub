@@ -169,7 +169,7 @@
     {:title "9. Limitation of liability"
      :font-size 32
      :paragraphs
-     ["TO THE MAXIMUM EXTENT PERMITTED BY LAW, Dungeon Master's Vault SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOOD-WILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (A) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE PRODUCTS; (B) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE PRODUCTS, INCLUDING WITHOUT LIMITATION, ANY DEFAMATORY, OFFENSIVE OR ILLEGAL CONDUCT OF OTHER USERS OR THIRD PARTIES; OR (C) UNAUTHORIZED ACCESS, USE OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT. IN NO EVENT SHALL Dungeon Master's Vault'S AGGREGATE LIABILITY FOR ALL CLAIMS RELATING TO THE PRODUCTS EXCEED ONE HUNDRED U.S. DOLLARS (U.S. $100.00)."]}
+     ["TO THE MAXIMUM EXTENT PERMITTED BY LAW, Dungeon Master's Vault SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOOD-WILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (A) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE PRODUCTS; (B) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE PRODUCTS, INCLUDING WITHOUT LIMITATION, ANY DEFAMATORY, OFFENSIVE OR ILLEGAL CONDUCT OF OTHER USERS OR THIRD PARTIES; OR (C) UNAUTHORIZED ACCESS, USE OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT. IN NO EVENT SHALL Dungeon Master's Vault's AGGREGATE LIABILITY FOR ALL CLAIMS RELATING TO THE PRODUCTS EXCEED ONE HUNDRED U.S. DOLLARS (U.S. $100.00)."]}
     :title "10. Arbitration"
     :font-size 32
     :paragraphs
@@ -178,7 +178,7 @@
     {:title "11. Governing law and jurisdiction"
      :font-size 32
      :paragraphs
-     ["These Terms shall be governed by the laws of the State of Utah, without respect to its conflict of laws principles. We each agree to submit to the personal jurisdiction of a state court located in Salt Lake County, Utah or the United States District Court for the District of Utah, for any actions not subject to Section 10 (Arbitration)."]}
+     ["These Terms shall be governed by the laws of the State of Colorado, without respect to its conflict of laws principles. We each agree to submit to the personal jurisdiction of a state court located in Douglas County, Colorado or the United States District Court for the District of Utah, for any actions not subject to Section 10 (Arbitration)."]}
     {:title "12. General terms"
      :font-size 32
      :subsections
@@ -199,11 +199,16 @@
        :font-size 28
        :paragraphs
        ["No waiver of any term of these Terms shall be deemed a further or continuing waiver of such term or any other term, and Dungeon Master's Vault's failure to assert any right or provision under these Terms shall not constitute a waiver of such right or provision."]}
+      {:title "Terms of reuse"
+       :font-size 28
+       :paragraphs
+       ["Code and portions of this Derivative Works are used under Eclipse Public License 2.0 https://github.com/Orcpub/orcpub/blob/develop/LICENSE"]}
       {:title "Parties"
        :font-size 28
        :paragraphs
        ["These Terms are a contract between you and Dungeon Master's Vault"
-        "Effective March 1, 2019"]}]}]})
+        "Effective Aug 1, 2019"]}
+      ]}]})
 
 (defn terms-of-use []
   (terms-page terms-section))
@@ -315,7 +320,7 @@
      :paragraphs
      ["Your browser probably gives you cookie choices. For example, most browsers let you block \"third party cookies,\" which are cookies from sites other than the one you're visiting. Those options vary from browser to browser, so check your browser settings for more info."
       "Some browsers also have a privacy setting called \"Do Not Track,\" which we support. This setting is another way for you to decide whether we use info from our partners and other services to customize Dungeon Master's Vault for you."
-      "Effective March 1, 2019"]}]})
+      "Effective Aug 1, 2019"]}]})
 
 (defn cookie-policy []
   (terms-page cookie-policy-section))

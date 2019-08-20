@@ -41,7 +41,7 @@
             [orcpub.entity :as entity]
             [orcpub.security :as security]
             [orcpub.routes.party :as party]
-            [orcpub.oauth :as oauth]
+            ;[orcpub.oauth :as oauth]
             [hiccup.page :as page]
             [environ.core :as environ]
             [clojure.set :as sets])
@@ -203,7 +203,7 @@
 
 (defn create-login-response [db user & [headers]]
   (let [token (create-token (:orcpub.user/username user)
-                            (-> 24 hours from-now))]
+                            (-> 336 hours from-now))]
     {:status 200
      :headers headers
      :body {:user-data (user-body db user)
@@ -247,7 +247,7 @@
     user))
 
 
-(defn get-or-create-oauth-user [conn db oauth-email]
+#_(defn get-or-create-oauth-user [conn db oauth-email]
   (let [{:keys [:orcpub.user/username] :as user} (user-for-email db oauth-email)]
     (if username
       user
@@ -260,13 +260,13 @@
                        :orcpub.user/verified? true}])]
         (user-for-email (d/db conn) oauth-email)))))
 
-(defn oauth-login [email-fn]
+#_(defn oauth-login [email-fn]
   (fn [{:keys [conn db] :as request}]
     (let [fb-email (email-fn request)
           user (get-or-create-oauth-user conn db fb-email)]
       (create-login-response db user))))
 
-(defn fb-login [{:keys [json-params db conn remote-addr] :as request}]
+#_(defn fb-login [{:keys [json-params db conn remote-addr] :as request}]
   (if-let [access-token (-> json-params :authResponse :accessToken)]
     (let [fb-user (oauth/get-fb-user access-token)]
       (if-let [email (:email fb-user)]
@@ -274,14 +274,14 @@
         (login-error errors/fb-email-permission)))
     {:status 400}))
 
-(def google-login
+#_(def google-login
   (oauth-login oauth/get-google-email))
 
 
-(defn google-oauth-code [request]
+#_(defn google-oauth-code [request]
   (ring-resp/redirect (str oauth/google-oauth-url (oauth/get-google-redirect-uri request))))
 
-(defn fb-oauth-code [request]
+#_(defn fb-oauth-code [request]
   (ring-resp/redirect (str oauth/fb-oauth-url (oauth/get-fb-redirect-uri request))))
 
 (defn base-url [{:keys [scheme headers]}]
@@ -391,7 +391,7 @@
         :orcpub.user/password-reset-sent (java.util.Date.)}])
     (email/send-reset-email
      (base-url request)
-     {:first-and-last-name "OrcPub Patron"
+     {:first-and-last-name "Dungeon Master's Vault Patron"
       :email email}
      key)
     {:status 200}))
@@ -544,7 +544,7 @@
     :where [?e :orcpub.user/password-reset-key ?key]])
 
 (def default-title
-  "Dungeon Master's Vault: OrcPub2 community edition - D&D 5e Character Builder/Generator")
+  "Dungeon Master's Vault: D&D 5e Character Builder/Generator")
 
 (def default-description
   "Dungeons & Dragons 5th Edition (D&D 5e) character builder/generator and digital character sheet far beyond any other in the multiverse.")
@@ -559,8 +559,8 @@
     (merge
      response
      {:status 200
-      :headers {"Content-Type" "text/html"
-                "Access-Control-Allow-Origin" "https://www.facebook.com"}
+      :headers {"Content-Type" "text/html"}
+                ;"Access-Control-Allow-Origin" "https://www.facebook.com"}
       :body
       (index-page
        {:url (str "http://" host uri)
@@ -1077,11 +1077,11 @@
         {:delete `party/remove-character}]
        [(route-map/path-for route-map/login-route)
         {:post `login}]
-       ["/code/fb"
+       #_["/code/fb"
         {:get `fb-oauth-code}]
-       ["/code/google"
+       #_["/code/google"
         {:get `google-oauth-code}]
-       [(route-map/path-for route-map/fb-login-route)
+       #_[(route-map/path-for route-map/fb-login-route)
         {:post `fb-login}]
        #_[(route-map/path-for route-map/google-login-route)
         {:get `google-login}]

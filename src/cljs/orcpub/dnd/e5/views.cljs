@@ -148,7 +148,7 @@
    {:data-layout "button"
     :data-href url}])
 
-(defn on-fb-login [logged-in?]
+#_(defn on-fb-login [logged-in?]
   (if (not logged-in?)
     (do (go (<! (timeout 2000))
             (if (not @(subscribe [:login-message-shown?]))
@@ -156,7 +156,7 @@
         (if js/FB
           (.login js/FB events/fb-login-callback (clj->js {:scope "email"}))))))
 
-(defn fb-login-button-comp []
+#_(defn fb-login-button-comp []
   [:div.flex.justify-cont-s-a
    [:button.form-button.flex.align-items-c
     (let [logged-in? @(subscribe [:fb-logged-in?])]
@@ -175,7 +175,7 @@
     comp
     {:component-did-mount dispatch-init-fb}))
 
-(def facebook-login-button
+#_(def facebook-login-button
   (add-facebook-init
    fb-login-button-comp))
 
@@ -579,7 +579,7 @@
           :style registration-logo-style
           :on-click route-to-default-page}]]
        [:div.flex-grow-1 content]
-       [views-2/legal-footer]]
+       [views-2/legal-footer-sm]]
       [:div.registration-image
        {:style registration-page-style}]]]]])
 
@@ -1557,7 +1557,7 @@
            hdr]]]
         [:div.flex.justify-cont-c.main-text-color
          [:div.content hdr]]
-        [:div.m-l-20.m-r-20.f-w-b.f-s-18.container.m-b-10.main-text-color
+        #_[:div.m-l-20.m-r-20.f-w-b.f-s-18.container.m-b-10.main-text-color
          (if (and (not srd-message-closed?)
                   (not hide-header-message?))
            [:div
@@ -1575,7 +1575,7 @@
          [:div.content.f-w-n.f-s-12
           [:div.flex.justify-cont-s-b.align-items-c.flex-wrap.p-10
            [:div
-            [:div.m-b-5 "Icons made by Lorc, Caduceus, and Delapouite. Available on " [:a.orange {:href "http://game-icons.net" :target :_blank} "http://game-icons.net"]]
+            [:div.m-b-5 "Icons available on " [:a.orange {:href "http://game-icons.net" :target :_blank} "http://game-icons.net"]]
             [:div.m-b-5 "Artwork provided by the talented Sandra. Available on " [:a.orange {:href "https://www.deviantart.com/sandara" :target :_blank} "Deviantart"]]]
            [:div.m-l-10]
            [:div.m-l-10.m-r-10.p-10
@@ -1583,10 +1583,11 @@
             [:a.orange.m-l-5 {:href "/privacy-policy" :target :_blank} "Privacy Policy"]
             [:a.orange.m-l-5 {:href "/terms-of-use" :target :_blank} "Terms of Use"]]
            [:div.legal-footer
-            [:p "© " (f/unparse (f/formatter "yyyy") (time/now)) " OrcPub"]
-            [:p "Contact " [:a {:href "mailto:thDM@dungeonmastersvault.com"} "thDM@dungeonmastersvault.com"]]
-            [:p "Wizards of the Coast, Dungeons & Dragons, D&D, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © " (f/unparse (f/formatter "yyyy") (time/now)) " Wizards. All Rights Reserved. OrcPub.com is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC."]]]
-            [debug-data]]]])]))
+            [:p "Wizards of the Coast, Dungeons & Dragons, D&D, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © " (f/unparse (f/formatter "yyyy") (time/now)) " Wizards. All Rights Reserved. DungeonMastersVault.com is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC."]
+            [:p "Version 2.5.0.1 (08/19/2019)"]
+            [:p "Contact " [:a {:href "mailto:thDM@dungeonmastersvault.com"} "thDM@dungeonmastersvault.com"]]]
+           ]
+          [debug-data]]]])]))
 
 (def row-style
   {:border-bottom "1px solid rgba(255,255,255,0.5)"})
