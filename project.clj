@@ -34,7 +34,7 @@
                  [clj-http "3.9.1"]
                  [com.yetanalytics/ring-etag-middleware "0.1.1"]
                  [org.clojure/test.check "0.9.0"]
-
+                 [org.clojure/data.csv "0.1.4"]
                  [org.clojure/core.match "0.3.0-alpha5"]
                  [re-frame "0.10.6"]
                  [reagent "0.7.0"]
