@@ -19,6 +19,13 @@ Windows instructions [here](https://github.com/Orcpub/orcpub/wiki/Orcpub-on-Wind
 
 Docker Cheat [Sheet](https://github.com/Orcpub/orcpub/wiki/Docker-Cheat-sheet)
 
+### Importing your homebrew automatically
+
+To have your homebrew orcbrew file automatically loaded when a new client connects place it in the 'deploy/homebrew/' folder with the name "homebrew.orcbrew".
+All orcbrew files have to be combined into a single file named "homebrew.orcbrew" because that is the only file that will be loaded.
+This will elect to not import the homebrew if any other homebrew has already been imported on that device.
+If you want to overwrite what is already loaded delete all of the content from the Content List section and reload the page.
+
 ## Getting Started with Development
 
 ### With docker
@@ -53,6 +60,7 @@ EMAIL_SERVER_URL: '' # Url to a smtp server
 EMAIL_ACCESS_KEY: '' # User for the mail server
 EMAIL_SECRET_KEY: '' # Password for the user
 EMAIL_SERVER_PORT: 587 # Mail server port
+EMAIL_SSL: 'false' # Should SSL be used? Gmail requires this.
 DATOMIC_URL: datomic:free://datomic:4334/orcpub # Url for the database
 ```
 #### How do I contribute?
@@ -72,29 +80,25 @@ Afterwards, run `docker-compose up --build` to start building!
 ### Without docker
 
 - Install Java: http://openjdk.java.net/ or http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-- Download [Datomic here](https://my.datomic.com/downloads/free/0.9.5561) rename the 0.9.5561 to 0.9.5561.zip and unzip it into a directory.
-- Start Datomic by going to the unziped directory and run:
+- Download [Datomic here](https://my.datomic.com/downloads/free/0.9.5561), and unzip it into a directory.
+- Start Datomic by going to the unzipped directory and run:
 
 On Windows: `bin\transactor config/samples/free-transactor-template.properties`
 
-On Unix: `bin/transactor config/samples/free-transactor-template.properties`
+On Mac/Unix: `bin/transactor config/samples/free-transactor-template.properties`
 
-On macOS: [homebrew](https://brew.sh/) to do this pretty quickly:
 
-```
-brew install datomic
-brew services start datomic
-```
-
-- Install leiningen: https://leiningen.org/ into a directory. 
-- download the code from your git fork `git clone git@github.com:yourrepo/your.git` Use the clone url in YOUR repo.
+- Install leiningen (https://leiningen.org/#install) into a directory.
+    - Mac / Linux: The latest version (2.9.1 as of this writing) should work.
+    - Windows: There is an issue with 2.9.1, so downgrade to 2.8.1 (`lein downgrade 2.8.1`).
+- Download the code from your git fork `git clone git@github.com:yourrepo/your.git` Use the clone url in YOUR repo.
 - cd into orcpub
-- run `lein repl`
+- run `lein with-profile +start-server repl`
 - run `lein figwheel` Once lein figwheel finishes, a browser will launch.
 
 You should leave all three processes running: Datomic transactor, lein repl, and lein figwheel.  
 
-*NOTE:* There is an issue using leiningen 2.8.1 causing a `ClassCastException`. Building with leiningen 2.7.1 still works
+(*NOTE:* There is an issue using leiningen 2.8.1 causing a `ClassCastException`.)
 
 When you save changes, it will auto compile and send all changes to the browser without the
 need to reload. After the compilation process is complete, you will
@@ -108,19 +112,23 @@ and you should see an alert in the browser window.
 
 #### Editors
 
+##### Emacs
 Emacs with [Cider](https://cider.readthedocs.io/en/latest/) you can run the command to start the Cider REPL:
 
 ```
 C-c M-j
 ```
 
-For Vim users, [vim-fireplace](https://github.com/tpope/vim-fireplace) provides a good way to interact with a running repl without leaving Vim.
+##### Vim
+[vim-fireplace](https://github.com/tpope/vim-fireplace) provides a good way to interact with a running repl without leaving Vim.
 
-For Windows Users you can use the community edition of [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows) with the [Cursive plug-in](https://cursive-ide.com/userguide/)
+##### IntelliJ / Cursive
+You can use the community edition of [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) with the [Cursive plug-in](https://cursive-ide.com/).
 
-Or you can use the [Cursive](https://cursive-ide.com/) IDE, but I hear it is really nice and I'm sure there's an easy way to start a REPL within it.
 
-Once you have a REPL you can run this from within it to create the database, transact the database schema, and start the server:
+#### REPL
+
+Once you have a REPL, you can run this from within it to create the database, transact the database schema, and start the server:
 
 You only need to `(init-database)` ONCE.
 

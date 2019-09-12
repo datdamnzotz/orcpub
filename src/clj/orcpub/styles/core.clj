@@ -253,6 +253,12 @@
 
    [:.w-auto
     {:width :auto}]
+   [:.w-10-p
+    {:width "10%"}]
+   [:.w-20-p
+    {:width "20%"}]
+   [:.w-30-p
+    {:width "30%"}]
    [:.w-40-p
     {:width "40%"}]
    [:.w-50-p
@@ -435,6 +441,8 @@
 
    [:.hidden
     {:display :none}]
+   [:.invisible
+    {:visibility :hidden}]
 
    (at-keyframes
     :fade-out
@@ -828,6 +836,12 @@
 
     [:.character-builder-header
      {:margin-bottom "19px"}]
+
+    [:.senses
+     {:width "450px"}]
+
+    [:.notes
+     {:width "350px"}]
 
     [:.registration-content
      {:width "785px"

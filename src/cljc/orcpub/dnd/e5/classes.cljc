@@ -72,7 +72,7 @@
                  {:name "Rage"
                   :page 48
                   :duration units5e/minutes-1
-                  :frequency (units5e/rests (condp <= (?class-level :barbarian)
+                  :frequency (units5e/long-rests (condp <= (?class-level :barbarian)
                                               17 6
                                               12 5
                                               6 4
@@ -1292,7 +1292,7 @@
               3 {:modifiers [(mod5e/reaction
                               {:name "Deflect Missiles"
                                :page 78
-                               :summary (str "When hit by a ranged attack, reduce the damage by 1d10 " (common/mod-str (+ (?ability-bonuses ::char5e/dex) (?class-level :monk))) ". If you reduce it to 0, you can catch the missile and use it in a ranged attack as a monk weapon with range 20/60")})]}
+                               :summary (str "When hit by a ranged attack, reduce the damage by 1d10 " (common/mod-str (+ (?ability-bonuses ::char5e/dex) (?class-level :monk))) ". If you reduce it to 0, you can catch the missile (if you have a free hand and it's small enough to hold) and use it in a ranged attack with proficiency, as a monk weapon, for 1 ki point with range 20/60")})]}
               4 {:modifiers [(mod5e/reaction
                               {:name "Slow Fall"
                                :page 78
@@ -2373,6 +2373,9 @@
                         {:name "Spellcasting Equipment"
                          :options {:component-pouch 1
                                    :arcane-focus 1}}]
+    :weapon-choices [{:name "Melee Weapon"
+                      :options {:quarterstaff 1
+                                :dagger 1}}]
     :equipment {:spellbook 1}
     :profs {:weapon {:dagger true :dart true :sling true :quarterstaff true :crossbow-light true}
             :save {::char5e/int true ::char5e/wis true}

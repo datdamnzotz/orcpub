@@ -1453,7 +1453,7 @@
 
 (defn add-subclass-component []
   (info-block [:span
-               [:span (str srd-prefix "Don't see a class or class here that you want to use?")]
+               [:span (str srd-prefix "Don't see a class or subclass here that you want to use?")]
                [:div.m-t-5
                 [:span.pointer.underline.orange
                  {:on-click #(dispatch [:route routes/dnd-e5-class-builder-page-route])}
@@ -1468,6 +1468,12 @@
     :icon "woman-elf-face"
     :tags #{:race :subrace}
     :components [add-race-component]}
+   {:name "Class / Level"
+    :icon "mounted-knight"
+    :tags #{:class :subclass}
+    :ui-fns [{:key :class :title "Class / Level" :ui-fn class-levels-selector}
+             {:key :hit-points :group? true :ui-fn hit-points-editor}]
+    :components [add-subclass-component]}
    {:name "Ability Scores / Feats"
     :icon "strong"
     :tags #{:ability-scores :feats}
@@ -1478,22 +1484,16 @@
     :icon "ages"
     :tags #{:background}
     :components [add-background-component]}
-   {:name "Class / Level"
-    :icon "mounted-knight"
-    :tags #{:class :subclass}
-    :ui-fns [{:key :class :title "Class / Level" :ui-fn class-levels-selector}
-             {:key :hit-points :group? true :ui-fn hit-points-editor}]
-    :components [add-subclass-component]}
-   {:name "Spells"
-    :icon "spell-book"
-    :tags #{:spells}
-    :components [known-mode-info
-                 add-spell-component]}
    {:name "Proficiencies"
     :icon "juggler"
     :tags #{:profs}
     ;;:ui-fns [{:key :skill-proficiency :ui-fn skills-selector}]
     }
+   {:name "Spells"
+    :icon "spell-book"
+    :tags #{:spells}
+    :components [known-mode-info
+                 add-spell-component]}
    {:name "Equipment"
     :icon "backpack"
     :tags #{:equipment :starting-equipment}
