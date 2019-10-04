@@ -1584,7 +1584,7 @@
             [:a.orange.m-l-5 {:href "/terms-of-use" :target :_blank} "Terms of Use"]]
            [:div.legal-footer
             [:p "Wizards of the Coast, Dungeons & Dragons, D&D, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © " (f/unparse (f/formatter "yyyy") (time/now)) " Wizards. All Rights Reserved. DungeonMastersVault.com is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC."]
-            [:p "Version 2.5.0.4 (10/03/2019)"]
+            [:p "Version 2.5.0.5 (10/04/2019)"]
             [:p "Contact " [:a {:href "mailto:thDM@dungeonmastersvault.com"} "thDM@dungeonmastersvault.com"]]]
            ]
           [debug-data]]]])]))
