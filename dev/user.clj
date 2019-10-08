@@ -118,6 +118,216 @@
     (with-open [out-file (io/writer "users.csv")]
       (csv/write-csv out-file userdata))))
 
+
+(defn fixsrd []
+  (println "fix tashas-hideous-laughter")
+  (let [u1
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :tashas-hideous-laughter]] db))]
+    (with-db [conn]
+             (doseq [[k] u1]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :hideous-laughter}])
+               )
+             )
+    )
+
+  (println "fix :bigbys-hand")
+  (let [u1
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :bigbys-hand]] db))]
+    (with-db [conn]
+             (doseq [[k] u1]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :arcane-hand}])
+               )
+             )
+    )
+
+  (println "fix :drawmijs-instant-summons")
+  (let [u1
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :drawmijs-instant-summons]] db))]
+    (with-db [conn]
+             (doseq [[k] u1]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :instant-summons}])
+               )
+             )
+    )
+
+  (println "fix :evards-black-tentacles")
+  (let [u1
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :drawmijs-instant-summons]] db))]
+    (with-db [conn]
+             (doseq [[k] u1]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :black-tentacles}])
+               )
+             )
+    )
+
+  (println "fix :leomunds-tiny-hut")
+  (let [u1
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :leomunds-tiny-hut]] db))]
+    (with-db [conn]
+             (doseq [[k] u1]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :tiny-hut}])
+               )
+             )
+    )
+
+  (println "fix :leomunds-secret-chest")
+  (let [u1
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :leomunds-secret-chest]] db))]
+    (with-db [conn]
+             (doseq [[k] u1]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :secret-chest}])
+               )
+             )
+    )
+
+  (println "fix melfs-acid-arrow")
+  (let [u
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :melfs-acid-arrow]] db))]
+    (with-db [conn]
+             (doseq [[k] u]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :acid-arrow}])
+               )
+             )
+    )
+
+  (println "fix :mordenkainens-faithful-hound")
+  (let [u
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :mordenkainens-faithful-hound]] db))]
+    (with-db [conn]
+             (doseq [[k] u]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :faithful-hound}])
+               )
+             )
+    )
+
+  (println "fix :mordenkainens-magnificent-mansion")
+  (let [u
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :mordenkainens-magnificent-mansion]] db))]
+    (with-db [conn]
+             (doseq [[k] u]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :magnificent-mansion}])
+               )
+             )
+    )
+
+  (println "fix :mordenkainens-private-sanctum")
+  (let [u
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :mordenkainens-private-sanctum]] db))]
+    (with-db [conn]
+             (doseq [[k] u]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :private-sanctum}])
+               )
+             )
+    )
+
+  (println "fix :mordenkainens-sword")
+  (let [u
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :mordenkainens-sword]] db))]
+    (with-db [conn]
+             (doseq [[k] u]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :arcane-sword}])
+               )
+             )
+    )
+
+  (println "fix :nystuls-magic-aura")
+  (let [u
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :nystuls-magic-aura]] db))]
+    (with-db [conn]
+             (doseq [[k] u]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :magic-aura}])
+               )
+             )
+    )
+
+  (println "fix :otilukes-freezing-sphere")
+  (let [u
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :otilukes-freezing-sphere]] db))]
+    (with-db [conn]
+             (doseq [[k] u]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :freezing-sphere}])
+               )
+             )
+    )
+
+  (println "fix :otilukes-resilient-sphere")
+  (let [u
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :otilukes-resilient-sphere]] db))]
+    (with-db [conn]
+             (doseq [[k] u]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :resilient-sphere}])
+               )
+             )
+    )
+
+  (println "fix :ottos-irresistible-dance")
+  (let [u
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :ottos-irresistible-dance]] db))]
+    (with-db [conn]
+             (doseq [[k] u]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :irresistible-dance}])
+               )
+             )
+    )
+
+  (println "fix :tashas-hideous-laughter")
+  (let [u
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :tashas-hideous-laughter]] db))]
+    (with-db [conn]
+             (doseq [[k] u]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :hideous-laughter}])
+               )
+             )
+    )
+
+  (println "fix :tensers-floating-disk")
+  (let [u
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.entity.strict/key :tensers-floating-disk]] db))]
+    (with-db [conn]
+             (doseq [[k] u]
+               (println k)
+               (datomic/transact conn [{:db/id k
+                                        :orcpub.entity.strict/key :floating-disk}])
+               )
+             )
+    )
+
+  )
+
+
+
 (defn fig-start
   "This starts the figwheel server and watch based auto-compiler.
 
