@@ -45,7 +45,8 @@
             [cljs.reader :as reader]
             [orcpub.user-agent :as user-agent]
             [cljs.core.async :refer [<! timeout]]
-            [bidi.bidi :as bidi])
+            [bidi.bidi :as bidi]
+            [camel-snake-kebab.core :as csk])
   (:require-macros [cljs.core.async.macros :refer [go]]))
 
 ;; the `amount` of "uses" an action may have before it warrants
@@ -1634,10 +1635,10 @@
         [:img.m-r-20.m-t-10.m-b-10 {:src image-url
                                     :style thumbnail-style}])
       [:div.flex.character-summary.m-t-20.m-b-20
-       (if (and character-name include-name?) [:span.m-r-20.m-b-5 character-name])
+       (if (and character-name include-name?) [:span.m-r-20.m-b-5.character-name character-name])
        [:span.m-r-10.m-b-5
-        [:span race-name]
-        [:div.f-s-12.m-t-5.opacity-6 subrace-name]]
+        [:span.character-race-name race-name]
+        [:div.f-s-12.m-t-5.opacity-6.character-subrace-name subrace-name]]
        (if (seq classes)
          [:span.flex
           (map-indexed
@@ -1649,8 +1650,8 @@
              (fn [{:keys [::char/class-name ::char/level ::char/subclass-name]}]
                (let []
                  [:span
-                  [:span (str class-name " (" level ")")]
-                  [:div.f-s-12.m-t-5.opacity-6 (if subclass-name subclass-name)]]))
+                  [:div.class-name (str class-name) ] [:div.level (str "(" level ")")]
+                  [:div.f-s-12.m-t-5.opacity-6.sub-class-name (if subclass-name subclass-name)]]))
              classes)))])]]
      (if (and show-owner?
               (some? owner)
@@ -2261,13 +2262,15 @@
   [:div
    [:div.p-10.flex.flex-column.align-items-c
     (section-header-2 "Armor Class" "checked-shield")
-    [:div.f-s-24.f-w-b @(subscribe [::char/current-armor-class id])]]])
+    [:div.f-s-24.f-w-b.armor-class @(subscribe [::char/current-armor-class id])]]])
 
 (defn basic-section [title icon v]
   [:div
    [:div.p-10.flex.flex-column.align-items-c
     (section-header-2 title icon)
-    [:div.f-s-24.f-w-b v]]])
+    [:div.f-s-24.f-w-b
+     {:class (csk/->kebab-case title)}
+     v]]])
 
 (def current-hit-points-editor-style
   {:width "60px"
@@ -2331,7 +2334,7 @@
     [:div
      [proficiency-bonus-section-2 id]
      [passive-perception-section-2 id]
-     [:div.p-10.flex.flex-column.align-items-c
+     [:div.p-10.flex.flex-column.align-items-c.skills
       (section-header-2 "Skills" "juggler")
       [:table
        [:tbody
@@ -2341,10 +2344,10 @@
             ^{:key skill-key}
             [:tr.t-a-l
              {:class-name (if (skill-profs skill-key) "f-w-b" "opacity-7")}
-             [:td [:div
+             [:td [:div.skill-name
                    (svg-icon icon 18)
                    [:span.m-l-5 skill-name]]]
-             [:td [:div.p-5 (common/bonus-str (skill-bonuses skill-key))]]])
+             [:td [:div.p-5.skillbonus (common/bonus-str (skill-bonuses skill-key))]]])
           skills/skills))]]]]))
 
 (defn ability-scores-section-2 [id]
@@ -2353,18 +2356,18 @@
         theme @(subscribe [:theme])]
     [:div
      [:div.f-s-18.f-w-b "Ability Scores"]
-     [:div.flex.justify-cont-s-a.m-t-10
+     [:div.flex.justify-cont-s-a.m-t-10.ability-scores
       (doall
        (map
         (fn [k]
           ^{:key k}
           [:div
            (t/ability-icon k 24 theme)
-           [:div
+           [:div.ability-score-name
             [:span.f-s-20.uppercase (name k)]]
-           [:div.f-s-24.f-w-b (abilities k)]
+           [:div.f-s-24.f-w-b.ability-score (abilities k)]
            [:div.f-s-12.opacity-5.m-b--2.m-t-2 "mod"]
-           [:div.f-s-18 (common/bonus-str (ability-bonuses k))]])
+           [:div.f-s-18.ability-score-modifier (common/bonus-str (ability-bonuses k))]])
         char/ability-keys))]]))
 
 (defn saving-throws-section-2 [id]
@@ -2379,12 +2382,12 @@
         (map
          (fn [k]
            ^{:key k}
-           [:tr.t-a-l
+            [:tr.t-a-l
             {:class-name (if (saving-throws k) "f-w-b" "opacity-7")}
             [:td [:div
                   (t/ability-icon k 18 theme)
-                  [:span.m-l-5 (s/upper-case (name k))]]]
-            [:td [:div.p-5 (common/bonus-str (save-bonuses k))]]])
+                  [:span.m-l-5.saving-throw-name (s/upper-case (name k))]]]
+            [:td [:div.p-5.saving-throw-bonus (common/bonus-str (save-bonuses k))]]])
          char/ability-keys))]]]))
 
 (defn feet-str [num]
@@ -2402,13 +2405,13 @@
      (section-header-2 "Speed" "walking-boot")
      [:span.f-s-24.f-w-b
       [:span
-       [:span (feet-str (+ (or unarmored-speed-bonus 0)
+       [:span [:div.speed (feet-str (+ (or unarmored-speed-bonus 0)
                       (if speed-with-armor
                         (speed-with-armor nil)
                         speed)))]
        (if (or unarmored-speed-bonus
                speed-with-armor)
-         [:span.display-section-qualifier-text "(unarmored)"])]
+         [:span.display-section-qualifier-text "(unarmored)"])]]
       (if speed-with-armor
         [:div.f-s-18
          (doall
@@ -2418,19 +2421,24 @@
                    speed (speed-with-armor armor)]
                ^{:key armor-kw}
                [:div
-                [:div
-                 [:span (feet-str speed)]
-                 [:span.display-section-qualifier-text (str "(" (:name armor) " armor)")]]]))
+                [:div.speed
+                 [:span (feet-str speed)]]
+                 [:span.display-section-qualifier-text (str "(" (:name armor) " armor)")]]))
            (dissoc all-armor :shield)))]
         (if unarmored-speed-bonus
           [:div.f-s-18
            [:span
-            [:span (feet-str speed)]
+            [:div.speed
+            [:span (feet-str speed)]]
             [:span.display-section-qualifier-text "(armored)"]]]))
       (if (and swim-speed (pos? swim-speed))
-        [:div.f-s-18 [:span (feet-str swim-speed)] [:span.display-section-qualifier-text "(swim)"]])
+        [:div.f-s-18
+         [:div.speed
+         [:span (feet-str swim-speed)]] [:span.display-section-qualifier-text "(swim)"]])
       (if (and flying-speed (pos? flying-speed))
-        [:div.f-s-18 [:span (feet-str flying-speed)] [:span.display-section-qualifier-text "(fly)"]])]]))
+        [:div.f-s-18
+         [:div.speed
+         [:span (feet-str flying-speed)]] [:span.display-section-qualifier-text "(fly)"]])]]))
 
 (defn personality-section [title & descriptions]
   (if (and (seq descriptions)
@@ -2904,8 +2912,7 @@
                       ;;expanded? (@expanded-details item-kw)
                       ]
                   ^{:key item-kw}
-                  [:tr.pointer
-                   #_{:on-click (toggle-details-expanded-handler expanded-details item-kw)}
+                  [:tr
                    [:td.p-10.f-w-b (or (:name item) item-name)]
                    [:td.p-10 (::char-equip/quantity item-cfg)]
                    [:td.p-10
@@ -2918,6 +2925,36 @@
                                   ", "))
                            weight)]]]]))
               equipment-cfgs))]]]]))))
+
+(defn treasure-section []
+  (r/with-let [expanded-details (r/atom {})]
+    (fn [id]
+      (let [mobile? @(subscribe [:mobile?])
+            treasure-cfgs (merge
+                             @(subscribe [::char/treasure id])
+                             (zipmap (range) @(subscribe [::char/custom-treasure id])))]
+        [:div
+         [:div.flex.align-items-c
+          (svg-icon "cash" 32)
+          [:span.m-l-5.f-w-b.f-s-18 "Treasure"]]
+         [:div
+          [:table.w-100-p.t-a-l.striped
+           [:tbody
+            [:tr.f-w-b
+             {:class-name (if mobile? "f-s-12")}
+             [:th.p-10 "Name"]
+             [:th.p-10 "Qty."]
+             [:th]]
+            (doall
+             (map
+              (fn [[treasure-kw treasure-cfg]]
+                (let [treasure-name (::char-equip/name treasure-cfg)
+                      {:keys [::equip/name] :as treasure} (equip/treasure-map treasure-kw)]
+                  ^{:key treasure-kw}
+                  [:tr
+                   [:td.p-10.f-w-b (or (:name treasure) treasure-name)]
+                   [:td.p-10 (::char-equip/quantity treasure-cfg)]]))
+              treasure-cfgs))]]]]))))
 
 
 (defn skill-details-section-2 []
@@ -3257,7 +3294,9 @@
    [:div.m-t-30
     [magic-items-section-2 id]]
    [:div.m-t-30
-    [other-equipment-section-2 id]]])
+    [other-equipment-section-2 id]]
+   [:div.m-t-30
+    [treasure-section id]]])
 
 (defn details-tab [title icon device-type selected? on-select]
   [:div.b-b-2.f-w-b.pointer.p-10.hover-opacity-full
@@ -3904,7 +3943,7 @@
         (let [speed-mod-type @(subscribe [::mi/speed-mod-type type-kw])]
           ^{:key type-kw}
           [:div.flex.align-items-c
-           [:div.w-100 (common/safe-capitalize type-kw)]
+           [:div.w-100 (common/safe-capitalize-kw type-kw)]
            [:div
             [dropdown
              {:value speed-mod-type
@@ -6873,7 +6912,7 @@
      [:div.flex.w-100-p.flex-wrap
       [spell-input-field "Casting Time" :casting-time spell "m-b-20"]
       [spell-input-field "Range" :range spell "m-l-5 m-b-20"]
-      [spell-input-field "Duration" :duration spell "m-l-5 m-b-20"]]
+      ]
      [:div [:h2.f-s-24.f-w-b.m-b-10 "Components"]]
      [:div.flex.w-100-p.flex-wrap
       [component-checkbox :verbal spell]
@@ -6882,8 +6921,10 @@
      [:div.m-b-20
       [textarea-field
        {:value (get-in spell [:components :material-component])
-        :on-change #(dispatch [::spells/set-material-component %])}]]
+        :on-change #(dispatch [::spells/set-material-component %])}]
+      ]
      [:div.w-100-p
+      [spell-input-field "Duration" :duration spell "m-b-20"]
       [:div.f-s-24.f-w-b
        "Description"]
       [textarea-field
