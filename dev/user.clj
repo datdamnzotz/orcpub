@@ -118,6 +118,11 @@
     (with-open [out-file (io/writer "users.csv")]
       (csv/write-csv out-file userdata))))
 
+(defn dump-unverifiedusers []
+  (let [userdata
+        (with-db [db] (datomic/q '[:find ?e :where [?e :orcpub.user/verified? false] ] db) )]
+    (with-open [out-file (io/writer "users.csv")]
+      (csv/write-csv out-file userdata))))
 
 (defn fixsrd []
   (println "fix tashas-hideous-laughter")
