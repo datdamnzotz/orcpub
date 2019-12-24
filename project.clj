@@ -38,7 +38,7 @@
                  [org.clojure/core.match "0.3.0-alpha5"]
                  [re-frame "0.10.9"]
                  [reagent "0.7.0"]
-                 [garden "1.3.2"]
+                 [garden "1.3.9"]
                  [org.apache.pdfbox/pdfbox "2.1.0-20170324.170253-831"]
                  [io.pedestal/pedestal.service "0.5.1"]
                  [io.pedestal/pedestal.route "0.5.1"]
@@ -94,7 +94,7 @@
                      :compiler { ;; Where to save the file:
                                 :output-to "resources/public/css/compiled/styles.css"
                                 ;; Compress the output?
-                                :pretty-print? false}}]}
+                                :pretty-print? true}}]}
 
   :prep-tasks [["garden" "once"]]
 
