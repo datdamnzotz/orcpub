@@ -604,9 +604,9 @@
             [show-info-button expanded?])
           (if (not hide-lock?)
             [:div.tooltip
-            [:i.fa.f-s-16.m-l-10.m-r-5.pointer
-             {:class-name (if locked? "fa-lock" "fa-unlock-alt opacity-5 hover-opacity-full")
-              :on-click (toggle-locked path)}]
+             [:i.fa.f-s-16.m-l-10.m-r-5.pointer
+              {:class-name (if locked? "fa-lock" "fa-unlock-alt opacity-5 hover-opacity-full")
+               :on-click (toggle-locked path)}]
              (if locked? [:span.tooltiptext "Locked to prevent changes - click to unlock"]
                          [:span.tooltiptext "Unlocked - click to lock the section to prevent changes"])
              ])
@@ -615,9 +615,9 @@
              {:class-name (if (not homebrew?) "opacity-5 hover-opacity-full")
               :on-click (toggle-homebrew path)}
              [:div.tooltip
-             (views5e/svg-icon "beer-stein" 18)
+              (views5e/svg-icon "beer-stein" 18)
               (if (not homebrew?) [:span.tooltiptext "Homebrew is off for " title " - enabling this option allows you select options you would not normally have (turns on homebrew rules)"]
-                [:span.tooltiptext "Homebrew is on for " title " - you can select anything and make it homebrew"] )]])]
+                                  [:span.tooltiptext "Homebrew is on for " title " - you can select anything and make it homebrew"] )]])]
          (if (and help path @expanded?)
            [help-section help])
          (if (int? min)
