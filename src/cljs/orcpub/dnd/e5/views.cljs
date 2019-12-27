@@ -96,7 +96,9 @@
     [:input.flex-grow-1
      (merge
       attrs
-      {:auto-complete :off})]]])
+      ;; Rem'd out to allow auto fill on use/password
+      ;;{:auto-complete :off}
+     )]]])
 
 (defn form-input []
   (let [blurred? (r/atom false)]
