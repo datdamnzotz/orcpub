@@ -44,7 +44,8 @@
             ;[orcpub.oauth :as oauth]
             [hiccup.page :as page]
             [environ.core :as environ]
-            [clojure.set :as sets])
+            [clojure.set :as sets]
+            [clj-http.client :as httpclient])
   (:import (org.apache.pdfbox.pdmodel.interactive.form PDCheckBox PDComboBox PDListBox PDRadioButton PDTextField)
 
            (org.apache.pdfbox.pdmodel PDDocument PDPage PDPageContentStream)
@@ -328,6 +329,9 @@
           :orcpub.user/password (hashers/encrypt password)
           :orcpub.user/send-updates? send-updates?
           :orcpub.user/created (java.util.Date.)}))
+      (when (= send-updates? true)
+        (httpclient/post "https://mailtrain.dungeonmastersvault.com/api/subscribe/CWdVjDw4?access_token=a26c9912a3c7520a0b71d9d1fee4d38ce6e0f198"
+                   {:form-params {"EMAIL" email "MERGE_NAME" username "FORCE_SUBSCRIBE" "yes" "REQUIRE_CONFIRMATION" "yes" }}))
       (catch Throwable e (do (prn e) (throw e))))))
 
 (def user-for-verification-key-query
