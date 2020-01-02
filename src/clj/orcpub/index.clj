@@ -111,17 +111,17 @@ html, body, #app {
 	  }(document, 'script', 'facebook-jssdk'));"
       (oauth/app-id url))]
     [:script
-     "	  var _paq = _paq || [];
-	  _paq.push(['trackPageView']);
-	  _paq.push(['enableLinkTracking']);
-	  (function() {
-		var u=\"//t.lissproductions.com/\";
-		_paq.push(['setTrackerUrl', u+'piwik.php']);
-		_paq.push(['setSiteId', '7']);
-		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-	  })();"]
-    ]
+     " var _paq = window._paq || [];
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+  var u=\"//t.lissproductions.com/\";
+  _paq.push(['setTrackerUrl', u+'matomo.php']);
+  _paq.push(['setSiteId', '7']);
+  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();"]
+   [:noscript "<p><img src=\"//t.lissproductions.com/matomo.php?idsite=7&amp;rec=1\" style=\"border:0;\" alt=\"\" /></p>"]]
    [:body {:style "margin:0;height:100%;line-height:1"}
     [:div#app
      (if splash?
@@ -145,5 +145,4 @@ html, body, #app {
             window.location.reload(false);
           }
       });
-    }
-    "]]))
+    }"]]))
