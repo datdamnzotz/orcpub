@@ -24,7 +24,13 @@
     (meta-tag "og:title" title)
     (meta-tag "og:description" description)
     (meta-tag "og:image" image)
-    ;(meta-tag "google-signin-client_id" "86323071944-te5j96nbke0duomgm24j2on4rs4p7ob9.apps.googleusercontent.com")
+    (meta-tag "og:site_name" "Dungeon Master's Vault")
+    (meta-tag "og:type" "website")
+    (meta-tag "twitter:card" "summary_large_image")
+    (meta-tag "twitter:site" "Dungeon Master's Vault")
+    (meta-tag "twitter:title" title)
+    (meta-tag "twitter:description" description)
+    (meta-tag "twitter:image" image)
     [:meta {:charset "UTF-8"}]
     [:meta {:name "viewport"
             :content "width=device-width, initial-scale=1"}]

@@ -548,7 +548,7 @@
     :where [?e :orcpub.user/password-reset-key ?key]])
 
 (def default-title
-  "Dungeon Master's Vault: D&D 5e Character Builder/Generator")
+  "Dungeon Master's Vault")
 
 (def default-description
   "Dungeons & Dragons 5th Edition (D&D 5e) character builder/generator and digital character sheet far beyond any other in the multiverse.")
@@ -564,7 +564,6 @@
      response
      {:status 200
       :headers {"Content-Type" "text/html"}
-                ;"Access-Control-Allow-Origin" "https://www.facebook.com"}
       :body
       (index-page
        {:url (str "http://" host uri)
