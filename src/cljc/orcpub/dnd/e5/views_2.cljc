@@ -38,6 +38,28 @@
      [:div
       [:span.splash-button-title-prefix "D&D 5e "] [:span title]]]]])
 
+(defn splash-page-button2 [title icon route & [handler]]
+  [:a.splash-button
+   (let [cfg {:style (style {:text-decoration :none
+                             :color "#f0a100"})}]
+     (if handler
+       (assoc cfg :on-click handler)
+       (assoc cfg :href route)))
+   [:div.splash-button-content
+    {:style (style {:box-shadow "0 2px 6px 0 rgba(0, 0, 0, 0.5)"
+                    :margin "5px"
+                    :text-align "center"
+                    :padding "10px"
+                    :cursor :pointer
+                    :display :flex
+                    :align-items :center
+                    :justify-content :space-around
+                    :font-weight :bold})}
+    [:div
+     (svg-icon-2 icon 64 "dark")
+     [:div
+      [:span.splash-button-title-prefix "D&D 5e "] [:span title]]]]])
+
 (defn legal-footer-sm []
   [:div.m-l-15.m-b-10.m-t-10.t-a-l
    ;[:span "© 2019 OrcPub"]
@@ -108,6 +130,16 @@
        "baby-face"
        routes/dnd-e5-newb-char-builder-route)
       (splash-page-button
+        "Homebrew Content"
+        "beer-stein"
+        routes/dnd-e5-my-content-route)]
+     [:div
+      {:style (style
+                {:display :flex
+                 :flex-wrap :wrap
+                 :justify-content :center
+                 :margin-top "10px"})}
+      (splash-page-button
        "Spells"
        "spell-book"
        routes/dnd-e5-spell-list-page-route)
@@ -123,10 +155,13 @@
        "Combat Tracker"
        "sword-clash"
        routes/dnd-e5-combat-tracker-page-route)
-      (splash-page-button
-       "Homebrew Content"
-       "beer-stein"
-       routes/dnd-e5-my-content-route)
+      ]
+     [:div
+      {:style (style
+                {:display :flex
+                 :flex-wrap :wrap
+                 :justify-content :center
+                 :margin-top "10px"})}
       (splash-page-button
        "Encounter Builder"
        "minions"
@@ -154,7 +189,45 @@
       (splash-page-button
        "Background Builder"
        "ages"
-       routes/dnd-e5-background-builder-page-route)]]]
+       routes/dnd-e5-background-builder-page-route)]
+     [:div
+      {:style (style
+                {:display :flex
+                 :flex-wrap :wrap
+                 :justify-content :center
+                 :margin-top "10px"})}
+
+      (splash-page-button2
+        "NPC Generator"
+        "monk-face"
+        "/generator/npcgenerator")
+      (splash-page-button2
+        "City Generator"
+        "elven-castle"
+        "/generator/citygenerator")
+      (splash-page-button2
+        "Name Generator"
+        "stone-tablet"
+        "/generator/namegenerator")
+      (splash-page-button2
+        "Legend Generator"
+        "giant-squid"
+        "/generator/legendgenerator")
+      (splash-page-button2
+        "Rumor Generator"
+        "discussion"
+        "/generator/rumorgenerator")
+      (splash-page-button2
+        "Wanted Poster Generator"
+        "wanted-reward"
+        "/generator/wantedpostergenerator")
+      (splash-page-button2
+        "So you're looking for..."
+        "cash"
+        "/generator/resourcegenerator")]
+
+
+     ]]
    [:div.legal-footer-parent
     {:style (style {:font-size "12px"
                     :color :white
