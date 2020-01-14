@@ -156,22 +156,6 @@
        "sword-clash"
        routes/dnd-e5-combat-tracker-page-route)
       ]
-     [:div.m-l-20.m-r-20.f-w-b.f-s-14.container.m-b-10.main-text-color
-      [:div
-       [:div.content.bg-lighter.p-10.flex
-        [:div.flex-grow-1
-         [:div.t-a-c "Explorer's Guide to Wildemount coming March 17th!"]
-         [:div.m-t-10
-          [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/0786966912/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0786966912&linkCode=as2&tag=dungeonmast0b-20&linkId=5e0a6e180ce3cef6a4eb0f004322d033"} [:img {:height "120px" :border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0786966912&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=0786966912" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
-          [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/0786966890/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0786966890&linkCode=as2&tag=dungeonmast0b-20&linkId=5310b4e05702fba3ba9bbf6531531ea3"} [:img {:height "120px" :border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0786966890&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=0786966890" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
-          [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/0786965606/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0786965606&linkCode=as2&tag=dungeonmast0b-20&linkId=35a7f9a44fa6b8ca84df51c39f563f02"} [:img {:height "120px" :border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0786965606&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=0786965606" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
-          [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/0786965622/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0786965622&linkCode=as2&tag=dungeonmast0b-20&linkId=ac4fc31252bb7c102f3752f24dce711b"} [:img {:height "120px" :border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0786965622&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=0786965622" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
-          [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/0786965614/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0786965614&linkCode=as2&tag=dungeonmast0b-20&linkId=711d30a7022ed50f25948f3afda1b5cd"} [:img {:height "120px" :border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0786965614&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=0786965614" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
-          ]
-         ]
-        ;;[:i.fa.fa-times.p-10.pointer
-        ;;{:on-click #(dispatch [:close-srd-message])}]
-        ]]]
      [:div
       {:style (style
                 {:display :flex
