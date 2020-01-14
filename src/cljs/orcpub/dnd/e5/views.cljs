@@ -1478,49 +1478,6 @@
 
 (def gmgtr-link (amazon-link "GMGtR" "https://www.amazon.com/gp/product/0786966599/ref=as_li_tl?ie=UTF8&tag=dungeonmast0f-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0786966599&linkId=783e3da079c4c6938bc8d202c73f3c6a"))
 
-#_(defn amazon-frame [link]
-    [:iframe {:style {:width "120px" :height "240px"}
-              :margin-width 0
-              :margin-height 0
-              :scrolling :no
-              :frame-border 0
-              :src link}])
-
-#_(def scag-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965800&asins=0786965800&linkId=f35402a86dd0851190d952228fab36e9&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
-
-#_(def volos-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966017&asins=0786966017&linkId=8c552e7b980d7d944bd12dec57e002e8&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
-
-#_(def phb-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965606&asins=0786965606&linkId=3b5b686390559c31dbc3c20d20f37ec4&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
-
-#_(def dmg-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965622&asins=0786965622&linkId=01922a9aafc4ea52eb90aed12bbeac04&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
-
-#_(def mm-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965614&asins=0786965614&linkId=5300756d865067bd552325212c176447&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
-
-#_(def xanathars-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966114&asins=0786966114&linkId=b1241c813fda22ff1b5ba56ba52cee50&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
-
-#_(def toa-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966106&asins=0786966106&linkId=8ef050066313a6092678df98f18401f7&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
-
-#_(def yawning-portal-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966092&asins=0786966092&linkId=df092b3840d56523be6c3626966a0e47&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
-
-#_(def cos-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965983&asins=0786965983&linkId=91dfcae14b0c8ecd3795eaf375104ca5&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
-
-#_(def skt-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786966009&asins=0786966009&linkId=b0fe41c5ff03ada5d23ebd4a176abcf6&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
-
-#_(def oota-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965819&asins=0786965819&linkId=125c478897a63892c24d0ca46c198848&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
-
-#_(def pota-amazon-frame
-    (amazon-frame "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=orcpub-20&marketplace=amazon&region=US&placement=0786965789&asins=0786965789&linkId=a2c9018a5e1260f518fa6b0fd0812350&show_border=false&link_opens_in_new_window=true&price_color=ffffff&title_color=f0a100&bg_color=2c3445"))
 
 
 (defn content-page [title button-cfgs content & {:keys [hide-header-message? frame?]}]
@@ -1562,20 +1519,45 @@
            hdr]]]
         [:div.flex.justify-cont-c.main-text-color
          [:div.content hdr]]
-        #_[:div.m-l-20.m-r-20.f-w-b.f-s-18.container.m-b-10.main-text-color
+        [:div.m-l-20.m-r-20.f-w-b.f-s-18.container.m-b-10.main-text-color
          (if (and (not srd-message-closed?)
                   (not hide-header-message?))
            [:div
             (if (not frame?)
               [:div.content.bg-lighter.p-10.flex
                [:div.flex-grow-1
-                [:div "Staff Pick!"]
-                [:div.m-t-10 "Need a random city? This application generates a random medieval city layout of a requested size. The generation method is rather arbitrary, the goal is to produce a nice looking map, not an accurate model of a city. "]
-                [:div.b.m-t-10 staff-pick-link " "]]
-               [:i.fa.fa-times.p-10.pointer
-                {:on-click #(dispatch [:close-srd-message])}]])])]
+                [:div.t-a-c "Explorer's Guide to Wildemount coming March 17th! Support us via these affiliate links"]
+                [:div.m-t-10.m-l-10
+                 [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/0786966912/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0786966912&linkCode=as2&tag=dungeonmast0b-20&linkId=5e0a6e180ce3cef6a4eb0f004322d033"} [:img {:height "160px" :border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0786966912&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=0786966912" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
+                 [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/0786966890/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0786966890&linkCode=as2&tag=dungeonmast0b-20&linkId=5310b4e05702fba3ba9bbf6531531ea3"} [:img {:height "160px" :border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0786966890&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=0786966890" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
+                 [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/0786965606/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0786965606&linkCode=as2&tag=dungeonmast0b-20&linkId=35a7f9a44fa6b8ca84df51c39f563f02"} [:img {:height "160px" :border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0786965606&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=0786965606" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
+                 [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/0786965622/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0786965622&linkCode=as2&tag=dungeonmast0b-20&linkId=ac4fc31252bb7c102f3752f24dce711b"} [:img {:height "160px" :border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0786965622&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=0786965622" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
+                 [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/0786965614/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0786965614&linkCode=as2&tag=dungeonmast0b-20&linkId=711d30a7022ed50f25948f3afda1b5cd"} [:img {:height "160px" :border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=0786965614&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=0786965614" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
+                 ]
+                ]
+               ;;[:i.fa.fa-times.p-10.pointer
+                ;;{:on-click #(dispatch [:close-srd-message])}]
+               ])])]
         [:div#app-main.container
          [:div.content.w-100-p content]]
+
+        [:div.m-l-20.m-r-20.f-w-b.f-s-14.container.m-b-10.main-text-color
+         [:div
+          [:div.content.bg-lighter.p-10.flex
+           [:div.flex-grow-1
+            [:div "Support us via these affiliate links"]
+            [:div.m-t-10
+             [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/B07F817H27/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07F817H27&linkCode=as2&tag=dungeonmast0b-20&linkId=95ca1e078ca4e4ad1b1ed9655f8db5cf"} [:img {:border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B07F817H27&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=B07F817H27" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
+             [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/B07PHJ94GM/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07PHJ94GM&linkCode=as2&tag=dungeonmast0b-20&linkId=8e337746e1c3624186bc8cfa7f065555"} [:img {:border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B07PHJ94GM&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=B07PHJ94GM" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
+             [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/B07RYPBQBH/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07RYPBQBH&linkCode=as2&tag=dungeonmast0b-20&linkId=a9129a533d5500702444e6c374bd72a1"} [:img {:border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B07RYPBQBH&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=B07RYPBQBH" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
+             [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/B07KDPW5RQ/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07KDPW5RQ&linkCode=as2&tag=dungeonmast0b-20&linkId=4f4fe10a9df855cbbeaf1974cd44127f"} [:img {:border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B07KDPW5RQ&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=B07KDPW5RQ" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
+             [:a.m-5 {:target "_blank" :href "https://www.amazon.com/gp/product/B07VS5QPPR/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07VS5QPPR&linkCode=as2&tag=dungeonmast0b-20&linkId=3a7e992da336ff3b884633a7026b6709"} [:img {:border "0" :src "//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B07VS5QPPR&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=dungeonmast0b-20"}]] [:img {:src "//ir-na.amazon-adsystem.com/e/ir?t=dungeonmast0b-20&l=am2&o=1&a=B07VS5QPPR" :width "1" :height "1" :border "0" :alt "" :style { :border "none !important" :margin "0px !important"}}]
+             ]
+            ]
+           ;;[:i.fa.fa-times.p-10.pointer
+           ;;{:on-click #(dispatch [:close-srd-message])}]
+           ]]]
+
         [:div.main-text-color.flex.justify-cont-c
          [:div.content.f-w-n.f-s-12
           [:div.flex.justify-cont-s-b.align-items-c.flex-wrap.p-10
