@@ -337,6 +337,39 @@
                  name])
               buttons))])]))))
 
+(defn header-tab2 []
+  (let [hovered? (r/atom false)]
+    (fn [title icon on-click disabled active device-type & buttons]
+      (let [mobile? (= :mobile device-type)]
+        [:div.f-w-b.f-s-14.t-a-c.header-tab.m-5.posn-rel
+         {:on-click (fn [e] (if (seq buttons)
+                              #(swap! hovered? not)
+                              (on-click e)))
+          :on-mouse-over #(reset! hovered? true)
+          :on-mouse-out #(reset! hovered? false)
+          :style (if active active-style)
+          :class-name (str (if disabled "disabled" "pointer")
+                           " "
+                           (if (not mobile?) " w-110"))}
+         [:div.p-10
+          {:class-name (if (not active) (if disabled "opacity-2" "opacity-6 hover-opacity-full"))}
+          (let [size (if mobile? 24 48)] (svg-icon icon size ""))
+          (if (not mobile?)
+            [:div.title.uppercase title])]
+         (if (and (seq buttons)
+                  @hovered?)
+           [:div.uppercase.shadow
+            {:style (if mobile? mobile-header-menu-item-style header-menu-item-style)}
+            (doall
+              (map
+                (fn [{:keys [name route]}]
+                  ^{:key name}
+                  [:div.p-10.opacity-5.hover-opacity-full
+                   (let [current-route @(subscribe [:route])]
+                     {:style (if (or (= route current-route)
+                                     (= route (get current-route :handler))) active-style)})
+                  [:a.no-text-decoration.white {:href route} name]])
+                buttons))])]))))
 
 (def social-icon-style
   {:color :white
@@ -511,6 +544,41 @@
           {:name "Encounter Builder"
            :route routes/dnd-e5-encounter-builder-page-route}
           ]
+         [header-tab2
+          "generators"
+          "elven-castle"
+          route-to-my-encounters-page
+          false
+          (routes/dnd-e5-my-encounters-routes
+            (or (:handler active-route)
+                active-route))
+          device-type
+          {:name "NPC Generator"
+           :route "/generator/npcgenerator"}
+          {:name "Help Wanted"
+           :route "/generator/postinggenerator"}
+          {:name "City"
+           :route "/generator/citygenerator"}
+          {:name "Name"
+           :route "/generator/namegenerator"}
+          {:name "Legend"
+           :route "/generator/legendgenerator"}
+          {:name "Rumor"
+           :route "/generator/rumorgenerator"}
+          {:name "Bond"
+           :route "/generator/bondgenerator"}
+          {:name "Flag"
+           :route "/generator/flaggenerator"}
+          {:name "Magic Item"
+           :route "/generator/magicitemgenerator"}
+          {:name "Custom City"
+           :route "/generator/customcitygenerator"}
+          {:name "So your looking for"
+           :route "/generator/resourcegenerator"}
+          {:name "Wanted Poster"
+           :route "/generator/wantedpostergenerator"}
+          {:name "Beware of the Critters"
+           :route "/generator/crittergenerator"}]
          [header-tab
           "My Content"
           "beer-stein"
@@ -1589,7 +1657,7 @@
             [:a.orange.m-l-5 {:href "/terms-of-use" :target :_blank} "Terms of Use"]]
            [:div.legal-footer
             [:p "Wizards of the Coast, Dungeons & Dragons, D&D, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © " (f/unparse (f/formatter "yyyy") (time/now)) " Wizards. All Rights Reserved. DungeonMastersVault.com is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC."]
-            [:p "Version 2.5.0.9 (Build 12/27/2019) \"The Beauty Embroidified\" edition"]
+            [:p "Version 2.5.0.9 (Build 1/16/2020) \"Lurkwood\" edition"]
             [:p "Contact " [:a {:href "mailto:thDM@dungeonmastersvault.com"} "thDM@dungeonmastersvault.com"]]]
            ]
           [debug-data]]]])]))

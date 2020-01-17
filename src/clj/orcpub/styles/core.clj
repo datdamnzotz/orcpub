@@ -919,7 +919,7 @@
     [:.app-header
      {:background-color :black
       :background-image "url(/../../image/header-background.jpg)"
-      :background-position "right center"
+      :background-position "center"
       :background-size "cover"
       :height (px const/header-height)}]
 
