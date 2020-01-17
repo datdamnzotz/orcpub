@@ -364,11 +364,11 @@
               (map
                 (fn [{:keys [name route]}]
                   ^{:key name}
-                  [:div.p-10.opacity-5.hover-opacity-full
+                  [:div.p-10.opacity-5.hover-opacity-full.a-white
                    (let [current-route @(subscribe [:route])]
                      {:style (if (or (= route current-route)
                                      (= route (get current-route :handler))) active-style)})
-                  [:a.no-text-decoration.white {:href route} name]])
+                  [:a.no-text-decoration {:href route} name]])
                 buttons))])]))))
 
 (def social-icon-style

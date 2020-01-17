@@ -330,9 +330,11 @@
     {:color "#191919"}]
    [:.orange
     {:color button-color}
-
     [:a :a:visited
      {:color button-color}]]
+   [:.a-white
+   [:a :a:visited
+    {:color "white !important" }]]
    [:.green
     {:color green}
 
