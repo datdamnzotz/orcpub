@@ -1785,8 +1785,8 @@
        conj
        [:div]
        buttons))]
-   [:div {:class-name (if list? "m-t-0" "m-t-4")}
-    [:span.f-s-24.f-w-600
+   [:div {:class-name (if list? "m-t-0" "m-t-4") }
+    [:span.f-s-24.f-w-600 {:class (csk/->camelCase (str title))}
      value]]])
 
 (defn list-display-section [title image-name values]
@@ -2542,7 +2542,7 @@
            (some (complement s/blank?) descriptions))
     [:div.m-t-20.t-a-l
      [:div.f-w-b.f-s-18 title]
-     [:div
+     [:div {:class (csk/->camelCase (str title))}
       (doall
        (map-indexed
         (fn [i description]
@@ -2825,7 +2825,7 @@
           [:span.m-l-5.f-w-b.f-s-18 "Armor"]]
          [:div
           [:table.w-100-p.t-a-l.striped
-           [:tbody
+           [:tbody.armors
             [:tr.f-w-b
              {:class-name (if mobile? "f-s-12")}
              [:th.p-10 "Name"]
@@ -2849,10 +2849,10 @@
                  ^{:key (str key (:key shield))}
                  [:tr.pointer
                   {:on-click (toggle-details-expanded-handler expanded-details k)}
-                  [:td.p-10.f-w-b (str (or (::mi/name armor) (:name armor) "unarmored")
+                  [:td.p-10.f-w-b.armor (str (or (::mi/name armor) (:name armor) "unarmored")
                                        (if shield (str " + " (:name shield))))]
                   (if (not mobile?)
-                    [:td.p-10 (boolean-icon proficient?)])
+                    [:td.p-10.proficient (boolean-icon proficient?)])
                   [:td.p-10.w-100-p
                    [:div
                     (armor-details-section armor shield expanded?)]]
@@ -2862,7 +2862,7 @@
                       [:span.underline (if expanded? "less" "more")])
                     [:i.fa.m-l-5
                      {:class-name (if expanded? "fa-caret-up" "fa-caret-down")}]]]
-                  [:td.p-10.f-w-b.f-s-18 ac]])))]]]]))))
+                  [:td.p-10.f-w-b.f-s-18.armor-class ac]])))]]]]))))
 
 (defn section-header [icon title]
   [:div.flex.align-items-c
@@ -2885,7 +2885,7 @@
          [section-header "crossed-swords" "Weapons"]
          [:div
           [:table.w-100-p.t-a-l.striped
-           [:tbody
+           [:tbody.weapons
             [:tr.f-w-b
              {:class-name (if mobile? "f-s-12")}
              [:th.p-10 "Name"]
@@ -2904,12 +2904,12 @@
                     ^{:key weapon-key}
                    [:tr.pointer
                     {:on-click (toggle-details-expanded-handler expanded-details weapon-key)}
-                    [:td.p-10.f-w-b (or (:name weapon)
+                    [:td.p-10.f-w-b.weapon (or (:name weapon)
                                         (::mi/name weapon))]
                     (if (not mobile?)
-                      [:td.p-10 (boolean-icon proficient?)])
+                      [:td.p-10.proficient (boolean-icon proficient?)])
                     [:td.p-10.w-100-p
-                     [:div
+                     [:div.weapon-damage-modifier
                       (weapon-attack-description weapon damage-modifier nil)]
                      (if expanded?
                        (weapon-details weapon weapon-damage-modifier))]
@@ -2919,7 +2919,7 @@
                         [:span.underline (if expanded? "less" "more")])
                       [:i.fa.m-l-5
                        {:class-name (if expanded? "fa-caret-up" "fa-caret-down")}]]]
-                    [:td.p-10.f-w-b.f-s-18 (common/bonus-str (weapon-attack-modifier weapon))]])))
+                    [:td.p-10.f-w-b.f-s-18.attack-modifier (common/bonus-str (weapon-attack-modifier weapon))]])))
               all-weapons))]]]]))))
 
 (defn magic-item-rows [expanded-details magic-item-cfgs magic-weapon-cfgs magic-armor-cfgs]
