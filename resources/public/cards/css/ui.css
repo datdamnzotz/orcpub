@@ -1,0 +1,81 @@
+#preview-container {
+    margin: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Small screen (preview fills all columns) */
+@media (max-width : 1199px) {
+    .preview-container {
+        flex-direction: row;
+    }
+    .card {
+        margin-right: 10px;
+    }
+}
+/* Large screen (preview fills one column, columns are narrow) */
+@media (min-width: 1200px) and (max-width : 1599px) {
+    .preview-container {
+        flex-direction: column;
+    }
+    .card {
+        margin-bottom: 10px;
+    }
+}
+/* Huge screen (preview fills one column, columns are wide) */
+@media (min-width : 1600px) {
+    .preview-container {
+        flex-direction: row;
+    }
+    .card {
+        margin-right: 10px;
+    }
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.color-input-addon {
+    border-right: 0;
+    border-radius: 4px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.card h4 {
+    /* Revert bootstrap style for the card preview */
+    font-weight: bold;
+}
+
+.form-horizontal {
+    margin-top: 10px;
+}
+
+
+.dropdown-menu>li>a {
+    padding-left: 35px;
+    position: relative;
+}
+
+.dropdown-menu a > span {
+    position: absolute;
+    left: 5px;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 24px;
+    height: 24px;
+    background-size: auto 90%;
+    top: 50%;
+    margin-top: -12px;
+}

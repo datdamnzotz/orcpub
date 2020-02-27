@@ -1,0 +1,34 @@
+.icon-custom-armor-light { background-image: url(../img/leather-vest.png);}
+.icon-custom-armor-medium { background-image: url(../img/lamellar.png);}
+.icon-custom-armor-heavy { background-image: url(../img/breastplate.png);}
+.icon-custom-shield { background-image: url(../img/round-shield.png);}
+
+.icon-custom-potion { background-image: url(../img/drink-me.png);}
+.icon-custom-light { background-image: url(../img/candle-flame.png);}
+.icon-custom-flask { background-image: url(../img/fizzing-flask.png);}
+.icon-custom-vial { background-image: url(../img/chemical-drop.png);}
+.icon-custom-poison { background-image: url(../img/poison-bottle.png);}
+.icon-custom-trap { background-image: url(../img/wolf-trap.png);}
+.icon-custom-item { background-image: url(../img/knapsack.png);}
+.icon-custom-wand { background-image: url(../img/crystal-wand.png);}
+.icon-custom-swords { background-image: url(../img/crossed-swords.png);}
+.icon-custom-arrows { background-image: url(../img/target-arrows.png);}
+.icon-custom-swordarrow { background-image: url(../img/mixed-swords.png);}
+
+.icon-custom-spell { background-image: url(../img/white-book.png);}
+.icon-custom-spell-0 { background-image: url(../img/white-book-0.png);}
+.icon-custom-spell-1 { background-image: url(../img/white-book-1.png);}
+.icon-custom-spell-2 { background-image: url(../img/white-book-2.png);}
+.icon-custom-spell-3 { background-image: url(../img/white-book-3.png);}
+.icon-custom-spell-4 { background-image: url(../img/white-book-4.png);}
+.icon-custom-spell-5 { background-image: url(../img/white-book-5.png);}
+.icon-custom-spell-6 { background-image: url(../img/white-book-6.png);}
+.icon-custom-spell-7 { background-image: url(../img/white-book-7.png);}
+.icon-custom-spell-8 { background-image: url(../img/white-book-8.png);}
+.icon-custom-spell-9 { background-image: url(../img/white-book-9.png);}
+.icon-custom-spell-holy { background-image: url(../img/white-book-cd.png);}
+.icon-custom-spell-runes { background-image: url(../img/book-cover.png);}
+
+.icon-custom-class-arcane { background-image: url(../img/robe.png);}
+.icon-custom-class-cleric { background-image: url(../img/holy-symbol.png);}
+.icon-custom-class-rogue { background-image: url(../img/cloak-dagger.png);}

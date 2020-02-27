@@ -1,0 +1,1 @@
+var card_data = [];

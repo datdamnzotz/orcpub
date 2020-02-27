@@ -1,0 +1,262 @@
+.card {
+    border: 2mm solid;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+    font-size: 8pt;
+    overflow: hidden;
+}
+
+.card.rounded-corners {
+    border-radius: 4px;
+}
+
+.card-content-container {
+    padding:2mm;
+    padding-top:1mm;
+    border-radius: 2mm;
+    margin-top:0px;
+    background-color: white;
+    border-color: inherit;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-size: inherit;
+}
+
+.card-back {
+/*     background-color: white; */
+    border-radius: 4mm;
+    border-color: inherit;
+    margin: 3mm;
+    flex: 1;
+    display: flex;
+}
+
+.card-back-inner {
+    margin: 3mm;
+    border: 1mm solid;
+    border-color: inherit;
+    border-radius: 4mm;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back-icon {
+    width: 1in;
+    height: 1in;
+    border: 4mm solid;
+    border-color: inherit;
+    border-radius: 4mm;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.card-title-icon {
+    width: 12mm;
+    height: 12mm;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: inherit;
+    border-color: inherit;
+}
+.card-title-icon-container {
+    position: absolute;
+    right: -1mm;
+    top: -1mm;
+    border: 1mm solid;
+    border-radius: 1mm;
+    background-color: inherit;
+    border-color: inherit;
+}
+
+.card-title-inlineicon {
+    width: 7mm;
+    height: 7mm;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: inherit;
+    border-color: inherit;
+}
+.card-title-inlineicon-container {
+    position: absolute;
+    right: -1mm;
+    top: -1mm;
+    border: 1mm solid;
+    border-radius: 1mm;
+    background-color: inherit;
+    border-color: inherit;
+}
+
+.card-title {
+    height: 8mm;
+    padding-left: 2mm;
+    font-family: Lora, 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    background-color: inherit;
+    color: white;
+}
+.card-title-16 {
+    font-size: 16pt;
+    line-height: 6.5mm;
+}
+.card-title-15 {
+    font-size: 15pt;
+    line-height: 6.5mm;
+}
+.card-title-14 {
+    font-size: 14pt;
+    line-height: 6.5mm;
+}
+.card-title-13 {
+    font-size: 13pt;
+    line-height: 7mm;
+}
+.card-title-12 {
+    font-size: 12pt;
+    line-height: 7mm;
+}
+.card-title-11 {
+    font-size: 11pt;
+    line-height: 7.5mm;
+}
+.card-title-10 {
+    font-size: 10pt;
+    line-height: 7.5mm;
+}
+.card-subtitle {
+    height: 18px;
+    margin-bottom: 0.0em;
+    line-height: 18px;
+    font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    font-style: italic;
+}
+.card-picture {
+    height: 80px;
+    line-height: 18px;
+    margin-bottom: 0.0em;
+}
+.card-inline-icon {
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    border-radius: 2mm;
+}
+
+.card-inline-icon.align-left {
+    align-self: flex-start;
+}
+
+.card-inline-icon.align-right {
+    align-self: flex-end;
+}
+
+.card-inline-icon.align-center {
+    align-self: center;
+}
+
+.card-property-line {
+    text-indent: -1em;
+    margin-left: 1em;
+    font-size: inherit;
+    color: black;
+}
+
+.card-property-name {
+    display: inline;
+    font-size: inherit;
+}
+.card-property-text {
+    display: inline;
+}
+
+.card-section {
+    border-bottom: 1px solid;
+    font-size: 10pt;
+    font-variant: small-caps;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin: 0;
+    border-color: inherit;
+}
+
+.card-section + .card-element {
+    margin-top: 0.3em;
+}
+
+.card-p {
+
+}
+
+.card-fill {flex:1;}
+
+.card-description-line {
+    margin-top: 0.5em;
+    margin-bottom: 0.0em;
+    font-size: inherit;
+    color: black;
+}
+.card-description-name {
+    display: inline;
+    font-size: inherit;
+    font-style: italic;
+}
+.card-description-name::after {
+    content: ".";
+}
+.card-description-text {
+    display: inline;
+}
+
+.card-ruler {
+    width: 100%;
+    height: 1.0mm;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.card-box {
+    display: inline;
+    height: 10mm;
+    width: 10mm;
+    margin-right: 0.3em;
+}
+
+.card-stats {
+    width: 100%
+}
+
+.card-stats-header {
+    text-align: center;
+    padding: 0;
+    width: 16.6%;
+}
+
+.card-stats-cell {
+    text-align: center;
+    padding: 0;
+}
+
+.card-bullet-line {
+    font-size: inherit;
+    color: black;
+    padding-left: 16px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.card-bullet {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: inherit;
+}

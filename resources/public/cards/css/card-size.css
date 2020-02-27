@@ -1,0 +1,101 @@
+/*
+    Full page printing CSS
+    ======================
+
+    Since we want precisely specify the card sizes, we must not allow the user to scale the content to fit a sheet of paper.
+    We must also make sure the browser does not add randomly sized margins to the page.
+
+    Instead, we use absolute sizes for all content, such that it fills a sheet of paper:
+    1) Remove all page margins (using the @page CSS rule). The borders of the document will be outside of the printable area,
+       however, we will cluster all content around the center, so that we won't crop anything.
+    2) Fill the document with <page> elements which have an absolute size equal to the full area of the paper.
+    3) Fill each page with cards, arranged around the center of the page.
+*/
+
+
+/* Center all content within a page */
+.page {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    page-break-after: always;
+    padding: 0;
+}
+
+/* A4 paper area */
+/* Chrome has problems with page sizes given in metric units. Make the paper area slightly smaller to work around this. */
+page[size="A4"] {
+    width:  210mm; /* full: 210.0mm */
+    height: 296mm; /* full: 297.0mm */
+}
+
+/* US letter area */
+page[size="Letter"] {
+    width:  8.5in;
+    height: 11.0in;
+}
+
+page[size="25x35"] {
+    width: 2.5in;
+    height: 3.5in;
+}
+
+/* Default card size */
+.card {
+    width:2.5in;
+    height:3.5in;
+}
+
+/* Bridge card size */
+.card-size-225x35 {
+    width:2.25in;
+    height:3.5in;
+}
+.card-size-225x35 .card-back-icon {
+    width: 1in;
+    height: 1in;
+}
+
+/* Poker / Magic card size */
+.card-size-25x35 {
+    width:2.5in;
+    height:3.5in;
+}
+.card-size-25x35 .card-back-icon {
+    width: 1in;
+    height: 1in;
+}
+
+/* Poker / Magic card size */
+.card-size-35x50 {
+    width:3.5in;
+    min-width:3.5in;
+    height:5.0in;
+}
+.card-size-35x50 .card-back-icon {
+    width: 1.5in;
+    height: 1.5in;
+}
+
+/* Landscape big card */
+.card-size-75x50 {
+    width:7.5in;
+    height:5.0in;
+}
+.card-size-75x50 .card-back-icon {
+    width: 2in;
+    height: 2in;
+}
+
+/* Card sizes that fill out the entire sheet of paper (minimal margins) */
+.page[size="A4"] .card-size-full3x3 {
+    width:69mm;
+    height:98mm;
+}
+
+.page[size="Letter"] .card-size-full3x3 {
+    width:71mm;
+    height:92mm;
+}
