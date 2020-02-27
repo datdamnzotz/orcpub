@@ -3650,32 +3650,15 @@
     spell-cfgs))
 
 (defn make-spell-print-handler [id built-char]
-  ;(let [spells-known @(subscribe [::char/spells-known id])
-  ;      spell-slots @(subscribe [::char/spell-slots id])
-  ;      spell-modifiers @(subscribe [::char/spell-modifiers id])
-  ;      spell-slot-factors @(subscribe [::char/spell-slot-factors id])
-  ;      total-spellcaster-levels @(subscribe [::char/total-spellcaster-levels id])
-  ;      levels @(subscribe [::char/levels id])
-  ;      spell-map @(subscribe [::spells/spells-map])
+  (let [spells-known @(subscribe [::char/spells-known id])]
 
-  ;            (doall
-  ;             myspells (map
-  ;               (fn [[lvl spells]]
-  ;                   ^{:key lvl}
-  ;                   (fn [id lvl spells spell-modifiers hide-unprepared? prepare-spell-count-fn]
-  ;                     (let [prepares-spells @(subscribe [::char/prepares-spells id])
-  ;                           prepared-spells-by-class @(subscribe [::char/prepared-spells-by-class id])]
+    (prn spells-known)
+    (prn "Setting card_data")
 
-  ;                      )
-  ;                     spells)
-  ;                   )
-  ;                spells-known))])
+    (.setItem js/window.localStorage "card_data" (clj->json spells-known)))
 
-  ;        (prn myspells)
-  ;        (prn "Setting card_data")
-
-  ;        (.setItem js/window.localStorage "card_data" (clj->json myspells)))
   )
+
 
 
 (defn character-page []
