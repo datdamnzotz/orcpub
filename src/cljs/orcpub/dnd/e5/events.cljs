@@ -3136,6 +3136,19 @@
      (js/saveAs blob (str "all-content.orcbrew"))
      {})))
 
+(defn clj->json
+  [ds]
+  (.stringify js/JSON (clj->js ds) nil 2))
+
+(reg-event-fx
+  ::e5/save-to-json
+  (fn [_ [_ name plugin]]
+    (let [blob (js/Blob.
+                 (clj->js [(clj->json plugin)])
+                 (clj->js {:type "application/json;charset=utf-8"}))]
+      (js/saveAs blob (str name ".json"))
+      {})))
+
 (reg-event-fx
   ::e5/export-plugin-pretty-print
   (fn [_ [_ name plugin]]
@@ -3144,6 +3157,7 @@
                  (clj->js {:type "text/plain;charset=utf-8"}))]
       (js/saveAs blob (str name ".orcbrew"))
       {})))
+
 (reg-event-fx
   ::e5/export-all-plugins-pretty-print
   (fn [_ _]

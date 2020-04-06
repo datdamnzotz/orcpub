@@ -204,6 +204,42 @@
                     (apply dissoc treasure coin-keys)
                     unequipped-items)))})))
 
+(defn treasure-fields [built-char]
+  (let [equipment (es/entity-val built-char :equipment)
+        armor (es/entity-val built-char :armor)
+        magic-armor (es/entity-val built-char :magic-armor)
+        magic-items (es/entity-val built-char :magic-items)
+        weapons (sort (es/entity-val built-char :weapons))
+        magic-weapons (sort (es/entity-val built-char :magic-weapons))
+        custom-equipment (into {}
+                               (map
+                                (juxt ::char-equip5e/name identity)
+                                (char5e/custom-equipment built-char)))
+        custom-treasure (into {}
+                               (map
+                                (juxt ::char-equip5e/name identity)
+                                (char5e/custom-treasure built-char)))
+        all-equipment (merge equipment custom-equipment custom-treasure magic-items armor magic-armor)
+        treasure (es/entity-val built-char :treasure)
+        treasure-map (into {} (map (fn [[kw {qty ::char-equip5e/quantity}]] [kw qty]) treasure))
+        unequipped-items  (filter
+                          (fn [[kw {:keys [::char-equip5e/equipped? ::char-equip5e/quantity]}]]
+                            (and (not equipped?)
+                                 (pos? quantity)))
+                          (merge all-equipment weapons magic-weapons magic-items))]
+    (merge
+     (select-keys treasure-map coin-keys)
+     {:treasure (s/join
+                  "\n"
+                  (map
+                   (fn [[kw {count ::char-equip5e/quantity}]]
+                     (str (disp5e/equipment-name mi5e/all-equipment-map kw) " (" count ")"))
+                   (merge
+                    (apply dissoc treasure coin-keys)
+                    unequipped-items)))})))
+
+
+
 (def level-max-spells
   {0 8
    1 12
