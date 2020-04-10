@@ -46,7 +46,8 @@
             [orcpub.user-agent :as user-agent]
             [cljs.core.async :refer [<! timeout]]
             [bidi.bidi :as bidi]
-            [camel-snake-kebab.core :as csk])
+            [camel-snake-kebab.core :as csk]
+            [orcpub.dnd.e5.exports :as ex])
   (:require-macros [cljs.core.async.macros :refer [go]]))
 
 ;; the `amount` of "uses" an action may have before it warrants
@@ -3368,6 +3369,7 @@
 
 (def export-pdf-handler (memoize export-pdf-fn))
 
+
 (defn print-options [id built-char]
   (let [print-character-sheet? @(subscribe [::char/print-character-sheet?])
         print-spell-cards? @(subscribe [::char/print-spell-cards?])
@@ -3376,7 +3378,7 @@
         has-spells? (seq (char/spells-known built-char))]
     [:div.flex.justify-cont-end
      [:div.p-20
-      [:div.f-s-24.f-w-b.m-b-10 "Print Options"]
+      [:div.f-s-20.f-w-b.m-b-10 "Print Options"]
       [:div.m-b-2
        [:div.flex
         [:div
@@ -3407,9 +3409,6 @@
            [labeled-checkbox
             "Prepared"
             print-prepared-spells?]]]])
-      [:span.orange.underline.pointer.uppercase.f-s-12
-       {:on-click (make-event-handler ::char/hide-options)}
-       "Cancel"]
       [:button.form-button.p-10.m-l-5
        {:on-click (export-pdf-handler built-char
                                       id
@@ -3417,7 +3416,35 @@
                                       print-spell-cards?
                                       print-prepared-spells?
                                       print-large-abilities?)}
-       "Print"]]]))
+       "Create PDF"]
+      [:div.f-s-20.f-w-b.m-b-10.m-t-10 "Beta - Export Options"]
+      [:span.f-s-14 "To be used for importing into other applications, there is no import option."]
+      [:div.m-t-10.m-b-10
+       [:button.form-button.p-10.m-l-5
+        {:on-click (ex/orcpub-export-json-handler built-char
+                                                  id
+                                                  print-character-sheet?
+                                                  print-spell-cards?
+                                                  print-prepared-spells?
+                                                  print-large-abilities?)}
+        "JSON"]
+       [:span.f-s-12 "  DMV Export format"]]
+      ; D&D 5E by Roll20 - Single class sheet export example
+      #_[:div.m-t-10.m-b-10
+         [:button.form-button.p-10.m-l-5
+          {:on-click (ex/dd5eroll20-export-json-handler built-char
+                                                        id
+                                                        print-character-sheet?
+                                                        print-spell-cards?
+                                                        print-prepared-spells?
+                                                        print-large-abilities?)}
+          "JSON"]
+         [:span.f-s-12 "  D&D 5E by Roll20 format - " [:a.orange {:href "https://roll20.zendesk.com/hc/en-us/articles/360037773573" :target "_blank"} "Single class"]
+          " load with " [:a.orange {:href "https://ssstormy.github.io/roll20-enhancement-suite/" :target "_blank"} "VTT"]
+          " (no weapons or spells at this time)"]]
+      [:span.orange.underline.pointer.uppercase.m-l-10.f-s-12
+       {:on-click (make-event-handler ::char/hide-options)}
+       "Cancel"]]]))
 
 (defn make-print-handler [id built-char]
   #(dispatch
@@ -3436,152 +3463,11 @@
    {}
    vals))
 
-(defn export-json-handler [built-char id print-character-sheet?
-                           print-spell-cards?
-                           print-prepared-spells?
-                           print-large-abilities?]
-  (let [character (merge 
-                   (let [race (char/race built-char)
-                         subrace (char/subrace built-char)
-                         abilities (char/ability-values built-char)
-                         ability-bonuses (char/ability-bonuses built-char)
-                         saving-throws (set (char/saving-throws built-char))
-                         unarmored-armor-class (char/base-armor-class built-char)
-                         ac-with-armor-fn (char/armor-class-with-armor built-char)
-                         all-armor-inventory (mi/equipped-armor-details (char/all-armor-inventory built-char))
-                         equipped-armor (armor/non-shields all-armor-inventory)
-                         equipped-shields (armor/shields all-armor-inventory)
-                         all-armor-classes (for [armor (conj equipped-armor nil)
-                                                 shield (conj equipped-shields nil)]
-                                             (ac-with-armor-fn armor shield))
-                         max-armor-class (apply max all-armor-classes)
-                         current-ac @(subscribe [::char/current-armor-class id])
-                         levels (char/levels built-char)
-                         classes (char/classes built-char)
-                         character-name (char/character-name built-char)
-                         con-mod (es/entity-val built-char :con-mod)
-                         total-hit-dice (->> levels
-                                             vals
-                                             (reduce
-                                              (fn [levels-per-die level]
-                                                (update levels-per-die (:hit-die level) (fnil #(+ % (:class-level level)) 0)))
-                                              {})
-                                             (sort-by key)
-                                             (map #(str (val %) "x(1d" (key %) "+" con-mod ")"))
-                                             (s/join "\n"))
-                         speed (pdf-spec/speed built-char)]
-                     (merge
-                      {:player-name (char/player-name built-char)
-                       :character-name character-name
-                       :race (str race (if subrace (str "/" subrace)))
-                       :alignment (char/alignment built-char)
-                       :class-level (pdf-spec/class-string classes levels)
-                       :background (char/background built-char)
-                       :prof-bonus (common/bonus-str (es/entity-val built-char :prof-bonus))
-                       :ac current-ac
-                       :unarmored-armor-class unarmored-armor-class
-                       :hd total-hit-dice
-                       :initiative (common/bonus-str (es/entity-val built-char :initiative))
-                       :speed speed
-                       :hp-max (es/entity-val built-char :max-hit-points)
-                       :passive (es/entity-val built-char :passive-perception)
-                       :other-proficiencies (pdf-spec/other-profs-field built-char)
-                       :tool-proficiencies (pdf-spec/profs-paragraph (map first (char/tool-proficiencies built-char)) equip/tools-map "Tool")
-                       :weapon-proficiencies (pdf-spec/profs-paragraph  (char/weapon-proficiencies built-char) weapon/weapons-map "Weapon")
-                       :armor-proficiencies (pdf-spec/profs-paragraph (char/armor-proficiencies built-char) armor/armor-map "Armor")
-                       :languages (pdf-spec/profs-paragraph (char/languages built-char) @(subscribe [::langs/language-map]) "Language")
-                       :personality-trait-1 (char/personality-trait-1 built-char)
-                       :personality-traits-2 (char/personality-trait-2 built-char)
-                       :description-backstory (char/description built-char)
-                       :treasure (pdf-spec/treasure-fields built-char)
-                       :ideals (char/ideals built-char)
-                       :bonds (char/bonds built-char)
-                       :flaws (char/flaws built-char)
-                       :backstory (char/description built-char)
-                       :xp (char/xps built-char)
-                       :age (char/age built-char)
-                       :height (char/height built-char)
-                       :weight (char/weight built-char)
-                       :eyes (char/eyes built-char)
-                       :skin (char/skin built-char)
-                       :hair (char/hair built-char)
-                       :image-url (char/image-url built-char)
-                       :image-url-failed (char/image-url-failed built-char)
-                       :faction-image-url (char/faction-image-url built-char)
-                       :faction-image-url-failed (char/faction-image-url-failed built-char)
-                       :faction-name (char/faction-name built-char)
-                       :attacks-and-spellcasting-fields (pdf-spec/attacks-and-spellcasting-fields built-char)
-                       :skill-fields (pdf-spec/skill-fields built-char)
-                       :abilities abilities
-                       :ability-bonuses ability-bonuses
-                       :save-bonuses ((set (char/saving-throws built-char))
-                                      (reduce
-                                       (fn [saves key]
-                                         (assoc saves (keyword (str (name key) "-save-check")) (boolean (key saving-throws))))
-                                       {}
-                                       char/ability-keys))
-                       :traits-fields (pdf-spec/traits-fields built-char)
-                       :equipment-fields (pdf-spec/equipment-fields built-char)
-                       ;:spellcasting-fields-2 (pdf-spec/spellcasting-fields built-char print-prepared-spells?)
-                       })))]
-#(dispatch
-    [::e5/save-to-json "character-export" character])))
-
-(defn export-options [id built-char ]
-  (let [print-character-sheet? @(subscribe [::char/print-character-sheet?])
-        print-spell-cards? @(subscribe [::char/print-spell-cards?])
-        print-prepared-spells? @(subscribe [::char/print-prepared-spells?])
-        print-large-abilities? @(subscribe [::char/print-large-abilities?])
-        has-spells? (seq (char/spells-known built-char))]
-    [:div.flex.justify-cont-end
-     [:div.p-20
-      [:div.f-s-24.f-w-b.m-b-10 "Export Options"]
-      #_[:div.m-b-2
-       [:div.flex
-        [:div
-         {:on-click (make-event-handler ::char/toggle-large-abilities-print)}
-         [labeled-checkbox
-          "Print Abilities Large (and Bonuses Small)"
-          print-large-abilities?]]]]
-      #_(if has-spells?
-        [:div.m-b-2
-         [:div.flex
-          [:div
-           {:on-click (make-event-handler ::char/toggle-spell-cards-print)}
-           [labeled-checkbox
-            "Export Spell Cards"
-            print-spell-cards?]]]])
-      #_(if has-spells?
-        [:div.m-b-10
-         [:div.m-b-10
-          [:span.f-w-b "Spells Printed"]]
-         [:div.flex
-          [:div
-           {:on-click (make-event-handler ::char/toggle-known-spells-print)}
-           [labeled-checkbox
-            "Known"
-            (not print-prepared-spells?)]]
-          [:div.m-l-20
-           {:on-click (make-event-handler ::char/toggle-known-spells-print)}
-           [labeled-checkbox
-            "Prepared"
-            print-prepared-spells?]]]])
-      [:span.orange.underline.pointer.uppercase.f-s-12
-       {:on-click (make-event-handler ::char/hide-options)}
-       "Cancel"]
-      [:button.form-button.p-10.m-l-5
-       {:on-click (export-json-handler built-char
-                                      id
-                                      print-character-sheet?
-                                      print-spell-cards?
-                                      print-prepared-spells?
-                                      print-large-abilities?)}
-       "Export"]]]))
 
 (defn make-export-handler [id built-char]
   #(dispatch
     [::char/show-options
-     [export-options id built-char]]))
+     [ex/dd5eroll20-export-json-handler id built-char]]))
 
 (defn character-page []
   (let [expanded? (r/atom false)]
@@ -3603,7 +3489,7 @@
          (remove
           nil?
           [[share-link id]
-           [:div.m-l-5.hover-shadow.pointer
+           #_[:div.m-l-5.hover-shadow.pointer
             {:on-click #(swap! expanded? not)}
             [:img.h-32 {:src "/image/world-anvil.jpeg"}]]
            (if (and username
@@ -3612,8 +3498,8 @@
              {:title "Edit"
               :icon "pencil"
               :on-click (make-event-handler :edit-character character)})
-           {:title "Print"
-            :icon "print"
+           {:title "Export"
+            :icon "download"
             :on-click (make-print-handler id built-character)}
            (if (and username owner (not= owner username))
              [add-to-party-component id])])
@@ -7520,7 +7406,7 @@
                  {:print-character-sheet? true
                   :print-spell-cards? true
                   :print-prepared-spells? false})}
-     "print"]
+     "Create PDF"]
     (if (= username owner)
       [:button.form-button.m-l-5
        {:on-click (make-event-handler ::char/show-delete-confirmation id)}

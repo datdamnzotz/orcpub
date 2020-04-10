@@ -2045,12 +2045,9 @@
                    {:confirm-button-text "CREATE CLONE"
                     :question "You have unsaved changes, are you sure you want to discard them and clone this character? The new character will have the unsaved changes, the original will not."
                     :event [::char5e/clone-character]})}
-       {:title "Print"
-        :icon "print"
-        :on-click (views5e/make-print-handler (:db/id character) built-char)}
        {:title "Export"
         :icon "download"
-        :on-click (views5e/make-export-handler (:db/id character) built-char)}
+        :on-click (views5e/make-print-handler (:db/id character) built-char)}
         {:title (if (:db/id character)
                  "Update Existing Character"
                  "Save New Character")
