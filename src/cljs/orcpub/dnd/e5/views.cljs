@@ -3430,7 +3430,7 @@
         "JSON"]
        [:span.f-s-12 "  DMV Export format"]]
       ; D&D 5E by Roll20 - Single class sheet export example
-      #_[:div.m-t-10.m-b-10
+      [:div.m-t-10.m-b-10
          [:button.form-button.p-10.m-l-5
           {:on-click (ex/dd5eroll20-export-json-handler built-char
                                                         id
@@ -3441,7 +3441,7 @@
           "JSON"]
          [:span.f-s-12 "  D&D 5E by Roll20 format - " [:a.orange {:href "https://roll20.zendesk.com/hc/en-us/articles/360037773573" :target "_blank"} "Single class"]
           " load with " [:a.orange {:href "https://ssstormy.github.io/roll20-enhancement-suite/" :target "_blank"} "VTT"]
-          " (no weapons or spells at this time)"]]
+          " (no weapons, skills, spells at this time, yes it is a beta)"]]
       [:span.orange.underline.pointer.uppercase.m-l-10.f-s-12
        {:on-click (make-event-handler ::char/hide-options)}
        "Cancel"]]]))

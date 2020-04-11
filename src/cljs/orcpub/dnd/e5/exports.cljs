@@ -155,26 +155,21 @@
 ; D&D 5E by Roll20 - Single class sheet export example
 ; https://roll20.zendesk.com/hc/en-us/articles/360037773573
 ;
-; This is attempt at importing characters using the VTT 
+; This is attempt at importing characters using the VTT Enhancement Suite
 ; https://ssstormy.github.io/roll20-enhancement-suite/
 ; Character sheet only supports 1 class, so pull the first one.
 ;
-; This really isn't functional since the Class, and Level don't import correctly, looks like Charactermancer messes it up.
-; https://roll20.zendesk.com/hc/en-us/articles/360039644133-D-D-5e-Charactermancer
-;
 ; Looking at https://github.com/Roll20/roll20-character-sheets/blob/master/DD5thEditionLegacy/src/js/versioning.js
-; looks like the character goes through several version upgrades when loaded, and this version on github isn't 
-; the one being run on roll 20 (it bumps to version 4.21 currently, where the above only upgrades to 2.7) 
-; it's hard to see what they keep changing and why the import never sets the Level or Class. 
-; *sigh*
-; Leaving it here as an example.
+; looks like the character goes through several version upgrades when loaded
+; So setting the version is important. 
 
-;From Discord - when asking about the schema for the json format:
-; I'll ask one of the community devs - just a sec
-; (for the schemata)
-; It's not currently publicly available.
-; want to find a way to release it again, it's just been a problem with the current workflow and licensing agreements.
-; so no. its reverse engineer or nothing
+
+(defn generateID
+        ([] (generateID 19))
+        ([n]
+           (let [chars (map char (concat (range 48 58) (range 65 91) (range 97 123))) ; a-zA-Z0-9
+                 id (take n (repeatedly #(rand-nth chars)))]
+            (str "-" (reduce str id)))))     
 
 (defn dd5eroll20-export-json-handler [built-char id print-character-sheet?
                            print-spell-cards?
@@ -196,6 +191,7 @@
                          class-name (get-in class [class-key :class-name])
                          class-level (get-in class [class-key :class-level])
                          class-subclass-name (get-in class [class-key :subclass-name])
+
                    ; TO-DO
                    ;      current-ac @(subscribe [::char/current-armor-class id])
                    ;      levels (char/levels built-char)
@@ -215,52 +211,117 @@
                       {:schema_version 1
                        :name (str "(" (char/player-name built-char) ") " (char/character-name built-char))
                        :bio ""
-                       ;:oldId "" ; not needed for schema 1
+                       :oldId "" ; not needed for schema 1?
                        :avatar ""
-                       ;:gmnotes "" ; not needed for schema 1
-                       ;:defaulttoken "" ; not needed for schema 1
-                       ;:tags "" ; not needed for schema 1
-                       ;:controlledby "" ; not needed for schema 1
-                       ;:inplayerjournals "all" ; not needed for schema 1
-                       :attribs [{:name "race"
+                       :gmnotes "" ; not needed for schema 1?
+                       :defaulttoken "" ; not needed for schema 1?
+                       :tags "" ; not needed for schema 1?
+                       :controlledby "" ; not needed for schema 1
+                       :inplayerjournals "all" ; not needed for schema 1
+                       :attribs [{:name "l1mancer_status"
+                                  :current "completed"
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "version"
+                                  :current 1.0
+                                  :max  ""
+                                  :id (generateID)}
+                                 {:name "mancer_confirm_flag"
+                                  :current ""
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "mancer_confirm"
+                                  :current "on"
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "charactermancer_step"
+                                  :current ""
+                                  :max ""
+                                  :id (generateID)}
+
+                                 {:name "race"
                                   :current (str (char/race built-char))
-                                  :max ""}
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "race_display"
-                                  :current (str (char/subrace built-char)) :max ""}
+                                  :current (str (char/subrace built-char))
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "subrace"
+                                  :current (str (char/subrace built-char))
+                                  :max ""
+                                  :id (generateID)}
+
                                  {:name "alignment"
-                                  :current (char/alignment built-char) :max ""}
+                                  :current (char/alignment built-char)
+                                  :max ""
+                                  :id (generateID)}
 
                                  {:name "class"
-                                  :current class-name :max ""}
+                                  :current class-name :max ""
+                                  :id (generateID)}
+
                                  {:name "class_display"
-                                  :current class-subclass-name :max ""}
+                                  :current (str class-name " " class-level)
+                                  :max ""
+                                  :id (generateID)}
+
                                  {:name "level"
-                                  :current class-level :max ""}
+                                  :current class-level
+                                  :max ""
+                                  :id (generateID)}
+
+                                 {:name "base_level"
+                                  :current class-level
+                                  :max ""
+                                  :id (generateID)}
 
                                  {:name "experience"
-                                  :current (char/xps built-char) :max ""}
+                                  :current (char/xps built-char)
+                                  :max ""
+                                  :id (generateID)}
 
-                                 {:name "age" :current (char/age built-char) :max ""}
-                                 {:name "height" :current (char/height built-char) :max ""}
-                                 {:name "weight" :current (char/weight built-char) :max ""}
-                                 {:name "eyes" :current (char/eyes built-char) :max ""}
-                                 {:name "skin" :current (char/skin built-char) :max ""}
-                                 {:name "hair" :current (char/hair built-char) :max ""}
-                                 {:name "sex" :current (char/sex built-char) :max ""}
+                                 {:name "age" :current (char/age built-char)
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "height" :current (char/height built-char)
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "weight" :current (char/weight built-char)
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "eyes" :current (char/eyes built-char)
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "skin" :current (char/skin built-char)
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "hair" :current (char/hair built-char)
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "sex" :current (char/sex built-char)
+                                  :max ""
+                                  :id (generateID)}
 
                                  {:name "pb"
-                                  :current (str (es/entity-val built-char :prof-bonus)) :max ""}
-                                 {:name "background" :current (char/background built-char) :max ""}
+                                  :current (str (es/entity-val built-char :prof-bonus))
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "background" :current (char/background built-char)
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "ac"
                                   :current (str @(subscribe [::char/armor-class id]))
-                                  :max (str max-armor-class)}
+                                  :max (str max-armor-class)
+                                  :id (generateID)}
 
                                  {:name "hitdietype"
-                                  :current "" :max ""}
-                                 {:name "hitdie_final"
-                                  :current "@{hitdietype}" :max ""}
-                                 {:name "hit_dice"
-                                  :current "" :max ""}
+                                  :current "" :max ""
+                                  :id (generateID)}
+                                 #_{:name "hitdie_final"
+                                    :current "@{hitdietype}" :max ""}
+                                 #_{:name "hit_dice"
+                                    :current "" :max ""}
                                  #_:hd #_(->> (char/levels built-char)
                                               vals
                                               (reduce
@@ -271,71 +332,128 @@
                                               (map #(str (val %) "x(1d" (key %) "+" (es/entity-val built-char :con-mod) ")"))
                                               (s/join "\n"))
                                  {:name "initiative_bonus"
-                                  :current (es/entity-val built-char :initiative) :max ""}
+                                  :current (es/entity-val built-char :initiative)
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "speed"
-                                  :current (pdf-spec/speed built-char) :max ""}
+                                  :current (pdf-spec/speed built-char)
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "hp"
                                   :current  (char/current-hit-points built-char)
-                                  :max (char/max-hit-points built-char)}
+                                  :max (char/max-hit-points built-char)
+                                  :id (generateID)}
 
                                  {:name "strength"
-                                  :current (::char/str @(subscribe [::char/abilities])) :max ""}
+                                  :current (::char/str @(subscribe [::char/abilities]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "strength_base"
-                                  :current (::char/str @(subscribe [::char/ability-scores-option-value])) :max ""}
+                                  :current (::char/str @(subscribe [::char/ability-scores-option-value]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "strength_mod"
-                                  :current (es/entity-val built-char :str-mod) :max ""}
+                                  :current (es/entity-val built-char :str-mod)
+                                  :max ""
+                                  :id (generateID)}
                                  ;{:name "strength_save_prof"
                                  ; :current "(@{pb})"}
 
                                  {:name "dexterity"
-                                  :current (::char/dex @(subscribe [::char/abilities])) :max ""}
+                                  :current (::char/dex @(subscribe [::char/abilities]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "dexterity_base"
-                                  :current (::char/dex @(subscribe [::char/ability-scores-option-value])) :max ""}
+                                  :current (::char/dex @(subscribe [::char/ability-scores-option-value]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "dexterity_mod"
-                                  :current (es/entity-val built-char :dex-mod) :max ""}
+                                  :current (es/entity-val built-char :dex-mod)
+                                  :max ""
+                                  :id (generateID)}
 
                                  {:name "constitution"
-                                  :current (::char/con @(subscribe [::char/abilities])) :max ""}
+                                  :current (::char/con @(subscribe [::char/abilities]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "constitution_base"
-                                  :current (::char/con @(subscribe [::char/ability-scores-option-value])) :max ""}
+                                  :current (::char/con @(subscribe [::char/ability-scores-option-value]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "constitution_mod"
-                                  :current (es/entity-val built-char :con-mod) :max ""}
+                                  :current (es/entity-val built-char :con-mod)
+                                  :max ""
+                                  :id (generateID)}
                                  ;{:name "constitution_save_prof"
                                  ; :current "(@{pb})"}
 
                                  {:name "intelligence"
-                                  :current (::char/int @(subscribe [::char/abilities])) :max ""}
+                                  :current (::char/int @(subscribe [::char/abilities]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "intelligence_base"
-                                  :current (::char/int @(subscribe [::char/ability-scores-option-value])) :max ""}
+                                  :current (::char/int @(subscribe [::char/ability-scores-option-value]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "intelligence_mod"
-                                  :current (es/entity-val built-char :int-mod) :max ""}
+                                  :current (es/entity-val built-char :int-mod)
+                                  :max ""
+                                  :id (generateID)}
 
                                  {:name "wisdom"
-                                  :current (::char/wis @(subscribe [::char/abilities])) :max ""}
+                                  :current (::char/wis @(subscribe [::char/abilities]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "wisdom_base"
-                                  :current (::char/wis @(subscribe [::char/ability-scores-option-value])) :max ""}
+                                  :current (::char/wis @(subscribe [::char/ability-scores-option-value]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "wisdom_mod"
-                                  :current (es/entity-val built-char :wis-mod) :max ""}
+                                  :current (es/entity-val built-char :wis-mod)
+                                  :max ""
+                                  :id (generateID)}
 
                                  {:name "charisma"
-                                  :current (::char/cha @(subscribe [::char/abilities])) :max ""}
+                                  :current (::char/cha @(subscribe [::char/abilities]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "charisma_base"
-                                  :current (::char/cha @(subscribe [::char/ability-scores-option-value])) :max ""}
+                                  :current (::char/cha @(subscribe [::char/ability-scores-option-value]))
+                                  :max ""
+                                  :id (generateID)}
                                  {:name "charisma_mod"
-                                  :current (es/entity-val built-char :cha-mod) :max ""}
+                                  :current (es/entity-val built-char :cha-mod)
+                                  :max ""
+                                  :id (generateID)}
 
-                                 {:name "passive" :current (int (es/entity-val built-char :passive-perception)) :max ""}
+                                 {:name "passive" :current (int (es/entity-val built-char :passive-perception))
+                                  :max ""
+                                  :id (generateID)}
 
-                                 {:name "flaws" :current (char/flaws built-char) :max ""}
-                                 {:name "personality_traits" :current (str (char/personality-trait-1 built-char) "\n\n" (char/personality-trait-2 built-char)) :max ""}
+                                 {:name "flaws" :current (char/flaws built-char)
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "personality_traits" :current (str (char/personality-trait-1 built-char) "\n\n" (char/personality-trait-2 built-char))
+                                  :max ""
+                                  :id (generateID)}
 
-                                 {:name "character_backstory" :current (char/description built-char) :max ""}
+                                 {:name "character_backstory" :current (char/description built-char)
+                                  :max ""
+                                  :id (generateID)}
 
-                                 {:name "ideals" :current (char/ideals built-char) :max ""}
-                                 {:name "bonds" :current (char/bonds built-char) :max ""}
+                                 {:name "ideals" :current (char/ideals built-char)
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "bonds" :current (char/bonds built-char)
+                                  :max ""
+                                  :id (generateID)}
 
-                                 {:name "allies_and_organizations" :current (char/faction-name built-char) :max ""}
-                                 {:name "character_backstory" :current (char/description built-char) :max ""}
+                                 {:name "allies_and_organizations" :current (char/faction-name built-char)
+                                  :max ""
+                                  :id (generateID)}
+                                 {:name "character_backstory" :current (char/description built-char)
+                                  :max ""
+                                  :id (generateID)}
 
                                  ;To-do
                                  ;:other-proficiencies (pdf-spec/other-profs-field built-char)
