@@ -106,14 +106,21 @@
 
                                 :hp [{:hp_current (char/current-hit-points built-char)
                                       :hp_max (char/max-hit-points built-char)}]
+
                                 :abilities_bonuses [{:abilities (char/ability-values built-char)
                                                      :bonuses (char/ability-bonuses built-char)}]
-                                :save_bonuses ((set (char/saving-throws built-char))
-                                               (reduce
-                                                (fn [saves key]
-                                                  (assoc saves (keyword (str (name key) "-save-check")) (boolean (key (char/saving-throws built-char)))))
-                                                {}
-                                                char/ability-keys))
+
+                                :save_bonuses (char/save-bonuses built-char)
+
+                                :saving_throw_advantages (es/entity-val built-char :saving-throw-advantages)
+
+                                :damage_resistances (char/damage-resistances built-char)
+
+                                :damage_vulnerabilities (char/damage-vulnerabilities built-char)
+
+                                :immunities (char/immunities built-char)
+
+                                :condition_immunities (char/condition-immunities built-char)
 
                                 :passive_perception (int (es/entity-val built-char :passive-perception))
 
