@@ -170,7 +170,7 @@
         abilities @(subscribe [::char/abilities id])
         skill-prof-bonuses (es/entity-val built-char :skill-prof-bonuses)
         skill-modifiers (es/entity-val built-char :skill-bonuses)
-        skill-profs (es/entity-val built-char :skill-profs)
+        skill-profs (or (es/entity-val built-char :skill-profs) {})
         skill-expertise @(subscribe [::char/skill-expertise id])
 
        ;Character sheet only supports 1 class, so pull the first one.
