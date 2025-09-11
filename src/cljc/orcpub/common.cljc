@@ -181,3 +181,9 @@
 (defn aloof-sort-by [sorter coll]
   (sort-by (comp s/lower-case sorter) coll)
   )
+
+(defn ->kebab-case [s]
+  (-> s
+      ;; Insert hyphen before each capital letter, but not at the start.
+      (s/replace #"([A-Z])" "-$1")
+      .toLowerCase))

@@ -1,4 +1,6 @@
-{:linters {:if {:level :off}
+{:linters {:shadowed-fn-param {:level :off}
+           :shadowed-var {:level :off}
+           :if {:level :off}
            :unused-namespace {:level :off}
            :unused-binding {:level :off}
            :unresolved-symbol

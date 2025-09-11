@@ -44,8 +44,7 @@
             [clojure.string :as s]
             [cljs.reader :as reader]
             [orcpub.user-agent :as user-agent]
-            [bidi.bidi :as bidi]
-            [camel-snake-kebab.core :as csk]))
+            [bidi.bidi :as bidi]))
 
 ;; the `amount` of "uses" an action may have before it warrants
 ;; using a dropdown instead of a list of checkboxes
@@ -2238,7 +2237,7 @@
    [:div.p-10.flex.flex-column.align-items-c
     (section-header-2 title icon)
     [:div.f-s-24.f-w-b
-     {:class (csk/->kebab-case title)}
+     {:class (orcpub.common/->kebab-case title)}
      (if (boolean show-button)
        (roll-button
         (str title " check: ")
